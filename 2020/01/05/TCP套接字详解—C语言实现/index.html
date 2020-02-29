@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hello-world | Amaris&#39;s blog</title>
+  <title>Tcp套接字详解—C语言实现 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="toc:truetitle: Hello WorldWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you c">
+  <meta name="description" content="基于C语言实现TCP套接字通信 本文旨在windows系统中使用TCP套接字实现客户端&#x2F;服务端通信编译器：visual studio 2019 (community)  Socket本意翻译为插座，这其实很形象的解释了套接字的作用，在客户端与服务端的通信中，套接字就起着像插座一样连接的作用。TCP套接字与UDP套接字最大的区别便是是否面向连接，本文所实现的便是面向连接的TCP套接字，即客户端与服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello-world">
-<meta property="og:url" content="http://yoursite.com/2020/02/29/hello-world/index.html">
+<meta property="og:title" content="Tcp套接字详解—C语言实现">
+<meta property="og:url" content="http://yoursite.com/2020/01/05/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="toc:truetitle: Hello WorldWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you c">
+<meta property="og:description" content="基于C语言实现TCP套接字通信 本文旨在windows系统中使用TCP套接字实现客户端&#x2F;服务端通信编译器：visual studio 2019 (community)  Socket本意翻译为插座，这其实很形象的解释了套接字的作用，在客户端与服务端的通信中，套接字就起着像插座一样连接的作用。TCP套接字与UDP套接字最大的区别便是是否面向连接，本文所实现的便是面向连接的TCP套接字，即客户端与服务">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-29T04:48:36.236Z">
-<meta property="article:modified_time" content="2020-02-29T11:42:53.486Z">
+<meta property="article:published_time" content="2020-01-05T11:00:21.000Z">
+<meta property="article:modified_time" content="2020-02-29T12:03:48.111Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
@@ -158,39 +159,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-TCP套接字详解—C语言实现" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hello-world
+      Tcp套接字详解—C语言实现
     </h1>
   
 
         
-        <a href="/2020/02/29/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-29T04:48:36.236Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+        <a href="/2020/01/05/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-01-05T11:00:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="toc-true"><a href="#toc-true" class="headerlink" title="toc:true"></a>toc:true</h2><h2 id="title-Hello-World"><a href="#title-Hello-World" class="headerlink" title="title: Hello World"></a>title: Hello World</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="基于C语言实现TCP套接字通信"><a href="#基于C语言实现TCP套接字通信" class="headerlink" title="基于C语言实现TCP套接字通信"></a>基于C语言实现TCP套接字通信</h1><blockquote>
+<p>本文旨在windows系统中使用TCP套接字实现客户端/服务端通信<br>编译器：visual studio 2019 (community)</p>
+</blockquote>
+<p>Socket本意翻译为插座，这其实很形象的解释了套接字的作用，在客户端与服务端的通信中，套接字就起着像插座一样连接的作用。<br>TCP套接字与UDP套接字最大的区别便是是否面向连接，本文所实现的便是面向连接的TCP套接字，即客户端与服务端在通信之前进行三次握手建立连接。</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="TCP服务端建立步骤："><a href="#TCP服务端建立步骤：" class="headerlink" title="TCP服务端建立步骤："></a>TCP服务端建立步骤：</h2><ol>
+<li>申请套接字：s = socket(…);</li>
+<li>确定本地端点，填写端点地址：address = …;</li>
+<li>建立套接字与端点关系（绑定）：bind(s,address…);</li>
+<li>设置为监听模式：listen(s);</li>
+<li>接收连接：newsock = accept(s);</li>
+<li>数据收/发：recv(newsock); / send(newsock);</li>
+<li>关闭套接字：closesocket(newsock);</li>
+</ol>
+<h2 id="TCP客户端建立步骤："><a href="#TCP客户端建立步骤：" class="headerlink" title="TCP客户端建立步骤："></a>TCP客户端建立步骤：</h2><ol>
+<li>申请套接字：s = socket(…);</li>
+<li>确定本地端点，填写端点地址：c_address = …;</li>
+<li>建立套接字与端点关系（绑定)：bind(s,c_address…);</li>
+<li>确定服务器端点：s_address = …;</li>
+<li>与服务器建立连接：connect(s,s_address…);</li>
+<li>数据发/收：send(s); / recv(s);</li>
+<li>关闭套接字：closesocket(s);</li>
+</ol>
+<h2 id="TCP服务端代码实现"><a href="#TCP服务端代码实现" class="headerlink" title="TCP服务端代码实现"></a>TCP服务端代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化WSA</span></span><br><span class="line">	WORD sockVersion = MAKEWORD(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">if</span> (WSAStartup(sockVersion, &amp;wsaData) != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建套接字</span></span><br><span class="line">	SOCKET slisten = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	<span class="keyword">if</span> (slisten == INVALID_SOCKET)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"socket error !"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//绑定IP和端口</span></span><br><span class="line">	sockaddr_in <span class="built_in">sin</span>;</span><br><span class="line">	<span class="built_in">sin</span>.sin_family = AF_INET;</span><br><span class="line">	<span class="built_in">sin</span>.sin_port = htons(<span class="number">8888</span>);</span><br><span class="line">	<span class="built_in">sin</span>.sin_addr.S_un.S_addr = INADDR_ANY;</span><br><span class="line">	<span class="keyword">if</span> (bind(slisten, (LPSOCKADDR)&amp; <span class="built_in">sin</span>, <span class="keyword">sizeof</span>(<span class="built_in">sin</span>)) == SOCKET_ERROR)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"bind error !"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//开始监听</span></span><br><span class="line">	<span class="keyword">if</span> (listen(slisten, <span class="number">5</span>) == SOCKET_ERROR)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"listen error !"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//循环接收数据</span></span><br><span class="line">	SOCKET sClient;</span><br><span class="line">	sockaddr_in remoteAddr;</span><br><span class="line">	<span class="keyword">int</span> nAddrlen = <span class="keyword">sizeof</span>(remoteAddr);</span><br><span class="line">	<span class="keyword">char</span> revData[<span class="number">255</span>];</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"等待连接...\n"</span>);</span><br><span class="line">		sClient = accept(slisten, (SOCKADDR*)&amp; remoteAddr, &amp;nAddrlen);</span><br><span class="line">		<span class="keyword">if</span> (sClient == INVALID_SOCKET)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"accept error !"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"接受到一个连接：%s \r\n"</span>, inet_ntoa(remoteAddr.sin_addr));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">20</span>; i++)</span><br><span class="line">		&#123;<span class="comment">//接收数据</span></span><br><span class="line">			<span class="keyword">int</span> ret = recv(sClient, revData, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">			<span class="comment">//int my_revdata = int(*revData);// *（int* (const char*)revData)</span></span><br><span class="line">			<span class="keyword">int</span> my_revdata = *((<span class="keyword">int</span>*)(revData));</span><br><span class="line">			<span class="keyword">if</span> (ret &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				revData[ret] = <span class="number">0x00</span>;</span><br><span class="line">				<span class="comment">//int b = int(*revData);</span></span><br><span class="line">				<span class="comment">//printf(revData);</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"成功接受数据：%3d"</span>, my_revdata);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">//发送数据</span></span><br><span class="line">			<span class="keyword">int</span> randData = rand() % <span class="number">500</span>;</span><br><span class="line">			randData = <span class="built_in">abs</span>(randData);</span><br><span class="line">			<span class="keyword">int</span> my_sendData = my_revdata + randData;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"我发送的数据：%5d \n"</span>, my_sendData);</span><br><span class="line">			send(sClient, (<span class="keyword">const</span> <span class="keyword">char</span>*)(&amp;my_sendData), <span class="keyword">sizeof</span>(my_sendData), <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">		closesocket(sClient);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	closesocket(slisten);</span><br><span class="line">	WSACleanup();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="TCP客户端代码实现"><a href="#TCP客户端代码实现" class="headerlink" title="TCP客户端代码实现"></a>TCP客户端代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;WINSOCK2.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;STDIO.H&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span>  comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WORD sockVersion = MAKEWORD(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">	WSADATA data;</span><br><span class="line">	<span class="keyword">if</span> (WSAStartup(sockVersion, &amp;data) != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	SOCKET sclient = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	<span class="keyword">if</span> (sclient == INVALID_SOCKET)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"invalid socket !"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	sockaddr_in serAddr;</span><br><span class="line">	serAddr.sin_family = AF_INET;</span><br><span class="line">	serAddr.sin_port = htons(<span class="number">8888</span>);</span><br><span class="line">	serAddr.sin_addr.S_un.S_addr = inet_addr(<span class="string">"127.0.0.1"</span>);</span><br><span class="line">	<span class="keyword">if</span> (connect(sclient, (sockaddr*)&amp; serAddr, <span class="keyword">sizeof</span>(serAddr)) == SOCKET_ERROR)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"connect error !"</span>);</span><br><span class="line">		closesocket(sclient);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Sleep(<span class="number">500</span>);</span><br><span class="line">		<span class="keyword">int</span> a = rand() % <span class="number">500</span>;</span><br><span class="line">		a = <span class="built_in">abs</span>(a);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"我发送的随机数：%3d "</span>, a);</span><br><span class="line">		</span><br><span class="line">		send(sclient, (<span class="keyword">const</span> <span class="keyword">char</span>*)(&amp;a), <span class="keyword">sizeof</span>(a), <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">char</span> recData[<span class="number">255</span>];</span><br><span class="line">		<span class="keyword">int</span> ret = recv(sclient, recData, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">int</span> d = *((<span class="keyword">int</span>*)(recData));</span><br><span class="line">		<span class="keyword">if</span> (ret &gt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			recData[ret] = <span class="number">0x00</span>;</span><br><span class="line">			<span class="keyword">if</span> (d &gt; <span class="number">100</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"成功接收返回数据："</span>);</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%5d\n"</span>, d);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"数据不符合要求！\n"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	closesocket(sclient);</span><br><span class="line">	WSACleanup();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
 
@@ -230,6 +247,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -280,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/29/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/05/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,20 +320,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2020/02/29/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          TCP套接字详解—C语言实现
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -425,6 +439,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
