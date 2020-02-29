@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最小网元设计【阶段二】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阶段二：交互@[toc]">
+  <meta name="description" content="阶段二：交互2.1 本阶段预期 2.1 本阶段预期在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。在应用层实现字符编码方案以及图片编码方案。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小网元设计【阶段二】">
 <meta property="og:url" content="http://yoursite.com/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="阶段二：交互@[toc]">
+<meta property="og:description" content="阶段二：交互2.1 本阶段预期 2.1 本阶段预期在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。在应用层实现字符编码方案以及图片编码方案。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200120201400213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200120194435964.png">
@@ -35,10 +35,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200120202329893.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200120202440923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-01-06T12:39:55.000Z">
-<meta property="article:modified_time" content="2020-02-29T13:35:24.577Z">
+<meta property="article:modified_time" content="2020-02-29T13:56:08.728Z">
 <meta property="article:author" content="Amaris">
-<meta property="article:tag" content="网络编程">
 <meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200120201400213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
   
@@ -196,10 +196,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="阶段二：交互"><a href="#阶段二：交互" class="headerlink" title="阶段二：交互"></a>阶段二：交互</h1><p>@[toc]</p>
+        <h1 id="阶段二：交互"><a href="#阶段二：交互" class="headerlink" title="阶段二：交互"></a>阶段二：交互</h1><p>2.1 本阶段预期</p>
+<h2 id="2-1-本阶段预期"><a href="#2-1-本阶段预期" class="headerlink" title="2.1 本阶段预期"></a>2.1 本阶段预期</h2><p>在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。<br>在应用层实现字符编码方案以及图片编码方案。</p>
 <a id="more"></a>
-<p>2.1 本阶段预期</p>
-<h2 id="2-1-本阶段预期"><a href="#2-1-本阶段预期" class="headerlink" title="2.1 本阶段预期"></a>2.1 本阶段预期</h2><p>在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。<br>在应用层实现字符编码方案以及图片编码方案。<br><strong>帧结构图:</strong><br><img src="https://img-blog.csdnimg.cn/20200120201400213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="帧结构"></p>
+
+<p><strong>帧结构图:</strong><br><img src="https://img-blog.csdnimg.cn/20200120201400213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="帧结构"></p>
 <h2 id="2-2-帧定位"><a href="#2-2-帧定位" class="headerlink" title="2.2 帧定位"></a>2.2 帧定位</h2><h3 id="2-2-1-定义"><a href="#2-2-1-定义" class="headerlink" title="2.2.1 定义"></a>2.2.1 定义</h3><p>帧定位技术是一种用来在一个比特流内分配或标记信道的技术。</p>
 <h3 id="2-2-2-方案"><a href="#2-2-2-方案" class="headerlink" title="2.2.2 方案"></a>2.2.2 方案</h3><p><strong>面向比特的首位字符界定法</strong><br>笔者采用在帧头和帧尾各加 8 位标识的比特流 01111110。但是，仅仅如此的话会造成对帧头帧尾的误判，笔者考虑如果在数据中遇到连续的 6 个 1，那么将最后一个 1 替换为 0，但是仔细考虑，这样仍然 会造成误判，因此笔者采用：如果在发送端数据中遇到连续 5 个 1，那么在 最后一个 1 后面增添 1 个 0，例如：Data:11111100 -&gt; 111110100。在接受端遇到 111110100 这种情况若判断出比特流为 9 位时，可去除连续 5 个 1 后 的 0，得到：11111100。</p>
 <h3 id="2-2-3-函数实现"><a href="#2-2-3-函数实现" class="headerlink" title="2.2.3 函数实现"></a>2.2.3 函数实现</h3><p>发送机制：</p>
@@ -289,11 +290,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
@@ -504,11 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
             
             <div class="clearfix"></div>

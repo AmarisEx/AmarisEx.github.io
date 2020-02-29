@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最小网元设计【阶段三】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阶段三：共享@[toc]">
+  <meta name="description" content="阶段三：共享3.1 本阶段预期二层交换机的实现，即按目的转发、反向地址学习以及未知广播。实现交换机成环设计。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小网元设计【阶段三】">
 <meta property="og:url" content="http://yoursite.com/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="阶段三：共享@[toc]">
+<meta property="og:description" content="阶段三：共享3.1 本阶段预期二层交换机的实现，即按目的转发、反向地址学习以及未知广播。实现交换机成环设计。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202110449331.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/202002021105187.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020020211130177.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202115518905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-02-02T03:23:19.000Z">
-<meta property="article:modified_time" content="2020-02-29T13:34:33.307Z">
+<meta property="article:modified_time" content="2020-02-29T13:56:21.434Z">
 <meta property="article:author" content="Amaris">
-<meta property="article:tag" content="网络编程">
 <meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200202110449331.png">
   
@@ -185,10 +185,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="阶段三：共享"><a href="#阶段三：共享" class="headerlink" title="阶段三：共享"></a>阶段三：共享</h1><p>@[toc]</p>
+        <h1 id="阶段三：共享"><a href="#阶段三：共享" class="headerlink" title="阶段三：共享"></a>阶段三：共享</h1><h2 id="3-1-本阶段预期"><a href="#3-1-本阶段预期" class="headerlink" title="3.1 本阶段预期"></a>3.1 本阶段预期</h2><p>二层交换机的实现，即按目的转发、反向地址学习以及未知广播。<br>实现交换机成环设计。</p>
 <a id="more"></a>
 
-<h2 id="3-1-本阶段预期"><a href="#3-1-本阶段预期" class="headerlink" title="3.1 本阶段预期"></a>3.1 本阶段预期</h2><p>二层交换机的实现，即按目的转发、反向地址学习以及未知广播。<br>实现交换机成环设计。</p>
 <h2 id="3-2-按目的转发"><a href="#3-2-按目的转发" class="headerlink" title="3.2 按目的转发"></a>3.2 按目的转发</h2><h3 id="3-2-1-定义"><a href="#3-2-1-定义" class="headerlink" title="3.2.1 定义"></a>3.2.1 定义</h3><p>二层交换机从某个端口收到帧后，通过查看到此帧的目的MAC地址，然后凭借MAC地址表向相应的端口转发。</p>
 <h3 id="3-2-2-方案"><a href="#3-2-2-方案" class="headerlink" title="3.2.2 方案"></a>3.2.2 方案</h3><p>在交互设计基础上为每个帧添加源地址和目的地址<br>为网络中每个设备编址（根据设备号编址，例如设备6其MAC地址为6），为交换机编写代码实现MAC地址表（利用结构数组），每接收一帧，查看其目的MAC，先判断是否为自身，若是则解封处理递交上层，若不是则查表获得端口号转发，若查无此地址则广播到其他端口（直通转发）。</p>
 <h3 id="3-2-3-代码实现"><a href="#3-2-3-代码实现" class="headerlink" title="3.2.3 代码实现"></a>3.2.3 代码实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Switch_Table</span>//建立<span class="title">MAC</span>表</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> addr;</span><br><span class="line">	<span class="keyword">int</span> port;</span><br><span class="line">&#125;;</span><br><span class="line">Switch_Table* st = (Switch_Table*)<span class="built_in">malloc</span>(<span class="number">15</span> * <span class="keyword">sizeof</span>(Switch_Table));<span class="comment">//实例化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">add_code_source_node</span><span class="params">(<span class="keyword">char</span>* p)</span></span>;<span class="comment">//插入目的地址</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_decode_source_node</span><span class="params">(<span class="keyword">char</span>* s)</span></span>;<span class="comment">//获得目的地址</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_switch_table</span><span class="params">()</span></span>;<span class="comment">//打印MAC表</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_st_port</span><span class="params">(<span class="keyword">int</span> addr)</span></span>;<span class="comment">//根据目的地址查找端口号-</span></span><br></pre></td></tr></table></figure>
@@ -251,11 +250,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
@@ -466,11 +465,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
             
             <div class="clearfix"></div>

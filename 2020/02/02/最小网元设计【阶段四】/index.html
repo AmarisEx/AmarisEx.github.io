@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最小网元设计【阶段四】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阶段四：路由@[TOC]">
+  <meta name="description" content="阶段四：路由4.1 本阶段预期实现网络层的路由转发功能，即路由表的建立以及静态路由&#x2F;动态路由的实现。搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。*以下内容均基于最终成果《混合组网》编写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小网元设计【阶段四】">
 <meta property="og:url" content="http://yoursite.com/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="阶段四：路由@[TOC]">
+<meta property="og:description" content="阶段四：路由4.1 本阶段预期实现网络层的路由转发功能，即路由表的建立以及静态路由&#x2F;动态路由的实现。搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。*以下内容均基于最终成果《混合组网》编写">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202113415585.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202113618730.png">
@@ -31,10 +31,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202114904144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200202114936427.png">
 <meta property="article:published_time" content="2020-02-02T04:00:51.000Z">
-<meta property="article:modified_time" content="2020-02-29T13:35:18.584Z">
+<meta property="article:modified_time" content="2020-02-29T13:56:33.248Z">
 <meta property="article:author" content="Amaris">
-<meta property="article:tag" content="网络编程">
 <meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200202113415585.png">
   
@@ -192,10 +192,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="阶段四：路由"><a href="#阶段四：路由" class="headerlink" title="阶段四：路由"></a>阶段四：路由</h1><p>@[TOC]</p>
+        <h1 id="阶段四：路由"><a href="#阶段四：路由" class="headerlink" title="阶段四：路由"></a>阶段四：路由</h1><h2 id="4-1-本阶段预期"><a href="#4-1-本阶段预期" class="headerlink" title="4.1 本阶段预期"></a>4.1 本阶段预期</h2><p>实现网络层的路由转发功能，即路由表的建立以及静态路由/动态路由的实现。<br>搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。<br>*以下内容均基于最终成果《混合组网》编写</p>
 <a id="more"></a>
 
-<h2 id="4-1-本阶段预期"><a href="#4-1-本阶段预期" class="headerlink" title="4.1 本阶段预期"></a>4.1 本阶段预期</h2><p>实现网络层的路由转发功能，即路由表的建立以及静态路由/动态路由的实现。<br>搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。<br>*以下内容均基于最终成果《混合组网》编写</p>
 <h2 id="4-2-路由表"><a href="#4-2-路由表" class="headerlink" title="4.2 路由表"></a>4.2 路由表</h2><h3 id="4-2-1-定义"><a href="#4-2-1-定义" class="headerlink" title="4.2.1 定义"></a>4.2.1 定义</h3><p>路由表或称路由择域信息库，是一个存储在路由器或者联网计算机中的电子表格（文件）或类数据库。路由表存储着指向特定网络地址的路径（在有些情况下，还记录有路径的路由度量值）。路由表中含有网络周边的拓扑信息。路由表建立的主要目标是为了实现路由协议和静态路由选择。</p>
 <h3 id="4-2-2-方案"><a href="#4-2-2-方案" class="headerlink" title="4.2.2 方案"></a>4.2.2 方案</h3><p>为每个路由器配置路由表，记录目的地址、下一跳、端口、距离四个信息项。<br>例如：<br><img src="https://img-blog.csdnimg.cn/20200202113415585.png" alt="Routing Table"></p>
 <h3 id="4-2-3-代码实现"><a href="#4-2-3-代码实现" class="headerlink" title="4.2.3 代码实现"></a>4.2.3 代码实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Router_Table</span>//建立路由表</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> destination;<span class="comment">//目的地址</span></span><br><span class="line">	<span class="keyword">int</span> gataway;<span class="comment">//下一跳</span></span><br><span class="line">	<span class="keyword">int</span> port;<span class="comment">//端口</span></span><br><span class="line">	<span class="keyword">int</span> metric;<span class="comment">//距离</span></span><br><span class="line">&#125;;</span><br><span class="line">Router_Table* rt = (Router_Table*)<span class="built_in">malloc</span>(<span class="number">15</span> * <span class="keyword">sizeof</span>(Router_Table));<span class="comment">//实例化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_router_table</span><span class="params">()</span></span>;<span class="comment">//打印路由表</span></span><br></pre></td></tr></table></figure>
@@ -270,11 +269,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
@@ -476,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
             
             <div class="clearfix"></div>

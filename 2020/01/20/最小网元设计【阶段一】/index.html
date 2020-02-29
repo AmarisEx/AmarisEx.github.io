@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最小网元设计【阶段一】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案 层次划分通过对 OSI 模型以及 TCP&#x2F;IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。 应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔">
+  <meta name="description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小网元设计【阶段一】">
 <meta property="og:url" content="http://yoursite.com/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案 层次划分通过对 OSI 模型以及 TCP&#x2F;IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。 应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔">
+<meta property="og:description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-01-20T11:08:01.000Z">
-<meta property="article:modified_time" content="2020-02-29T13:31:20.980Z">
+<meta property="article:modified_time" content="2020-02-29T13:55:48.957Z">
 <meta property="article:author" content="Amaris">
-<meta property="article:tag" content="网络编程">
 <meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="网络编程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
   
@@ -179,8 +179,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="阶段一：设计"><a href="#阶段一：设计" class="headerlink" title="阶段一：设计"></a>阶段一：设计</h1><h2 id="本阶段预期"><a href="#本阶段预期" class="headerlink" title="本阶段预期"></a>本阶段预期</h2><p>设计网元的层次划分，功能设计和端口分配方案</p>
-<h2 id="层次划分"><a href="#层次划分" class="headerlink" title="层次划分"></a>层次划分</h2><p>通过对 OSI 模型以及 TCP/IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。<br> <img src="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="最小网元层次划分"><br>应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔者将网络层和链路层功能集于一体，具体区分如下述）</p>
 <a id="more"></a>
+
+<h2 id="层次划分"><a href="#层次划分" class="headerlink" title="层次划分"></a>层次划分</h2><p>通过对 OSI 模型以及 TCP/IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。<br> <img src="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="最小网元层次划分"><br>应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔者将网络层和链路层功能集于一体，具体区分如下述）</p>
+<!-- more -->
 <h2 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h2><p> <strong>1. <strong>应用层</strong></strong><br> 应用层首先实现和用户的交互功能，既能够接受用户输入的指令，又能够将收 到的信息反馈给用户；其次，应用层还应实现和下层的通信，既可以将 用户输入的信息传递给下层，又能够接受下层传入的信息。<br> 具体功能如下：</p>
 <ul>
 <li><p>允许自动发送随机生成的比特流（便于测试）</p>
@@ -247,11 +249,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
@@ -462,11 +464,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
             
             <div class="clearfix"></div>
