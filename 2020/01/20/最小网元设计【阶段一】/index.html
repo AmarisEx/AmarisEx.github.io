@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Amaris&#39;s blog</title>
+  <title>最小网元设计【阶段一】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Less is more.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amaris&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案 层次划分通过对 OSI 模型以及 TCP&#x2F;IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。 应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最小网元设计【阶段一】">
+<meta property="og:url" content="http://yoursite.com/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="Less is more.">
+<meta property="og:description" content="阶段一：设计本阶段预期设计网元的层次划分，功能设计和端口分配方案 层次划分通过对 OSI 模型以及 TCP&#x2F;IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。 应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-01-20T11:08:01.000Z">
+<meta property="article:modified_time" content="2020-02-29T13:31:20.980Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="网络编程">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
   
@@ -152,120 +158,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-最小网元设计【阶段一】" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-02-02T04:00:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/">最小网元设计【阶段四】</a>
+    <h1 class="article-title" itemprop="name">
+      最小网元设计【阶段一】
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-02-02T03:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/">最小网元设计【阶段三】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/" class="archive-article-date">
+        
+        <a href="/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/" class="archive-article-date">
   	<time datetime="2020-01-20T11:08:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/">最小网元设计【阶段一】</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="阶段一：设计"><a href="#阶段一：设计" class="headerlink" title="阶段一：设计"></a>阶段一：设计</h1><h2 id="本阶段预期"><a href="#本阶段预期" class="headerlink" title="本阶段预期"></a>本阶段预期</h2><p>设计网元的层次划分，功能设计和端口分配方案</p>
+<h2 id="层次划分"><a href="#层次划分" class="headerlink" title="层次划分"></a>层次划分</h2><p>通过对 OSI 模型以及 TCP/IP 模型的分析，项目指导书的阅览以及对相关协议体系文献的阅览，笔者针对于本项目（最小网元设计），将模型划分为三层：应用层、网络层（链路层）和物理层。模型结构如下图所示 。<br> <img src="https://img-blog.csdnimg.cn/20200120184039374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="最小网元层次划分"><br>应用层和网络层笔者将继续编写相应的程序进行实现，物理层我们 将使用项目所提供的物理层模拟软件进行模拟。（在本项目中，笔者将网络层和链路层功能集于一体，具体区分如下述）</p>
+<a id="more"></a>
+<h2 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h2><p> <strong>1. <strong>应用层</strong></strong><br> 应用层首先实现和用户的交互功能，既能够接受用户输入的指令，又能够将收 到的信息反馈给用户；其次，应用层还应实现和下层的通信，既可以将 用户输入的信息传递给下层，又能够接受下层传入的信息。<br> 具体功能如下：</p>
+<ul>
+<li><p>允许自动发送随机生成的比特流（便于测试）</p>
+<ul>
+<li>字符编码/译码方案</li>
+<li>图片编码/译码方案</li>
+<li>正确处理确认帧（基于停止等待协议）</li>
+</ul>
+<p><strong>2. 网络层（链路层）</strong><br>本层首先也要实现和上层（应用层）的通信功能，既可以接受来自应用层的信息，又可以将处理过的信息反馈给应用层。（在具体实现上，网络层和链路层均具备本层所有功能，针对交换机和路由器，不同工作模式下，笔者定义了全局变量进行选择）具体功能如下：</p>
+<ul>
+<li>帧定位 </li>
+<li>差错检测</li>
+<li>差错控制：基于停止等待协议</li>
+<li>简单的流量控制</li>
+<li>交换机：按目的转发、反向地址学习、未知广播、环状拓扑适应</li>
+<li>路由器：路由表、寻址与转发（静态路由）</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. 物理层</strong><br> 物理层主要负责比特流数据的传输。即将从网络层接收到的比特流数据传输给 指定的对等层，同时接收对等层传来的比特流数据。（所有数据均使用字节模式处理）</p>
+<h2 id="端口分配方案"><a href="#端口分配方案" class="headerlink" title="端口分配方案"></a>端口分配方案</h2><p>笔者采用课程组建议的方案：<br>端口号的五位数字有以下格式：第一位1是常量，第二位1表示设备号为1，第3位3表示第3层——应用层，00在该应用层的实体编号，如果网元在这一层有多个实体，比如本例中每个网元在物理层就有两个实体，所以这两个实体的本地端口号分别位11100和11101。<br>例如若有网元1，其具有一个应用层11400、一个网络层11300、一个链路层11200以及两个物理层11100和11101。</p>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>笔者这里所列出的各层功能并不是一开始便考虑到的，而是对项目的一个总结，你不必拘泥于这些功能的实现，希望能有自己的创新。<br>随着项目的进行，有些功能你不得不去实现，有些知识也必须去自主的学习，现在回想，这种任务驱动型的学习方式可以很好的对所学知识加以运用，清楚的明白其具体运用，学得也更加扎实。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的鼓励是我创作的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193442664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193833714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -281,141 +257,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-01-06T12:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          最小网元设计【阶段三】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最小网元设计【阶段二】</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/">最小网元设计【阶段二】</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-01-06T01:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/">最小网元设计【阶段零】</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/05/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-01-05T11:00:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/05/TCP%E5%A5%97%E6%8E%A5%E5%AD%97%E8%AF%A6%E8%A7%A3%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">Tcp套接字详解—C语言实现</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -441,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
