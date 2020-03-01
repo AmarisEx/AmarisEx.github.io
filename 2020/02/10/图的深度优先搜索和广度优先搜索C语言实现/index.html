@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 爬虫 | Amaris&#39;s blog</title>
+  <title>图的遍历 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Less is more.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amaris&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/index.html">
+  <meta name="description" content="深度优先搜索">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图的遍历">
+<meta property="og:url" content="http://yoursite.com/2020/02/10/%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="Less is more.">
+<meta property="og:description" content="深度优先搜索">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-10T12:36:48.000Z">
+<meta property="article:modified_time" content="2020-03-01T02:19:23.725Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
@@ -152,64 +155,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-图的深度优先搜索和广度优先搜索C语言实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">Python 爬虫基础教程</a>
+    <h1 class="article-title" itemprop="name">
+      图的遍历
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/10/%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2020-02-10T12:36:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><!--more>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*图的遍历之深度优先搜索*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> book[<span class="number">101</span>],sum,n,e[<span class="number">101</span>][<span class="number">101</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> cur)</span></span>;<span class="comment">//cur为当前所在顶点编号 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">int</span> m;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入顶点数n="</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n请输入边数m="</span> );</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//邻接矩阵初始化 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">	<span class="keyword">if</span>(i==j) e[i][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> e[i][j]=<span class="number">99999999</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n请输入顶点之间的边：\n"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">		e[a][b]=<span class="number">1</span>;</span><br><span class="line">		e[b][a]=<span class="number">1</span>;</span><br><span class="line">	 &#125; </span><br><span class="line">	 </span><br><span class="line">	 book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	 dfs(<span class="number">1</span>);</span><br><span class="line">	 </span><br><span class="line">	getchar();getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125; </span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> cur)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> i;</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">"当前顶点编号：%d\n"</span>,cur);</span><br><span class="line">	sum++;</span><br><span class="line">	<span class="keyword">if</span>(sum==n)<span class="comment">//判断是否访问结束 </span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">	 <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	<span class="keyword">if</span>(e[cur][i]==<span class="number">1</span>&amp;&amp;book[i]==<span class="number">0</span>)</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		book[i]=<span class="number">1</span>;</span><br><span class="line">	 		dfs(i);</span><br><span class="line">		 &#125;</span><br><span class="line">	  &#125; </span><br><span class="line">	  <span class="keyword">return</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入顶点数n="</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n); </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入边数m="</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> e[<span class="number">101</span>][<span class="number">101</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">	<span class="keyword">if</span>(i==j) e[i][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> e[i][j]=<span class="number">99999999</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入顶点之间的边：\n"</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">		e[a][b]=<span class="number">1</span>;</span><br><span class="line">		e[b][a]=<span class="number">1</span>;</span><br><span class="line">	 &#125; </span><br><span class="line">	 </span><br><span class="line">	 <span class="keyword">int</span> que[<span class="number">10001</span>],book[<span class="number">101</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	 <span class="keyword">int</span> head,tail;</span><br><span class="line">	 head=<span class="number">1</span>;tail=<span class="number">1</span>;<span class="comment">//队列初始化 </span></span><br><span class="line">	 </span><br><span class="line">	 que[tail]=<span class="number">1</span>;</span><br><span class="line">	 tail++;</span><br><span class="line">	 book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	 </span><br><span class="line">	 <span class="keyword">int</span> cur;</span><br><span class="line">	 <span class="keyword">while</span>(head&lt;tail)</span><br><span class="line">	 &#123;</span><br><span class="line">	 	cur=que[head];</span><br><span class="line">	 	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	 	&#123;</span><br><span class="line">	 		<span class="keyword">if</span>(e[cur][i]==<span class="number">1</span>&amp;&amp;book[i]==<span class="number">0</span>)</span><br><span class="line">	 		&#123;</span><br><span class="line">	 			que[tail]=i;</span><br><span class="line">	 			tail++;</span><br><span class="line">	 			book[i]=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			 <span class="keyword">if</span>(tail&gt;n)<span class="comment">//判断是否遍历结束 </span></span><br><span class="line">			 <span class="keyword">break</span>;</span><br><span class="line">	 	&#125;</span><br><span class="line">	 head++;<span class="comment">//重要，扩展下一个点 </span></span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;tail;i++)</span><br><span class="line">	 <span class="built_in">printf</span>(<span class="string">"%d "</span>,que[i]);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+-->
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的鼓励是我创作的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193442664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193833714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/10/%E5%9B%BE%E7%9A%84%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/02/12/Pytorch%E5%8A%A8%E6%80%81%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pytorch动态神经网络
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构学习笔记【第7章 图】</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -233,9 +362,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

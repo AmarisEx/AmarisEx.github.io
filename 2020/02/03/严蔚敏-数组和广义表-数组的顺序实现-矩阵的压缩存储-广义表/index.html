@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 爬虫 | Amaris&#39;s blog</title>
+  <title>数据结构学习笔记【第5章 数组和广义表】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Less is more.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amaris&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/index.html">
+  <meta name="description" content="5.1 数组的定义 n维数组 n&#x3D;1时，n维数组就退化为定长的线性表；反之，n维数组也可以看成是线性表的推广 数组一旦被定义，它的维数和维界就不再改变 除了结构的初始化和销毁之外，数组只有存取元素和修改元素值的操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构学习笔记【第5章 数组和广义表】">
+<meta property="og:url" content="http://yoursite.com/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="Less is more.">
+<meta property="og:description" content="5.1 数组的定义 n维数组 n&#x3D;1时，n维数组就退化为定长的线性表；反之，n维数组也可以看成是线性表的推广 数组一旦被定义，它的维数和维界就不再改变 除了结构的初始化和销毁之外，数组只有存取元素和修改元素值的操作">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200203145329309.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200203145340249.png">
+<meta property="article:published_time" content="2020-02-03T06:55:14.000Z">
+<meta property="article:modified_time" content="2020-03-01T02:12:30.512Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200203145329309.png">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
   
@@ -152,64 +158,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-严蔚敏-数组和广义表-数组的顺序实现-矩阵的压缩存储-广义表" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-02-17T02:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">Python 爬虫基础教程</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构学习笔记【第5章 数组和广义表】
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-02-03T06:55:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="5-1-数组的定义"><a href="#5-1-数组的定义" class="headerlink" title="5.1 数组的定义"></a>5.1 数组的定义</h2><ul>
+<li>n维数组</li>
+<li>n=1时，n维数组就退化为定长的线性表；反之，n维数组也可以看成是线性表的推广</li>
+<li>数组一旦被定义，它的维数和维界就不再改变</li>
+<li>除了结构的初始化和销毁之外，数组只有存取元素和修改元素值的操作<a id="more"></a>
+<h2 id="5-2-数组的顺序表示和实现"><a href="#5-2-数组的顺序表示和实现" class="headerlink" title="5.2 数组的顺序表示和实现"></a>5.2 数组的顺序表示和实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdarg.h&gt;</span></span></span><br><span class="line"><span class="comment">//标准头文件，提供宏va_start、va_arg和va_end</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_ARRAY_DIM 8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	ElemType* base;<span class="comment">//数组元素基址</span></span><br><span class="line">	<span class="keyword">int</span> dim;<span class="comment">//数组维数</span></span><br><span class="line">	<span class="keyword">int</span>* bounds;<span class="comment">//数组维界基址</span></span><br><span class="line">	<span class="keyword">int</span>* constants;<span class="comment">//数组映像函数常量基址</span></span><br><span class="line">&#125;Array;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">InitArray</span><span class="params">(Array&amp; A, <span class="keyword">int</span> dim, ...)</span></span>;</span><br><span class="line"><span class="comment">//若维数dim和随后的各维长度合法，则构造相应的数组A,并返回OK</span></span><br><span class="line"><span class="function">Status <span class="title">DestroyArray</span><span class="params">(Array&amp; A)</span></span>;</span><br><span class="line"><span class="comment">//销毁数组A</span></span><br><span class="line"><span class="function">Status <span class="title">Locate</span><span class="params">(Array A, va_list ap, <span class="keyword">int</span>&amp; off)</span></span>;</span><br><span class="line"><span class="comment">//若ap指示的各下标值合法，则求出该元素在A中相对地址off</span></span><br><span class="line"><span class="function">Status <span class="title">Value</span><span class="params">(Array A, ElemType* e, ...)</span></span>;</span><br><span class="line"><span class="comment">//A是n维数组，e是元素变量,随后是n个下标值</span></span><br><span class="line"><span class="comment">//若下标不超界，则e赋值为所指定的A的元素值，并返回OK</span></span><br><span class="line"><span class="function">Status <span class="title">Assign</span><span class="params">(Array&amp; A, ElemType e, ...)</span></span>;</span><br><span class="line"><span class="comment">//A是n维数组，e是元素变量,随后是n个下标值</span></span><br><span class="line"><span class="comment">//若下标不超界，则将e的值赋给所指定的A的元素，并返回OK</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_Array</span><span class="params">(Array A)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Array A;</span><br><span class="line">	<span class="keyword">int</span> dim = <span class="number">2</span>;</span><br><span class="line">	InitArray(A, dim, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">	Assign(A, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	Assign(A, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	Assign(A, <span class="number">3</span>, <span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line">	Assign(A, <span class="number">4</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	Assign(A, <span class="number">5</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">	Assign(A, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">	print_Array(A);</span><br><span class="line">	ElemType e;</span><br><span class="line">	Value(A, &amp;e, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"e:%d"</span>, e);</span><br><span class="line">	DestroyArray(A);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">InitArray</span><span class="params">(Array&amp; A, <span class="keyword">int</span> dim, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (dim&lt;<span class="number">1</span> || dim&gt;MAX_ARRAY_DIM)<span class="keyword">return</span> ERROR;</span><br><span class="line">	A.dim = dim;</span><br><span class="line">	A.bounds = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(dim * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	<span class="keyword">if</span> (!A.bounds)<span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">	<span class="keyword">int</span> elemtotal = <span class="number">1</span>;</span><br><span class="line">	va_list ap;</span><br><span class="line">	va_start(ap, dim);</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; dim; i++) &#123;</span><br><span class="line">		A.bounds[i] = va_arg(ap, <span class="keyword">int</span>);</span><br><span class="line">		<span class="keyword">if</span> (A.bounds[i] &lt; <span class="number">0</span>)<span class="keyword">return</span> ERROR;</span><br><span class="line">		elemtotal *= A.bounds[i];</span><br><span class="line">	&#125;</span><br><span class="line">	va_end(ap);</span><br><span class="line">	A.base = (ElemType*)<span class="built_in">malloc</span>(elemtotal * <span class="keyword">sizeof</span>(ElemType));</span><br><span class="line">	<span class="keyword">if</span> (!A.base)<span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">	A.constants = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(dim * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	<span class="keyword">if</span> (!A.constants)<span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">	A.constants[dim - <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = dim - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		A.constants[i] = A.bounds[i + <span class="number">1</span>] * A.constants[i + <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">DestroyArray</span><span class="params">(Array&amp; A)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!A.base)<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="built_in">free</span>(A.base); A.base = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (!A.bounds)<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="built_in">free</span>(A.bounds); A.bounds = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (!A.constants)<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="built_in">free</span>(A.constants); A.constants = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">Locate</span><span class="params">(Array A, va_list ap, <span class="keyword">int</span>&amp; off)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	off = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> ind;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; A.dim; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ind = va_arg(ap, <span class="keyword">int</span>);</span><br><span class="line">		<span class="keyword">if</span> (ind &lt; <span class="number">0</span> || ind &gt;= A.bounds[i])<span class="keyword">return</span> OVERFLOW;</span><br><span class="line">		off += A.constants[i] * ind;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">Value</span><span class="params">(Array A, ElemType* e,...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	va_list ap;</span><br><span class="line">	<span class="keyword">int</span> result;</span><br><span class="line">	<span class="keyword">int</span> off;</span><br><span class="line">	va_start(ap, e);</span><br><span class="line">	<span class="keyword">if</span> ((result = Locate(A, ap, off)) &lt;= <span class="number">0</span>)<span class="keyword">return</span> result;</span><br><span class="line">	*e = *(A.base + off);</span><br><span class="line">	va_end(ap);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">Assign</span><span class="params">(Array&amp; A, ElemType e, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	va_list ap;</span><br><span class="line">	<span class="keyword">int</span> result;</span><br><span class="line">	<span class="keyword">int</span> off;</span><br><span class="line">	va_start(ap, e);</span><br><span class="line">	<span class="keyword">if</span> ((result = Locate(A, ap, off)) &lt;= <span class="number">0</span>)<span class="keyword">return</span> result;</span><br><span class="line">	*(A.base + off) = e;</span><br><span class="line">	va_end(ap);</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_Array</span><span class="params">(Array A)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Array:\n"</span>);</span><br><span class="line">	<span class="keyword">if</span> (!A.base) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"NULL\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> i, elemtotal=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; A.dim; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		elemtotal *= A.bounds[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; elemtotal; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, A.base[i]);</span><br><span class="line">		<span class="keyword">if</span> ((i + <span class="number">1</span>) % A.constants[<span class="number">0</span>] == <span class="number">0</span>) </span><br><span class="line">		&#123; </span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>); </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-3-矩阵的压缩存储"><a href="#5-3-矩阵的压缩存储" class="headerlink" title="5.3 矩阵的压缩存储"></a>5.3 矩阵的压缩存储</h2></li>
+<li><strong>压缩存储</strong>：为多个值相同的元只分配一个存储空间，对零元不分配空间</li>
+<li><strong>特殊矩阵</strong>：值相同的元素或零元素在矩阵中的分布有一定规律，反之称为<strong>稀疏矩阵</strong><h3 id="5-3-1-特殊矩阵"><a href="#5-3-1-特殊矩阵" class="headerlink" title="5.3.1 特殊矩阵"></a>5.3.1 特殊矩阵</h3></li>
+<li><strong>n阶对称矩阵</strong><br>为每一对对称元分配一个存储空间，则可将$n^2$个元压缩存储到$\large\frac{n(n+1)}{2}$个元的空间中</li>
+<li><strong>对角矩阵</strong><br>除了主对角线上和直接在对角线上、下方若干条对角线上的元之外，所有的其他的元均为零<h3 id="5-3-2-稀疏矩阵"><a href="#5-3-2-稀疏矩阵" class="headerlink" title="5.3.2 稀疏矩阵"></a>5.3.2 稀疏矩阵</h3></li>
+<li><strong>稀疏因子</strong><br>假设在$m×n$的矩阵中，有$t$个元素不为零，令$\delta=\Large\frac{t}{m×n}$，称$\delta$为矩阵的稀疏因子</li>
+<li><strong>存储方式</strong>：除了存储非零元的值之外，还必须同时记下它所在行和列的位置$(i,j)$。反之，一个三元组$(i,j,a)$唯一确定了矩阵$A$的一个非零元</li>
+<li><strong>算法5.1</strong> 采用三元组表存储表示，求稀疏矩阵M的转置矩阵T<br>时间复杂度$O(nu\cdot tu)$，一般矩阵转置时间复杂度为$O(mu\cdot nu)$，当$tu=mu\times nu$时，算法5.1的时间复杂度就为$O(mu\cdot nu^2)$了，因此该算法仅使用于$tu\ll mu\times nu$的情况<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">TransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T.mu = M.nu; T.nu = M.mu; T.tu = M.tu;</span><br><span class="line">	<span class="keyword">if</span> (T.nu) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> q = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> col;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">1</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> p;</span><br><span class="line">			<span class="keyword">for</span> (p = <span class="number">1</span>; p &lt;= M.tu; p++) </span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (M.data[p].j == col)</span><br><span class="line">				&#123;</span><br><span class="line">					T.data[q].i = M.data[p].j;</span><br><span class="line">					T.data[q].j = M.data[p].i;</span><br><span class="line">					T.data[q].e = M.data[p].e;</span><br><span class="line">					q++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*int ind;</span></span><br><span class="line"><span class="comment">	for (ind = 1; ind &lt;= M.tu; ind++)</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		T.data[ind].i = M.data[ind].j;</span></span><br><span class="line"><span class="comment">		T.data[ind].j = M.data[ind].i;</span></span><br><span class="line"><span class="comment">		T.data[ind].e = M.data[ind].e;</span></span><br><span class="line"><span class="comment">	&#125;*/</span></span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>算法5.2</strong> 采用三元组顺序表存储表示，求稀疏矩阵M的转置矩阵$T$</li>
+<li>按照$a.data$中三元组的次序进行转置，并将转置后的三元组置入$b$中恰当。的位置预先确定矩阵$M$中每一列（即$T$中每一行）的第一个非零元在$b.data$中应有的位置</li>
+<li>附设$num$和$cpot$两个向量。$num[col]$表示矩阵$M$中第$col$列中非零元个数，$cpot[col]$指示$M$中第$col$列的第一个非零元在$b.data$中的恰当位置</li>
+<li>时间复杂度$O(nu+tu)$<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">FastTransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T.mu = M.nu; T.nu = M.mu; T.tu = M.tu;</span><br><span class="line">	<span class="keyword">int</span> col;</span><br><span class="line">	<span class="keyword">int</span> num[MAXCOL + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> cpot[MAXCOL + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (T.tu)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">1</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			num[col] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> t;</span><br><span class="line">		<span class="keyword">for</span> (t = <span class="number">1</span>; t &lt;= M.nu; t++) &#123;</span><br><span class="line">			num[M.data[t].j]++;</span><br><span class="line">		&#125;</span><br><span class="line">		cpot[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">2</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			cpot[col] = cpot[col - <span class="number">1</span>] + num[col - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> p, q;</span><br><span class="line">		<span class="keyword">for</span> (p = <span class="number">1</span>; p &lt; M.tu; p++)</span><br><span class="line">		&#123;</span><br><span class="line">			col = M.data[p].j;</span><br><span class="line">			q = cpot[col];</span><br><span class="line">			T.data[q].i = M.data[p].j; T.data[q].j = M.data[p].i;</span><br><span class="line">			T.data[q].e = M.data[p].e;</span><br><span class="line">			cpot[col]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>算法5.3</strong>、<strong>算法5.4</strong><br>未完待续…</li>
+<li><strong>完整代码</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdarg.h&gt;</span></span></span><br><span class="line"><span class="comment">//标准头文件，提供宏va_start、va_arg和va_end</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 12500  <span class="comment">//非零元最大个数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXCOL 100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	ElemType e;  <span class="comment">//非零元下标</span></span><br><span class="line">&#125;Triple;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	Triple data[MAXSIZE + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> mu, nu, tu;  <span class="comment">//矩阵的行数、列数和非零元个数</span></span><br><span class="line">&#125;TSMatrix;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">TransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span>;</span><br><span class="line"><span class="comment">//算法5.1 采用三元组表存储表示，求稀疏矩阵M的转置矩阵T</span></span><br><span class="line"><span class="function">Status <span class="title">FastTransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span>;</span><br><span class="line"><span class="comment">//算法5.2 采用三元组顺序表存储表示，求稀疏矩阵M的转置矩阵T</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">TransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T.mu = M.nu; T.nu = M.mu; T.tu = M.tu;</span><br><span class="line">	<span class="keyword">if</span> (T.nu) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> q = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> col;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">1</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> p;</span><br><span class="line">			<span class="keyword">for</span> (p = <span class="number">1</span>; p &lt;= M.tu; p++) </span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (M.data[p].j == col)</span><br><span class="line">				&#123;</span><br><span class="line">					T.data[q].i = M.data[p].j;</span><br><span class="line">					T.data[q].j = M.data[p].i;</span><br><span class="line">					T.data[q].e = M.data[p].e;</span><br><span class="line">					q++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*int ind;</span></span><br><span class="line"><span class="comment">	for (ind = 1; ind &lt;= M.tu; ind++)</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		T.data[ind].i = M.data[ind].j;</span></span><br><span class="line"><span class="comment">		T.data[ind].j = M.data[ind].i;</span></span><br><span class="line"><span class="comment">		T.data[ind].e = M.data[ind].e;</span></span><br><span class="line"><span class="comment">	&#125;*/</span></span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">FastTransposeSMatrix</span><span class="params">(TSMatrix M, TSMatrix&amp; T)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T.mu = M.nu; T.nu = M.mu; T.tu = M.tu;</span><br><span class="line">	<span class="keyword">int</span> col;</span><br><span class="line">	<span class="keyword">int</span> num[MAXCOL + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> cpot[MAXCOL + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (T.tu)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">1</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			num[col] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> t;</span><br><span class="line">		<span class="keyword">for</span> (t = <span class="number">1</span>; t &lt;= M.nu; t++) &#123;</span><br><span class="line">			num[M.data[t].j]++;</span><br><span class="line">		&#125;</span><br><span class="line">		cpot[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (col = <span class="number">2</span>; col &lt;= M.nu; col++)</span><br><span class="line">		&#123;</span><br><span class="line">			cpot[col] = cpot[col - <span class="number">1</span>] + num[col - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> p, q;</span><br><span class="line">		<span class="keyword">for</span> (p = <span class="number">1</span>; p &lt; M.tu; p++)</span><br><span class="line">		&#123;</span><br><span class="line">			col = M.data[p].j;</span><br><span class="line">			q = cpot[col];</span><br><span class="line">			T.data[q].i = M.data[p].j; T.data[q].j = M.data[p].i;</span><br><span class="line">			T.data[q].e = M.data[p].e;</span><br><span class="line">			cpot[col]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-4-广义表的定义"><a href="#5-4-广义表的定义" class="headerlink" title="5.4 广义表的定义"></a>5.4 广义表的定义</h2><ul>
+<li><p><strong>广义表</strong>是线性表的推广，也称列表</p>
+</li>
+<li><p>广义表中可包含单个元素（<strong>原子</strong>）也可包含广义表（<strong>子表</strong>）</p>
+</li>
+<li><p><strong>3个结论</strong><br>列表的元素可以是子表<br>列表可为其他列表所共享<br>列表可以是一个递归的表，即列表也可以是其本身的一个子表</p>
+<h2 id="5-5-广义表的存储结构"><a href="#5-5-广义表的存储结构" class="headerlink" title="5.5 广义表的存储结构"></a>5.5 广义表的存储结构</h2></li>
+<li><p>由于广义表中数据元素可以具有不同的结构，因此难以用顺序存储结构表示，通常采用<strong>链式存储结构</strong></p>
+</li>
+<li><p>一个表节点由3个域组成：标志域、指示表头的指针域和指示表尾的指针域</p>
+</li>
+<li><p>原子节点由2个域组成：标志域和值域</p>
+</li>
+<li><p><strong>广义表的头尾链表存储表示</strong><br><img src="https://img-blog.csdnimg.cn/20200203145329309.png" alt="广义表的头尾链表存储表示"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> &#123; ATOM, LIST &#125;ElemTag;  <span class="comment">//枚举类型</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">GLNode</span> &#123;</span></span><br><span class="line">	ElemTag tag;  <span class="comment">//Tag=0为原子，Tag=1为子表</span></span><br><span class="line">	<span class="keyword">union</span> &#123;  <span class="comment">//共用体，共享同一段内存</span></span><br><span class="line">		AtomType atom;  <span class="comment">//原子节点值域</span></span><br><span class="line">		<span class="class"><span class="keyword">struct</span> &#123;</span> <span class="class"><span class="keyword">struct</span> <span class="title">GLNode</span>* <span class="title">hp</span>, * <span class="title">tp</span>;</span> &#125;ptr;  <span class="comment">//hp表头，tp表尾</span></span><br><span class="line">	&#125;;</span><br><span class="line">&#125;*GList;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>广义表的扩展线性链表存储表示</strong><br><img src="https://img-blog.csdnimg.cn/20200203145340249.png" alt="广义表的扩展线性链表存储表示"></p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> &#123; ATOM, LIST &#125;ElemTag;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">GLNode</span> &#123;</span></span><br><span class="line">	ElemTag tag;</span><br><span class="line">	<span class="keyword">union</span> &#123;</span><br><span class="line">		AtomType atom;</span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">GLNode</span>* <span class="title">hp</span>;</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span>  <span class="title">GLNode</span>* <span class="title">tp</span>;</span></span><br><span class="line">&#125;*GList;</span><br></pre></td></tr></table></figure>
+<h2 id="5-6-m元多项式的表示"><a href="#5-6-m元多项式的表示" class="headerlink" title="5.6 m元多项式的表示"></a>5.6 m元多项式的表示</h2><ul>
+<li>未完待续…<h2 id="5-7-广义表的递归算法"><a href="#5-7-广义表的递归算法" class="headerlink" title="5.7 广义表的递归算法"></a>5.7 广义表的递归算法</h2></li>
+<li>未完待续…</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的鼓励是我创作的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193442664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193833714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构学习笔记【第6章 树和二叉树】
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最小网元设计【阶段四】</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -233,9 +405,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
