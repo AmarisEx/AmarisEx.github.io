@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Amaris&#39;s blog</title>
+  <title>Python 爬虫基础教程 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello, AmarisEx.github.io">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="爬取网页流程 选择网址（url） 使用 python 登录上这个网址 (urlopen) 等 读取网页信息 将读取的信息放入 BeautifulSoup 使用 BeautifulSoup 选取 tag 信息等（代替正则表达式）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 爬虫基础教程">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="Hello, AmarisEx.github.io">
+<meta property="og:description" content="爬取网页流程 选择网址（url） 使用 python 登录上这个网址 (urlopen) 等 读取网页信息 将读取的信息放入 BeautifulSoup 使用 BeautifulSoup 选取 tag 信息等（代替正则表达式）">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-29T14:17:30.000Z">
-<meta property="article:modified_time" content="2020-02-29T14:21:13.932Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200216195441110.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200216201801125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200216201819628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-02-17T02:45:51.000Z">
+<meta property="article:modified_time" content="2020-03-01T01:49:59.342Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="爬虫">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200216195441110.png">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
   
@@ -154,27 +160,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="categories-" class="article article-type-categories " itemscope itemprop="blogPost">
+            <article id="post-Python 爬虫基础教程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Python 爬虫基础教程
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2020-02-29T14:17:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+        <a href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-02-17T02:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hello, AmarisEx.github.io</p>
+        <h2 id="爬取网页流程"><a href="#爬取网页流程" class="headerlink" title="爬取网页流程"></a>爬取网页流程</h2><ol>
+<li>选择网址（url）</li>
+<li>使用 python 登录上这个网址 (urlopen) 等</li>
+<li>读取网页信息</li>
+<li>将读取的信息放入 BeautifulSoup</li>
+<li>使用 BeautifulSoup 选取 tag 信息等（代替正则表达式）<a id="more"></a>
+<h2 id="了解网页结构"><a href="#了解网页结构" class="headerlink" title="了解网页结构"></a>了解网页结构</h2></li>
+</ol>
+<ul>
+<li>$<html>,</html>$首尾</li>
+<li>$<head>,<meta name="generator" content="Hexo 4.2.0"></head>$头部，不显示</li>
+<li>$<body>,</body>$主体</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"cn"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Scraping tutorial 1 | 莫烦Python<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"https://morvanzhou.github.io/static/img/description/tab_icon.png"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>爬虫测试1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		这是一个在 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://morvanzhou.github.io/"</span>&gt;</span>莫烦Python<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://morvanzhou.github.io/tutorials/scraping"</span>&gt;</span>爬虫教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 中的简单测试.</span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>python 匹配网页源码</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">res = re.findall(<span class="string">r"&lt;title&gt;(.+?)&lt;/title&gt;"</span>, html)</span><br><span class="line">print(<span class="string">"\nPage title is: "</span>, res[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">res = re.findall(<span class="string">r"&lt;p&gt;(.*?)&lt;/p&gt;"</span>, html, flags=re.DOTALL)    <span class="comment"># re.DOTALL if multi line</span></span><br><span class="line">print(<span class="string">"\nPage paragraph is: "</span>, res[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">res = re.findall(<span class="string">r'href="(.*?)"'</span>, html)</span><br><span class="line">print(<span class="string">"\nAll links: "</span>, res)</span><br></pre></td></tr></table></figure>
+<h2 id="BeautifulSoup-解析网页：基础"><a href="#BeautifulSoup-解析网页：基础" class="headerlink" title="BeautifulSoup 解析网页：基础"></a>BeautifulSoup 解析网页：基础</h2><ul>
+<li>安装（windows下）：pip install beautifulsoup4</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line"><span class="comment"># print(soup.h1)</span></span><br><span class="line"><span class="comment"># print('\n', soup.p)</span></span><br><span class="line"></span><br><span class="line">all_href = soup.find_all(<span class="string">'a'</span>)</span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> all_href:</span><br><span class="line">    print(l[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200216195441110.png" alt="href"></p>
+<h2 id="BeautifulSoup-解析网页：CSS"><a href="#BeautifulSoup-解析网页：CSS" class="headerlink" title="BeautifulSoup 解析网页：CSS"></a>BeautifulSoup 解析网页：CSS</h2><p><img src="https://img-blog.csdnimg.cn/20200216201801125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="test"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/list.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># month = soup.find_all('li', &#123;'class': 'month'&#125;)</span></span><br><span class="line"><span class="comment"># for m in month:</span></span><br><span class="line"><span class="comment">#     print(m.get_text())</span></span><br><span class="line"></span><br><span class="line">jan = soup.find(<span class="string">'ul'</span>, &#123;<span class="string">'class'</span>: <span class="string">'jan'</span>&#125;)</span><br><span class="line">print(jan)</span><br><span class="line">d_jan = jan.find_all(<span class="string">'li'</span>)</span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> d_jan:</span><br><span class="line">    print(d.get_text())</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200216201819628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="result"></p>
+<h2 id="BeautifulSoup-解析网页：正则表达式"><a href="#BeautifulSoup-解析网页：正则表达式" class="headerlink" title="BeautifulSoup 解析网页：正则表达式"></a>BeautifulSoup 解析网页：正则表达式</h2><ul>
+<li><a href="https://morvanzhou.github.io/tutorials/python-basic/basic/13-10-regular-expression/" target="_blank" rel="noopener">BeautifulSoup 解析网页：正则表达式</a><h2 id="爬百度百科"><a href="#爬百度百科" class="headerlink" title="爬百度百科"></a>爬百度百科</h2>error</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span>  BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">base_url = <span class="string">"https://baike.baidu.com/"</span></span><br><span class="line">his = [<span class="string">"/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    url = base_url + his[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    html = urlopen(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line">    print(i, soup.find(<span class="string">'h1'</span>).get_text(), <span class="string">'    url: '</span>, his[<span class="number">-1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># find valid urls</span></span><br><span class="line">    sub_urls = soup.find_all(<span class="string">"a"</span>, &#123;<span class="string">"target"</span>: <span class="string">"_blank"</span>, <span class="string">"href"</span>: re.compile(<span class="string">"/item/(%.&#123;2&#125;)+$"</span>)&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(sub_urls) != <span class="number">0</span>:</span><br><span class="line">        his.append(random.sample(sub_urls, <span class="number">1</span>)[<span class="number">0</span>][<span class="string">'href'</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># no valid sub link found</span></span><br><span class="line">        his.pop()</span><br></pre></td></tr></table></figure>
+<h2 id="Post-登录-Cookies-Requests"><a href="#Post-登录-Cookies-Requests" class="headerlink" title="Post 登录 Cookies(Requests)"></a>Post 登录 Cookies(Requests)</h2><ul>
+<li><p>其实在加载网页的时候, 有几种类型, 而这几种类型就是你打开网页的关键. 最重要的类型 (method) 就是 get 和 post (当然还有其他的, 比如 head, delete). 刚接触网页构架的朋友可能又会觉得有点懵逼了. 这些请求的方式到底有什么不同? 他们又有什么作用?</p>
+</li>
+<li><p>我们就来说两个重要的, get, post, 95% 的时间, 你都是在使用这两个来请求一个网页.</p>
+</li>
+<li><p><strong>post</strong><br>   账号登录<br>   搜索内容<br>   上传图片<br>   上传文件<br>   往服务器传数据 等</p>
+</li>
+<li><p><strong>get</strong><br>   正常打开网页<br>   不往服务器传数据</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line"></span><br><span class="line"><span class="comment"># param = &#123;"wd": "莫烦Python"&#125;</span></span><br><span class="line"><span class="comment"># r = requests.get('https://www.baidu.com/s', params=param)</span></span><br><span class="line"><span class="comment"># print(r.url)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># data = &#123;'firstname': 'Guosheng', 'lastname': 'Zhang'&#125;</span></span><br><span class="line"><span class="comment"># r = requests.post('http://pythonscraping.com/files/processing.php', data=data)</span></span><br><span class="line"><span class="comment"># print(r.text)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file = &#123;'uploadFile': open('./image.png', 'rb')&#125;</span></span><br><span class="line"><span class="comment"># r = requests.post('http://pythonscraping.com/files/processing2.php', files=file)</span></span><br><span class="line"><span class="comment"># print(r.text)</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -214,6 +262,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -264,7 +327,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,6 +339,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/16/Matplotlib.pyplot/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Matplotlib.pyplot</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +367,16 @@
 </aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -317,7 +400,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
