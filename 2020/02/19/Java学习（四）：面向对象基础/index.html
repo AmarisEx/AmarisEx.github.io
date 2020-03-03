@@ -182,7 +182,14 @@
   
 
         
-        <a href="/2020/02/19/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/19/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" class="archive-article-date">
   	<time datetime="2020-02-19T13:48:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
 </a>
         
@@ -216,7 +223,6 @@
 </li>
 </ul>
 <h2 id="4-3-1-第一个类的定义"><a href="#4-3-1-第一个类的定义" class="headerlink" title="4.3.1 第一个类的定义"></a>4.3.1 第一个类的定义</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SxtStu</span> </span>&#123;</span><br><span class="line">    <span class="comment">//属性（成员变量）</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    String sname;</span><br><span class="line">    <span class="keyword">int</span> age;  </span><br><span class="line">    <span class="comment">//方法</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我正在学习！"</span>);</span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">   SxtStu()&#123;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="4-3-2-属性"><a href="#4-3-2-属性" class="headerlink" title="4.3.2 属性"></a>4.3.2 属性</h2><ul>
 <li>属性用于定义该类或该类对象包含的数据或者说静态特征。<ul>
 <li>属性作用范围是整个类体。</li>
@@ -268,8 +274,7 @@
 </li>
 <li><p>方法区实际也是堆，只是用于<strong>存储类、常量</strong>相关的信息!</p>
 </li>
-<li><p>用来存放程序中永远是不变或唯一的内容。(类信息【Class对象】、静态变量、字符串常量等)</p>
-</li>
+<li>用来存放程序中永远是不变或唯一的内容。(类信息【Class对象】、静态变量、字符串常量等)</li>
 </ol>
 <p><img src="https://img-blog.csdnimg.cn/20200219170021500.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="内存分配图"><br><img src="https://img-blog.csdnimg.cn/20200219170036646.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="内存分配图"></p>
 <h1 id="4-5-构造方法"><a href="#4-5-构造方法" class="headerlink" title="4.5 构造方法"></a>4.5 构造方法</h1><ul>
@@ -283,8 +288,7 @@
 <li>　　构造方法也是方法，只不过有特殊的作用而已。与普通方法一样，构造方法也可以重载。</li>
 <li>如果方法构造中形参名与属性名相同时，需要使用<strong>this</strong>关键字区分属性与形参。</li>
 </ul>
-<p>　　this.id 表示属性id;id表示形参id</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	String name;</span><br><span class="line">	String pwd;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> id,String name)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//super();</span></span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> id,String name,String pwd)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.pwd = pwd;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] arg)</span> </span>&#123;</span><br><span class="line">		User u1 = <span class="keyword">new</span> User(<span class="number">24</span>,<span class="string">"Amaris"</span>);</span><br><span class="line">		User u2 = <span class="keyword">new</span> User(<span class="number">24</span>,<span class="string">"Amaris"</span>,<span class="string">"7851"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　this.id 表示属性id;id表示形参id<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	String name;</span><br><span class="line">	String pwd;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> id,String name)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//super();</span></span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> id,String name,String pwd)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.pwd = pwd;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] arg)</span> </span>&#123;</span><br><span class="line">		User u1 = <span class="keyword">new</span> User(<span class="number">24</span>,<span class="string">"Amaris"</span>);</span><br><span class="line">		User u2 = <span class="keyword">new</span> User(<span class="number">24</span>,<span class="string">"Amaris"</span>,<span class="string">"7851"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="4-7-垃圾回收机制"><a href="#4-7-垃圾回收机制" class="headerlink" title="4.7 垃圾回收机制"></a>4.7 垃圾回收机制</h1><ul>
 <li>$Garbage\ Collection$</li>
 <li>　Java引入了<strong>垃圾回收机制</strong>，令C++程序员最头疼的内存管理问题迎刃而解。</li>
@@ -384,8 +388,7 @@
 </li>
 <li><p>使用this关键字<strong>调用重载</strong>的构造方法，避免相同的初始化代码。但只能在构造方法中用，并且<strong>必须位于构造方法的第一句</strong>。<br><img src="https://img-blog.csdnimg.cn/20200219205609890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="this关键字调用重载的构造方法"></p>
 </li>
-<li><p><strong>this不能用于static方法中。</strong></p>
-<h1 id="4-9-static-关键字"><a href="#4-9-static-关键字" class="headerlink" title="4.9 static 关键字"></a>4.9 static 关键字</h1></li>
+<li><strong>this不能用于static方法中。</strong><h1 id="4-9-static-关键字"><a href="#4-9-static-关键字" class="headerlink" title="4.9 static 关键字"></a>4.9 static 关键字</h1></li>
 </ol>
 <ul>
 <li>在类中，用<strong>static声明的成员变量</strong>为<strong>静态成员变量</strong>，也称为<strong>类变量</strong>。（公有的） 类变量的生命周期和类相同，在整个应用程序执行期间都有效。它有如下特点：</li>
@@ -419,8 +422,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User4</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> id;        <span class="comment">//id</span></span><br><span class="line">    String name;   <span class="comment">//账户名</span></span><br><span class="line">    String pwd;   <span class="comment">//密码</span></span><br><span class="line">       </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User4</span><span class="params">(<span class="keyword">int</span> id, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span>   <span class="keyword">void</span>   <span class="title">testParameterTransfer01</span><span class="params">(User4  u)</span></span>&#123;</span><br><span class="line">        u.name=<span class="string">"高小八"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span>   <span class="keyword">void</span>   <span class="title">testParameterTransfer02</span><span class="params">(User4  u)</span></span>&#123;</span><br><span class="line">        u = <span class="keyword">new</span>  User4(<span class="number">200</span>,<span class="string">"高三"</span>);<span class="comment">//地址改变了</span></span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User4   u1  =  <span class="keyword">new</span> User4(<span class="number">100</span>, <span class="string">"高小七"</span>);</span><br><span class="line">         </span><br><span class="line">        u1.testParameterTransfer01(u1); </span><br><span class="line">        System.out.println(u1.name);<span class="comment">//地址未变，</span></span><br><span class="line"> </span><br><span class="line">        u1.testParameterTransfer02(u1);</span><br><span class="line">        System.out.println(u1.name);<span class="comment">//新建了对象，地址改变</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200219212130414.png" alt="result"></p>
 <h1 id="4-12-包"><a href="#4-12-包" class="headerlink" title="4.12 包"></a>4.12 包</h1><ul>
-<li><p><strong>包机制</strong>是Java中管理类的重要手段。 开发中，我们会遇到大量同名的类，通过包我们很容易对解决类重名的问题，也可以实现对类的有效管理。 包对于类，相当于文件夹对于文件的作用。</p>
-<h1 id="4-13-package"><a href="#4-13-package" class="headerlink" title="4.13 package"></a>4.13 package</h1></li>
+<li><strong>包机制</strong>是Java中管理类的重要手段。 开发中，我们会遇到大量同名的类，通过包我们很容易对解决类重名的问题，也可以实现对类的有效管理。 包对于类，相当于文件夹对于文件的作用。<h1 id="4-13-package"><a href="#4-13-package" class="headerlink" title="4.13 package"></a>4.13 package</h1></li>
 <li><p>通常是类的第一句非注释性语句。</p>
 </li>
 <li><p>包名：域名倒着写即可，再加上模块名，便于内部管理类。<br><img src="https://img-blog.csdnimg.cn/20200219212906675.png" alt="包名"></p>
@@ -611,26 +613,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习（四）：面向对象基础" data-title="Java学习（四）：面向对象基础" data-url="http://yoursite.com/2020/02/19/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -656,6 +638,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -752,10 +737,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -765,6 +746,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,6 +769,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -792,7 +781,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,10 +794,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

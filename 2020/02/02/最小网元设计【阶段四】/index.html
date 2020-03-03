@@ -184,7 +184,14 @@
   
 
         
-        <a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/" class="archive-article-date">
   	<time datetime="2020-02-02T04:00:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
 </a>
         
@@ -194,7 +201,6 @@
       
         <h1 id="阶段四：路由"><a href="#阶段四：路由" class="headerlink" title="阶段四：路由"></a>阶段四：路由</h1><h2 id="4-1-本阶段预期"><a href="#4-1-本阶段预期" class="headerlink" title="4.1 本阶段预期"></a>4.1 本阶段预期</h2><p>实现网络层的路由转发功能，即路由表的建立以及静态路由/动态路由的实现。<br>搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。<br>*以下内容均基于最终成果《混合组网》编写</p>
 <a id="more"></a>
-
 <h2 id="4-2-路由表"><a href="#4-2-路由表" class="headerlink" title="4.2 路由表"></a>4.2 路由表</h2><h3 id="4-2-1-定义"><a href="#4-2-1-定义" class="headerlink" title="4.2.1 定义"></a>4.2.1 定义</h3><p>路由表或称路由择域信息库，是一个存储在路由器或者联网计算机中的电子表格（文件）或类数据库。路由表存储着指向特定网络地址的路径（在有些情况下，还记录有路径的路由度量值）。路由表中含有网络周边的拓扑信息。路由表建立的主要目标是为了实现路由协议和静态路由选择。</p>
 <h3 id="4-2-2-方案"><a href="#4-2-2-方案" class="headerlink" title="4.2.2 方案"></a>4.2.2 方案</h3><p>为每个路由器配置路由表，记录目的地址、下一跳、端口、距离四个信息项。<br>例如：<br><img src="https://img-blog.csdnimg.cn/20200202113415585.png" alt="Routing Table"></p>
 <h3 id="4-2-3-代码实现"><a href="#4-2-3-代码实现" class="headerlink" title="4.2.3 代码实现"></a>4.2.3 代码实现</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Router_Table</span>//建立路由表</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> destination;<span class="comment">//目的地址</span></span><br><span class="line">	<span class="keyword">int</span> gataway;<span class="comment">//下一跳</span></span><br><span class="line">	<span class="keyword">int</span> port;<span class="comment">//端口</span></span><br><span class="line">	<span class="keyword">int</span> metric;<span class="comment">//距离</span></span><br><span class="line">&#125;;</span><br><span class="line">Router_Table* rt = (Router_Table*)<span class="built_in">malloc</span>(<span class="number">15</span> * <span class="keyword">sizeof</span>(Router_Table));<span class="comment">//实例化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_router_table</span><span class="params">()</span></span>;<span class="comment">//打印路由表</span></span><br></pre></td></tr></table></figure>
@@ -207,23 +213,15 @@
 <li>以下测试为在《混合组网》中实现，从5号主机发送数据到4号路由器</li>
 <li>经过2号路由器<br><img src="https://img-blog.csdnimg.cn/20200202114015822.png" alt="路由器测试"></li>
 <li>经过3号路由器<br><img src="https://img-blog.csdnimg.cn/20200202114053548.png" alt="路由器测试"></li>
-<li>4号路由器进行地址比对，接收此帧<br><img src="https://img-blog.csdnimg.cn/20200202114112953.png" alt="路由器测试"><h2 id="4-4-混合组网"><a href="#4-4-混合组网" class="headerlink" title="4.4 混合组网"></a>4.4 混合组网</h2><h3 id="4-4-1-概述"><a href="#4-4-1-概述" class="headerlink" title="4.4.1 概述"></a>4.4.1 概述</h3>本例为仿真六个网元，网元1为交换机，网元5、6是主机，与交换机1的一个接口在共享信道上，交换机1的另一个端口与网元2连接，网元2、3、4为路由器连接成环状，整个拓扑需要交换与路由器的配合，形成复杂网络结构。<h3 id="4-4-2-层次化设计"><a href="#4-4-2-层次化设计" class="headerlink" title="4.4.2 层次化设计"></a>4.4.2 层次化设计</h3>相比较于项目所要求层次设计，我们作了相应的简化，即将链路层与网络层功能集于一体，但在端口分配时仍区分开来。如下图【“***”表示此层不存在】<br><img src="https://img-blog.csdnimg.cn/20200202114342846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网端口分配表"><h3 id="4-4-3-拓扑图"><a href="#4-4-3-拓扑图" class="headerlink" title="4.4.3 拓扑图"></a>4.4.3 拓扑图</h3><img src="https://img-blog.csdnimg.cn/20200202114406947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网拓扑图"><h3 id="4-4-4-路由表分配"><a href="#4-4-4-路由表分配" class="headerlink" title="4.4.4 路由表分配"></a>4.4.4 路由表分配</h3><img src="https://img-blog.csdnimg.cn/20200202114554870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="路由表分配"></li>
-</ul>
-<p>*由于最终的混合组网拓扑结构过于简单，直接使用无法体现路由器对最优路径的选择，因此，我们为每条路径都规定了距离，如下：例如从Router 2到Router 4距离为4。<br><img src="https://img-blog.csdnimg.cn/20200202114642529.png" alt="虚拟路径分配"></p>
-<h3 id="4-4-5-测试"><a href="#4-4-5-测试" class="headerlink" title="4.4.5 测试"></a>4.4.5 测试</h3><ul>
+<li>4号路由器进行地址比对，接收此帧<br><img src="https://img-blog.csdnimg.cn/20200202114112953.png" alt="路由器测试"><h2 id="4-4-混合组网"><a href="#4-4-混合组网" class="headerlink" title="4.4 混合组网"></a>4.4 混合组网</h2><h3 id="4-4-1-概述"><a href="#4-4-1-概述" class="headerlink" title="4.4.1 概述"></a>4.4.1 概述</h3>本例为仿真六个网元，网元1为交换机，网元5、6是主机，与交换机1的一个接口在共享信道上，交换机1的另一个端口与网元2连接，网元2、3、4为路由器连接成环状，整个拓扑需要交换与路由器的配合，形成复杂网络结构。<h3 id="4-4-2-层次化设计"><a href="#4-4-2-层次化设计" class="headerlink" title="4.4.2 层次化设计"></a>4.4.2 层次化设计</h3>相比较于项目所要求层次设计，我们作了相应的简化，即将链路层与网络层功能集于一体，但在端口分配时仍区分开来。如下图【“<em>*</em>”表示此层不存在】<br><img src="https://img-blog.csdnimg.cn/20200202114342846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网端口分配表"><h3 id="4-4-3-拓扑图"><a href="#4-4-3-拓扑图" class="headerlink" title="4.4.3 拓扑图"></a>4.4.3 拓扑图</h3><img src="https://img-blog.csdnimg.cn/20200202114406947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网拓扑图"><h3 id="4-4-4-路由表分配"><a href="#4-4-4-路由表分配" class="headerlink" title="4.4.4 路由表分配"></a>4.4.4 路由表分配</h3><img src="https://img-blog.csdnimg.cn/20200202114554870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="路由表分配"><br>*由于最终的混合组网拓扑结构过于简单，直接使用无法体现路由器对最优路径的选择，因此，我们为每条路径都规定了距离，如下：例如从Router 2到Router 4距离为4。<br><img src="https://img-blog.csdnimg.cn/20200202114642529.png" alt="虚拟路径分配"><h3 id="4-4-5-测试"><a href="#4-4-5-测试" class="headerlink" title="4.4.5 测试"></a>4.4.5 测试</h3></li>
 <li><p>本例为实现5号主机与4号路由器之间通信<br>依照上述内容，帧传递路径为5-&gt;1-&gt;2-&gt;3-&gt;4</p>
 </li>
 <li><p>5号主机将用户输入信息”Hello,Router 4 !”编码发送；<br><img src="https://img-blog.csdnimg.cn/20200202114738115.png" alt="混合组网测试"></p>
 </li>
-<li><p>1号交换机收到未知目的地址的帧，转发至其他所有端口（端口1），并进行反向地址学习；<br><img src="https://img-blog.csdnimg.cn/202002021148098.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></p>
-</li>
-<li><p>2号路由器收到帧，解析其目的地址并查表转发；<br><img src="https://img-blog.csdnimg.cn/20200202114837171.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></p>
-</li>
-<li><p>3号路由器收到帧，解析其目的地址并查表转发；<br><img src="https://img-blog.csdnimg.cn/20200202114904144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></p>
-</li>
-<li><p>4号路由器（主机）收到帧，进行目的地址比对，传递给应用层，应用层进行译码<br><img src="https://img-blog.csdnimg.cn/20200202114936427.png" alt="混合组网测试"></p>
-<h2 id="4-6-心得体会"><a href="#4-6-心得体会" class="headerlink" title="4.6 心得体会"></a>4.6 心得体会</h2><p>好了，项目到这里也就结束了，没做动态路由有些遗憾，，，项目从头做下来也顺便把C语言系统的复习了一遍，同时也感觉自己的编程能力有待提升啊，最近疫情比较严重，适合在家肝数据结构，加油💪</p>
-</li>
+<li>1号交换机收到未知目的地址的帧，转发至其他所有端口（端口1），并进行反向地址学习；<br><img src="https://img-blog.csdnimg.cn/202002021148098.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></li>
+<li>2号路由器收到帧，解析其目的地址并查表转发；<br><img src="https://img-blog.csdnimg.cn/20200202114837171.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></li>
+<li>3号路由器收到帧，解析其目的地址并查表转发；<br><img src="https://img-blog.csdnimg.cn/20200202114904144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网测试"></li>
+<li>4号路由器（主机）收到帧，进行目的地址比对，传递给应用层，应用层进行译码<br><img src="https://img-blog.csdnimg.cn/20200202114936427.png" alt="混合组网测试"><h2 id="4-6-心得体会"><a href="#4-6-心得体会" class="headerlink" title="4.6 心得体会"></a>4.6 心得体会</h2>好了，项目到这里也就结束了，没做动态路由有些遗憾，，，项目从头做下来也顺便把C语言系统的复习了一遍，同时也感觉自己的编程能力有待提升啊，最近疫情比较严重，适合在家肝数据结构，加油💪</li>
 </ul>
 
       
@@ -380,26 +378,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="最小网元设计【阶段四】" data-title="最小网元设计【阶段四】" data-url="http://yoursite.com/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -425,6 +403,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -521,10 +502,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -534,6 +511,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,6 +534,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -561,7 +546,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,10 +559,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

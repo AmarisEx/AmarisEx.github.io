@@ -188,7 +188,14 @@
   
 
         
-        <a href="/2020/02/27/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/27/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AE%B9%E5%99%A8/" class="archive-article-date">
   	<time datetime="2020-02-27T13:41:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
 </a>
         
@@ -203,7 +210,7 @@
 <li><strong>泛</strong>指的数据类<strong>型</strong><a id="more"></a></li>
 <li>泛型的本质就是“<strong>数据类型的参数化</strong>”。 我们可以把“泛型”理解为数据类型的一个占位符(形式参数)，即告诉编译器，在调用泛型时必须传入实际类型。</li>
 <li><strong>容器的接口层次结构图</strong><br><img src="https://img-blog.csdnimg.cn/20200227161243150.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="容器的接口层次结构图"><h2 id="9-1-1-自定义泛型"><a href="#9-1-1-自定义泛型" class="headerlink" title="9.1.1 自定义泛型"></a>9.1.1 自定义泛型</h2></li>
-<li>我们可以在类的声明处<strong>增加泛型列表</strong>，如：<strong>&lt;T,E,V&gt;</strong>。<br>此处，字符可以是任何标识符，一般采用这3个字母。</li>
+<li>我们可以在类的声明处<strong>增加泛型列表</strong>，如：<strong><T,E,V></T,E,V></strong>。<br>此处，字符可以是任何标识符，一般采用这3个字母。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.amarisex;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestGeneric</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		myCollection&lt;String&gt; m = <span class="keyword">new</span> myCollection&lt;&gt;();</span><br><span class="line">		m.set(<span class="string">"Amaris"</span>, <span class="number">0</span>);</span><br><span class="line">		m.set(<span class="string">"9527"</span>, <span class="number">1</span>);</span><br><span class="line">		</span><br><span class="line">		String a =m.get(<span class="number">1</span>);</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myCollection</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">	Object[] objs = <span class="keyword">new</span> Object[<span class="number">5</span>];</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(E e,<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">		objs[index] = e;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (E) objs[index];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="9-1-2-容器中使用泛型"><a href="#9-1-2-容器中使用泛型" class="headerlink" title="9.1.2 容器中使用泛型"></a>9.1.2 容器中使用泛型</h2><ul>
@@ -260,31 +267,22 @@
 <blockquote>
 <ol>
 <li>HashMap: 线程不安全，效率高。允许key或value为null。</li>
-<li>HashTable: 线程安全，效率低。不允许key或value为null。</li>
+<li>HashTable: 线程安全，效率低。不允许key或value为null。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.amarisex;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMap</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;Integer, String&gt; m1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		m1.put(<span class="number">1</span>, <span class="string">"Amaris"</span>);</span><br><span class="line">		m1.put(<span class="number">2</span>, <span class="string">"97"</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(m1.get(<span class="number">1</span>));</span><br><span class="line">		System.out.println(m1.size());</span><br><span class="line">		System.out.println(m1.containsKey(<span class="number">2</span>));</span><br><span class="line">		</span><br><span class="line">		Map&lt;Integer, String&gt; m2 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		m2.put(<span class="number">3</span>, <span class="string">"52"</span>);</span><br><span class="line">		m1.putAll(m2);</span><br><span class="line">		System.out.println(m1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9-4-2-HashMap底层实现详解"><a href="#9-4-2-HashMap底层实现详解" class="headerlink" title="9.4.2 HashMap底层实现详解"></a>9.4.2 HashMap底层实现详解</h2></li>
 </ol>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.amarisex;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMap</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;Integer, String&gt; m1 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		m1.put(<span class="number">1</span>, <span class="string">"Amaris"</span>);</span><br><span class="line">		m1.put(<span class="number">2</span>, <span class="string">"97"</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(m1.get(<span class="number">1</span>));</span><br><span class="line">		System.out.println(m1.size());</span><br><span class="line">		System.out.println(m1.containsKey(<span class="number">2</span>));</span><br><span class="line">		</span><br><span class="line">		Map&lt;Integer, String&gt; m2 = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		m2.put(<span class="number">3</span>, <span class="string">"52"</span>);</span><br><span class="line">		m1.putAll(m2);</span><br><span class="line">		System.out.println(m1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="9-4-2-HashMap底层实现详解"><a href="#9-4-2-HashMap底层实现详解" class="headerlink" title="9.4.2 HashMap底层实现详解"></a>9.4.2 HashMap底层实现详解</h2><ul>
-<li><p><strong>HashMap</strong> 底层实现采用了<strong>哈希表</strong>，这是一种非常重要的数据结构。对于我们以后理解很多技术都非常有帮助(比如：redis数据库的核心技术和HashMap一样)，因此，非常有必要让大家理解。<br>数据结构中由数组和链表来实现对数据的存储，他们各有特点。</p>
-<blockquote>
+<ul>
+<li><strong>HashMap</strong> 底层实现采用了<strong>哈希表</strong>，这是一种非常重要的数据结构。对于我们以后理解很多技术都非常有帮助(比如：redis数据库的核心技术和HashMap一样)，因此，非常有必要让大家理解。<br>数据结构中由数组和链表来实现对数据的存储，他们各有特点。</li>
+</ul>
 <p>(1) 数组：占用空间连续。 寻址容易，查询速度快。但是，增加和删除效率非常低。<br>(2) 链表：占用空间不连续。 寻址困难，查询速度慢。但是，增加和删除效率非常高。</p>
 </blockquote>
-<p>   那么，我们能不能结合数组和链表的优点(即查询快，增删效率也高)呢? 答案就是“哈希表”。 <strong>哈希表的本质就是“数组+链表”</strong>。</p>
-</li>
-</ul>
-<h1 id="9-5-Set-接口"><a href="#9-5-Set-接口" class="headerlink" title="9.5 Set 接口"></a>9.5 Set 接口</h1><hr>
+<pre><code>  那么，我们能不能结合数组和链表的优点(即查询快，增删效率也高)呢? 答案就是“哈希表”。 **哈希表的本质就是“数组+链表”**。
+</code></pre><h1 id="9-5-Set-接口"><a href="#9-5-Set-接口" class="headerlink" title="9.5 Set 接口"></a>9.5 Set 接口</h1><hr>
 <ul>
-<li><p><strong>Set接口</strong>继承自<strong>Collection</strong>，Set接口中没有新增方法，方法和Collection保持完全一致。我们在前面通过List学习的方法，在Set中仍然适用。因此，学习Set的使用将没有任何难度。</p>
-</li>
-<li><p>Set容器特点：<strong>无序、不可重复</strong>。无序指Set中的元素没有索引，我们<strong>只能遍历查找</strong>;不可重复指<strong>不允许加入重复的元素</strong>。更确切地讲，新元素如果和Set中某个元素通过equals()方法对比为true，则不能加入;甚至，Set中也只能放入一个null元素，不能多个。</p>
-</li>
-<li><p>Set常用的实现类有：<strong>HashSet</strong>、<strong>TreeSet</strong>等，我们一般使用HashSet。</p>
-<h2 id="9-5-1-HashSet-基本使用"><a href="#9-5-1-HashSet-基本使用" class="headerlink" title="9.5.1 HashSet 基本使用"></a>9.5.1 HashSet 基本使用</h2><p><img src="https://img-blog.csdnimg.cn/20200227210432319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="use"><br><img src="https://img-blog.csdnimg.cn/20200227210445856.png" alt="result"></p>
-<h2 id="9-5-2-HashSet-底层实现"><a href="#9-5-2-HashSet-底层实现" class="headerlink" title="9.5.2 HashSet 底层实现"></a>9.5.2 HashSet 底层实现</h2></li>
-<li><p><strong>HashSet</strong> 是采用<strong>哈希算法</strong>实现，底层<strong>实际是用HashMap实现</strong>的(HashSet本质就是一个<strong>简化版的HashMap</strong>)，因此，<strong>查询效率和增删效率都比较高</strong>。由于 map 中 key 都是不可重复的，因此，Set 天然具有“不可重复”的特性。</p>
-<h2 id="9-5-3-TreeSet-的使用和底层实现"><a href="#9-5-3-TreeSet-的使用和底层实现" class="headerlink" title="9.5.3 TreeSet 的使用和底层实现"></a>9.5.3 TreeSet 的使用和底层实现</h2></li>
-<li><p><strong>TreeSet</strong> 底层实际是用 <strong>TreeMap 实现</strong>的，内部维持了一个<strong>简化版的TreeMap</strong>，通过key来存储Set的元素。 TreeSet内部需要对存储的元素进行排序，因此，我们对应的类需要实现Comparable接口。这样，才能根据compareTo()方法比较对象之间的大小，才能进行内部排序。</p>
-</li>
+<li><strong>Set接口</strong>继承自<strong>Collection</strong>，Set接口中没有新增方法，方法和Collection保持完全一致。我们在前面通过List学习的方法，在Set中仍然适用。因此，学习Set的使用将没有任何难度。</li>
+<li>Set容器特点：<strong>无序、不可重复</strong>。无序指Set中的元素没有索引，我们<strong>只能遍历查找</strong>;不可重复指<strong>不允许加入重复的元素</strong>。更确切地讲，新元素如果和Set中某个元素通过equals()方法对比为true，则不能加入;甚至，Set中也只能放入一个null元素，不能多个。</li>
+<li>Set常用的实现类有：<strong>HashSet</strong>、<strong>TreeSet</strong>等，我们一般使用HashSet。<h2 id="9-5-1-HashSet-基本使用"><a href="#9-5-1-HashSet-基本使用" class="headerlink" title="9.5.1 HashSet 基本使用"></a>9.5.1 HashSet 基本使用</h2><img src="https://img-blog.csdnimg.cn/20200227210432319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="use"><br><img src="https://img-blog.csdnimg.cn/20200227210445856.png" alt="result"><h2 id="9-5-2-HashSet-底层实现"><a href="#9-5-2-HashSet-底层实现" class="headerlink" title="9.5.2 HashSet 底层实现"></a>9.5.2 HashSet 底层实现</h2></li>
+<li><strong>HashSet</strong> 是采用<strong>哈希算法</strong>实现，底层<strong>实际是用HashMap实现</strong>的(HashSet本质就是一个<strong>简化版的HashMap</strong>)，因此，<strong>查询效率和增删效率都比较高</strong>。由于 map 中 key 都是不可重复的，因此，Set 天然具有“不可重复”的特性。<h2 id="9-5-3-TreeSet-的使用和底层实现"><a href="#9-5-3-TreeSet-的使用和底层实现" class="headerlink" title="9.5.3 TreeSet 的使用和底层实现"></a>9.5.3 TreeSet 的使用和底层实现</h2></li>
+<li><strong>TreeSet</strong> 底层实际是用 <strong>TreeMap 实现</strong>的，内部维持了一个<strong>简化版的TreeMap</strong>，通过key来存储Set的元素。 TreeSet内部需要对存储的元素进行排序，因此，我们对应的类需要实现Comparable接口。这样，才能根据compareTo()方法比较对象之间的大小，才能进行内部排序。</li>
 <li><p>使用TreeSet要点：</p>
 <blockquote>
 <p>(1) 由于是二叉树，需要对元素做内部排序。 如果要放入TreeSet中的类  没有实现Comparable接口，则会抛出异常：java.lang.ClassCastException。<br>(2) TreeSet中不能放入null元素。</p>
@@ -343,7 +341,8 @@
 <blockquote>
 <p>Ø ArrayList特点：查询效率高，增删效率低，线程不安全。<br>Ø LinkedList特点：查询效率低，增删效率高，线程不安全。<br>Ø vector特点：线程安全,效率低,其它特征类似于ArrayList。</p>
 </blockquote>
-<pre><code>b. Set中的元素没有顺序，不可重复。常用的实现类有HashSet和TreeSet。</code></pre><blockquote>
+<pre><code>b. Set中的元素没有顺序，不可重复。常用的实现类有HashSet和TreeSet。
+</code></pre><blockquote>
 <p>Ø HashSet特点：采用哈希算法实现,查询效率和增删效率都比较高。<br>Ø TreeSet特点：内部需要对存储的元素进行排序。因此，我们对应的类需要实现Comparable接口。这样，才能根据compareTo()方法比较对象之间的大小，才能进行内部排序。</p>
 </blockquote>
 </li>
@@ -514,26 +513,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习（九）：容器" data-title="Java学习（九）：容器" data-url="http://yoursite.com/2020/02/27/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%AE%B9%E5%99%A8/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -559,6 +538,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -655,10 +637,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -668,6 +646,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,6 +669,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -695,7 +681,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,10 +694,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

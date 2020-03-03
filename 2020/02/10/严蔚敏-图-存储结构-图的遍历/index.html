@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数据结构学习笔记【第7章 图】 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="7.1 图的定义和术语 图是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。 在图中的数据元素通常称做顶点(Vertex)，V是顶点的有穷非空集合；VR是两个顶点之间的关系的集合。若$&lt;v,w&gt;∈VR$，则$&lt;v,w&gt;$表示从$v$到$w$的一条*弧*(Arc)，    且称$v$为弧尾(Tail)或起始点，称$">
+  <meta name="description" content="7.1 图的定义和术语 图是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。 在图中的数据元素通常称做顶点(Vertex)，V是顶点的有穷非空集合；VR是两个顶点之间的关系的集合。若$∈VR$，则$$表示从$v$到$w$的一条弧(Arc)，    且称$v$为弧尾(Tail)或起始点，称$w$为弧头(Head)或终端点。 无向图中$$与">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构学习笔记【第7章 图】">
 <meta property="og:url" content="http://yoursite.com/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="7.1 图的定义和术语 图是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。 在图中的数据元素通常称做顶点(Vertex)，V是顶点的有穷非空集合；VR是两个顶点之间的关系的集合。若$&lt;v,w&gt;∈VR$，则$&lt;v,w&gt;$表示从$v$到$w$的一条*弧*(Arc)，    且称$v$为弧尾(Tail)或起始点，称$">
+<meta property="og:description" content="7.1 图的定义和术语 图是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。 在图中的数据元素通常称做顶点(Vertex)，V是顶点的有穷非空集合；VR是两个顶点之间的关系的集合。若$∈VR$，则$$表示从$v$到$w$的一条弧(Arc)，    且称$v$为弧尾(Tail)或起始点，称$w$为弧头(Head)或终端点。 无向图中$$与">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200206141703878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020020620064057.png">
@@ -173,7 +173,14 @@
   
 
         
-        <a href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
   	<time datetime="2020-02-10T12:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
 </a>
         
@@ -183,16 +190,16 @@
       
         <h2 id="7-1-图的定义和术语"><a href="#7-1-图的定义和术语" class="headerlink" title="7.1 图的定义和术语"></a>7.1 图的定义和术语</h2><ul>
 <li><strong>图</strong>是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。</li>
-<li>在图中的数据元素通常称做<strong>顶点</strong>(<em>Vertex</em>)，<em>V</em>是顶点的有穷非空集合；<em>VR<em>是两个顶点之间的关系的集合。若$&lt;v,w&gt;∈VR$，则$&lt;v,w&gt;$表示从$v$到$w$的一条*</em>弧*<em>(</em>Arc</em>)，    且称$v$为<strong>弧尾</strong>(<em>Tail</em>)或起始点，称$w$为<strong>弧头</strong>(<em>Head</em>)或终端点。</li>
-<li><strong>无向图</strong>中$&lt;v,w&gt;$与$&lt;w,v&gt;$是相同的，即VR是对称的，用$(v,w)$表示$v$和$w$的一条<strong>边</strong>(<em>Edge</em>)，反之称为<strong>有向图</strong>。<a id="more"></a></li>
+<li>在图中的数据元素通常称做<strong>顶点</strong>(<em>Vertex</em>)，<em>V</em>是顶点的有穷非空集合；<em>VR</em>是两个顶点之间的关系的集合。若$<v,w>∈VR$，则$<v,w>$表示从$v$到$w$的一条<strong>弧</strong>(<em>Arc</em>)，    且称$v$为<strong>弧尾</strong>(<em>Tail</em>)或起始点，称$w$为<strong>弧头</strong>(<em>Head</em>)或终端点。</v,w></v,w></li>
+<li><strong>无向图</strong>中$<v,w>$与$<w,v>$是相同的，即VR是对称的，用$(v,w)$表示$v$和$w$的一条<strong>边</strong>(<em>Edge</em>)，反之称为<strong>有向图</strong>。<a id="more"></a></w,v></v,w></li>
 <li>有$\Large\frac{1}{2}$$n(n-1)$条边的无向图称为<strong>完全图</strong>，有$n(n-1)$条边的有向图称为<strong>有向完全图</strong></li>
 <li>有很少条边或弧的无向图称为<strong>稀疏图</strong>，反之称为<strong>稠密图</strong>。</li>
 <li>有时图的边或弧具有与它相关的数，这种与图的边或弧相关的数叫做<strong>权</strong>(<em>Weight</em>)。</li>
 <li>对于无向图$G=(V,${$E$}$)$，如果边$(v,v’)∈E$，则称顶点$v$和$v’$互为<strong>邻接点</strong>(<em>Adjacent</em>)。边$(v,v’)$<strong>依附</strong>于顶点$v$和$v’$，或者说$(v,v’)$和顶点$v$和$v’$<strong>相关联</strong>。</li>
 <li>顶点的<strong>度</strong>(<em>Degree</em>)是和$v$相关联的边的数目，记为$TD(V)$。以顶点$v$为头的弧的数目称为$v$的入度(<em>InDegree</em>)，记为$ID(v)$;以顶点$v$为尾的弧的数目称为$v$的出度(<em>OutDegree</em>)，记为$OD(v)$;$TD(v)=ID(v)+OD(v)$。</li>
-<li>一般地，如果顶点$v$<sub>$i$</sub>的度记为$TD(v$<sub>$i$</sub>$)$，那么一个有$n$个顶点，$e$条边或弧的图，满足$e=$$\Large\frac{1}{2}$$\sum TD(v)$</li>
+<li>一般地，如果顶点$v$<sub>$i$</sub>的度记为$TD(v$<sub>$i$</sub>$)$，那么一个有$n$个顶点，$e$条边或弧的图，满足$e=<script type="math/tex">\Large\frac{1}{2}</script>\sum TD(v)$</li>
 <li>无向图中从顶点$v$到顶点$v’$的<strong>路径</strong>是一个顶点序列。第一个顶点和最后一个顶点相同的路径称为<strong>回路</strong>或<strong>环</strong>(<em>Cycle</em>)。序列中顶点不重复出现的路径称为<strong>简单路径</strong>，类似的，除了第一个和最后一个顶点外，其余顶点不重复出现的回路称为<strong>简单回路</strong>或<strong>简单环</strong>。</li>
-<li>在<strong>无向图$G$</strong>，如果通过顶点$v$到顶点$v’$有路径，则称$v$和$v’$是<strong>连通</strong>的。如果对图$G$中任意两个顶点都满足连通关系，则称图$G$为<strong>连通图</strong>(<em>Connected Graph</em>)。<strong>连通分量</strong>(<em>Connected (*Connected Graph</em>)*)是指无向图中的极大连通子图。</li>
+<li>在<strong>无向图$G$</strong>，如果通过顶点$v$到顶点$v’$有路径，则称$v$和$v’$是<strong>连通</strong>的。如果对图$G$中任意两个顶点都满足连通关系，则称图$G$为<strong>连通图</strong>(<em>Connected Graph</em>)。<strong>连通分量</strong>(<em>Connected (</em>Connected Graph<em>)</em>)是指无向图中的极大连通子图。</li>
 <li>在<strong>有向图$G$</strong>，如果每一对顶点都有路径，则称$G$为<strong>强连通图</strong>，有向图中的极大强连通子图称做有向图的<strong>强连通分量</strong>。</li>
 <li>一个连通图的<strong>生成树</strong>是一个极小连通子图，它含有图中全部顶点，但只有足以构成一棵树的$n-1$条边。</li>
 <li>一个有向图的<strong>生成森林</strong>由若干棵有向树组成，含有图中全部顶点，但只有足以构成若干棵不相交的有向树的弧。<h2 id="7-2-图的存储结构"><a href="#7-2-图的存储结构" class="headerlink" title="7.2 图的存储结构"></a>7.2 图的存储结构</h2></li>
@@ -395,26 +402,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="严蔚敏-图-存储结构-图的遍历" data-title="数据结构学习笔记【第7章 图】" data-url="http://yoursite.com/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -440,6 +427,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -536,10 +526,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -549,6 +535,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,6 +558,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -576,7 +570,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,10 +583,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

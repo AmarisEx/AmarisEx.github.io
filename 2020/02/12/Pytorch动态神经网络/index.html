@@ -180,7 +180,14 @@
   
 
         
-        <a href="/2020/02/12/Pytorch%E5%8A%A8%E6%80%81%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/12/Pytorch%E5%8A%A8%E6%80%81%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
   	<time datetime="2020-02-12T13:11:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
 </a>
         
@@ -193,7 +200,6 @@
 <li><a href="https://pytorch-cn.readthedocs.io/zh/latest/" target="_blank" rel="noopener">pytorch资料（中文）</a><a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对比numpy与pytorch</span></span><br><span class="line"><span class="comment">#2020/2/12</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">np_data = np.arange(<span class="number">6</span>).reshape((<span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line">torch_data = torch.from_numpy(np_data)</span><br><span class="line">print(</span><br><span class="line">    <span class="string">'\nnumpy'</span>, np_data,</span><br><span class="line">    <span class="string">'\ntorch'</span>, torch_data,</span><br><span class="line">)</span><br><span class="line">tensor2array = torch_data.numpy()</span><br><span class="line">print(<span class="string">'\ntensor2array'</span>, tensor2array)</span><br><span class="line"></span><br><span class="line">data = [<span class="number">1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">4</span>]</span><br><span class="line">tensor = torch.FloatTensor(data)</span><br><span class="line">tensor = tensor.reshape(((<span class="number">2</span>,<span class="number">2</span>)))</span><br><span class="line">print(</span><br><span class="line">    np.abs(tensor),</span><br><span class="line">    <span class="string">'\n'</span>,</span><br><span class="line">    torch.mm(tensor, tensor)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
 <li>list,numpy,tensor相互转化<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy as np</span><br><span class="line"></span><br><span class="line">data_list = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"># <span class="built_in">list</span>-&gt;tensor</span><br><span class="line">data_numpy = np.<span class="built_in">array</span>(data_list)</span><br><span class="line"># numpy-&gt;tensor</span><br><span class="line">data_tensor = torch.from_numpy(data_numpy)</span><br><span class="line"># <span class="built_in">list</span>-&gt;tensor</span><br><span class="line">data_tensor = torch.tensor(data_list)</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h2 id="Variable变量"><a href="#Variable变量" class="headerlink" title="Variable变量"></a>Variable变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Variable变量</span></span><br><span class="line"><span class="comment">#2020/2/12</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.autograd <span class="keyword">import</span> Variable</span><br><span class="line"></span><br><span class="line">tensor = torch.FloatTensor([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">variable = Variable(tensor, requires_grad=<span class="literal">True</span>) <span class="comment">#requires_grad为真，可以进行反向传播（计算梯度值）</span></span><br><span class="line"></span><br><span class="line">t_out = torch.mean(tensor*tensor)</span><br><span class="line">v_out = torch.mean(variable*variable)</span><br><span class="line">print(</span><br><span class="line">    t_out,</span><br><span class="line">    <span class="string">'\n'</span>, v_out</span><br><span class="line">)</span><br><span class="line">v_out.backward()</span><br><span class="line">print(variable.grad)</span><br><span class="line">print(variable.data.numpy())</span><br></pre></td></tr></table></figure>
@@ -202,16 +208,11 @@
 </li>
 <li><p><a href="https://blog.csdn.net/zfjBIT/article/details/91611146" target="_blank" rel="noopener">激活函数（3）ReLU、softplus激活函数</a></p>
 </li>
-<li><p>神经网络中的每个神经元节点接受上一层神经元的输出值作为本神经元的输入值，并将输入值传递给下一层，输入层神经元节点会将输入属性值直接传递给下一层（隐层或输出层）。在多层神经网络中，上层节点的输出和下层节点的输入之间具有一个函数关系，这个函数称为<strong>激活函数</strong>（又称<strong>激励函数</strong>）****。</p>
-</li>
-<li><p><strong>Relu</strong><br><img src="https://img-blog.csdnimg.cn/20200213195059713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Relu"></p>
-</li>
-<li><p><strong>sigmoid</strong><br><img src="https://img-blog.csdnimg.cn/20200213195152379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="sigmoid"></p>
-</li>
-<li><p><strong>tanh</strong><br><img src="https://img-blog.csdnimg.cn/20200213195256490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="tanh"></p>
-</li>
-<li><p><strong>softplus</strong><br><img src="https://img-blog.csdnimg.cn/20200213195535368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="softplus"></p>
-</li>
+<li>神经网络中的每个神经元节点接受上一层神经元的输出值作为本神经元的输入值，并将输入值传递给下一层，输入层神经元节点会将输入属性值直接传递给下一层（隐层或输出层）。在多层神经网络中，上层节点的输出和下层节点的输入之间具有一个函数关系，这个函数称为<strong>激活函数</strong>（又称<strong>激励函数</strong>）<em>**</em>。</li>
+<li><strong>Relu</strong><br><img src="https://img-blog.csdnimg.cn/20200213195059713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Relu"></li>
+<li><strong>sigmoid</strong><br><img src="https://img-blog.csdnimg.cn/20200213195152379.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="sigmoid"></li>
+<li><strong>tanh</strong><br><img src="https://img-blog.csdnimg.cn/20200213195256490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="tanh"></li>
+<li><strong>softplus</strong><br><img src="https://img-blog.csdnimg.cn/20200213195535368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="softplus"></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#激励函数（Activation)</span></span><br><span class="line"><span class="comment">#2020/2/13</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">from</span> torch.autograd <span class="keyword">import</span>  Variable</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># fake data</span></span><br><span class="line">x = torch.linspace(<span class="number">-5</span>, <span class="number">5</span>, <span class="number">200</span>)</span><br><span class="line">x = Variable(x)</span><br><span class="line">x_np = x.data.numpy()</span><br><span class="line"></span><br><span class="line">y_relu = torch.relu(x).data.numpy()</span><br><span class="line">y_sigmoid = torch.sigmoid(x).data.numpy()</span><br><span class="line">y_tanh = torch.tanh(x).data.numpy()</span><br><span class="line">y_softplus = F.softplus(x).data.numpy()</span><br><span class="line"></span><br><span class="line">plt.figure(<span class="number">1</span>, figsize=(<span class="number">8</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">221</span>)</span><br><span class="line">plt.plot(x_np, y_relu, c=<span class="string">'red'</span>, label=<span class="string">'relu'</span>)</span><br><span class="line">plt.ylim((<span class="number">-1</span>, <span class="number">5</span>))</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">222</span>)</span><br><span class="line">plt.plot(x_np, y_sigmoid, c=<span class="string">'red'</span>, label=<span class="string">'sigmoid'</span>)</span><br><span class="line">plt.ylim((<span class="number">-0.2</span>, <span class="number">1.2</span>))</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">223</span>)</span><br><span class="line">plt.plot(x_np, y_tanh, c=<span class="string">'red'</span>, label=<span class="string">'tanh'</span>)</span><br><span class="line">plt.ylim((<span class="number">-1.2</span>, <span class="number">1.2</span>))</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">224</span>)</span><br><span class="line">plt.plot(x_np, y_softplus, c=<span class="string">'red'</span>, label=<span class="string">'softplus'</span>)</span><br><span class="line">plt.ylim((<span class="number">-0.2</span>, <span class="number">6</span>))</span><br><span class="line">plt.legend(loc=<span class="string">'best'</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200213195628785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="激活函数"></p>
@@ -395,26 +396,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Pytorch动态神经网络" data-title="Pytorch动态神经网络" data-url="http://yoursite.com/2020/02/12/Pytorch%E5%8A%A8%E6%80%81%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -440,6 +421,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -536,10 +520,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -549,6 +529,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,6 +552,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -576,7 +564,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,10 +577,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

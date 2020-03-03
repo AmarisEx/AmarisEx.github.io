@@ -167,7 +167,14 @@
   
 
         
-        <a href="/2020/01/21/%E4%B8%A5%E8%94%9A%E6%95%8F-%E4%B8%B2-%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0-%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/01/21/%E4%B8%A5%E8%94%9A%E6%95%8F-%E4%B8%B2-%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0-%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" class="archive-article-date">
   	<time datetime="2020-01-21T12:04:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
 </a>
         
@@ -184,7 +191,6 @@
 <li><strong>空格串</strong>：由一个或多个空格组成的串<a id="more"></a>
 <h2 id="4-2-串的表示和实现"><a href="#4-2-串的表示和实现" class="headerlink" title="4.2 串的表示和实现"></a>4.2 串的表示和实现</h2><h3 id="4-1-定长顺序存储表示"><a href="#4-1-定长顺序存储表示" class="headerlink" title="4.1 定长顺序存储表示"></a>4.1 定长顺序存储表示</h3></li>
 <li>用一组地址连续的存储单元存储串值的字符序列（字符数组）<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSTRLEN 255</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> SString[MAXSTRLEN + <span class="number">1</span>];<span class="comment">//0号存放串的长度</span></span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">Concat</span><span class="params">(SString&amp; T, SString S1, SString S2)</span></span>;</span><br><span class="line"><span class="comment">//算法4.2 用T返回由S和S2联结而成的新串。若未截断，则返回TRUE，否则FALSE。</span></span><br><span class="line"><span class="function">Status <span class="title">SubString</span><span class="params">(SString&amp; Sub, SString S, <span class="keyword">int</span> pos, <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="comment">//算法4.3 用SUb返回串S的第pos个字符起长度为len的子串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_SString</span><span class="params">(SString S)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SString S1;</span><br><span class="line">	S1[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">	S1[<span class="number">1</span>] = <span class="string">'H'</span>;</span><br><span class="line">	S1[<span class="number">2</span>] = <span class="string">'i'</span>;</span><br><span class="line">	S1[<span class="number">3</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	SString S2;</span><br><span class="line">	S2[<span class="number">0</span>] = <span class="number">3</span>;</span><br><span class="line">	S2[<span class="number">1</span>] = <span class="string">' '</span>;</span><br><span class="line">	S2[<span class="number">2</span>] = <span class="string">'g'</span>;</span><br><span class="line">	S2[<span class="number">3</span>] = <span class="string">'s'</span>;</span><br><span class="line">	S2[<span class="number">4</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	SString T;</span><br><span class="line">	Concat(T, S1, S2);</span><br><span class="line">	print_SString(T);</span><br><span class="line"></span><br><span class="line">	SString Sub;</span><br><span class="line">	SubString(Sub, T, <span class="number">4</span>, <span class="number">2</span>);</span><br><span class="line">	print_SString(Sub);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">Concat</span><span class="params">(SString&amp; T, SString S1, SString S2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (S1[<span class="number">0</span>] + S2[<span class="number">0</span>] &lt;= MAXSTRLEN) &#123;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= S1[<span class="number">0</span>]; i++) &#123;</span><br><span class="line">			T[i] = S1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (i = S1[<span class="number">0</span>] + <span class="number">1</span>; i &lt;= S1[<span class="number">0</span>] + S2[<span class="number">0</span>]; i++) &#123;</span><br><span class="line">			T[i] = S2[i - S1[<span class="number">0</span>]];</span><br><span class="line">		&#125;</span><br><span class="line">		T[<span class="number">0</span>] = S1[<span class="number">0</span>] + S2[<span class="number">0</span>];</span><br><span class="line">		T[T[<span class="number">0</span>]+<span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line">		<span class="keyword">return</span> TRUE;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (S1[<span class="number">0</span>] &lt; MAXSTRLEN) &#123;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= S1[<span class="number">0</span>]; i++) &#123;</span><br><span class="line">			T[i] = S1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (i = S1[<span class="number">0</span>] + <span class="number">1</span>; i &lt;= MAXSTRLEN; i++) &#123;</span><br><span class="line">			T[i] = S2[i - S1[<span class="number">0</span>]];</span><br><span class="line">		&#125;</span><br><span class="line">		T[<span class="number">0</span>] = MAXSTRLEN;</span><br><span class="line">		<span class="keyword">return</span> FALSE;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= MAXSTRLEN; i++) &#123;</span><br><span class="line">			T[i] = S1[i];</span><br><span class="line">		&#125;</span><br><span class="line">		T[<span class="number">0</span>] = MAXSTRLEN;</span><br><span class="line">		<span class="keyword">return</span> FALSE;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Status <span class="title">SubString</span><span class="params">(SString&amp; Sub, SString S, <span class="keyword">int</span> pos, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pos&lt;<span class="number">1</span> || pos&gt;S[<span class="number">0</span>] || len&lt;<span class="number">0</span> || len&gt;S[<span class="number">0</span>] - pos + <span class="number">1</span>)<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= len; i++) &#123;</span><br><span class="line">		Sub[i] = S[i + pos - <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	Sub[<span class="number">0</span>] = len;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_SString</span><span class="params">(SString S)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"SString(length:%d):"</span>, S[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= S[<span class="number">0</span>]; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>, S[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h3 id="4-2-堆分配存储表示"><a href="#4-2-堆分配存储表示" class="headerlink" title="4.2 堆分配存储表示"></a>4.2 堆分配存储表示</h3><ul>
@@ -346,26 +352,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="严蔚敏-串-串的表示和实现-串的应用举例" data-title="数据结构学习笔记【第4章 串】" data-url="http://yoursite.com/2020/01/21/%E4%B8%A5%E8%94%9A%E6%95%8F-%E4%B8%B2-%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0-%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -391,6 +377,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -487,10 +476,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -500,6 +485,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,6 +508,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -527,7 +520,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,10 +533,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

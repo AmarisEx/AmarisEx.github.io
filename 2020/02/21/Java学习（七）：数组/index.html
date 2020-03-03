@@ -182,7 +182,14 @@
   
 
         
-        <a href="/2020/02/21/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%95%B0%E7%BB%84/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/21/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%95%B0%E7%BB%84/" class="archive-article-date">
   	<time datetime="2020-02-21T06:41:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
 </a>
         
@@ -198,13 +205,10 @@
 </li>
 <li><p>其元素必须是相同类型，不允许出现混合类型。</p>
 <a id="more"></a></li>
-<li><p>数组类型可以是任何数据类型，包括基本类型和引用类型。</p>
-</li>
+<li>数组类型可以是任何数据类型，包括基本类型和引用类型。</li>
 </ol>
 <ul>
-<li><p>数组变量属引用类型，数组也可以看成是<strong>对象</strong>，数组中的每个元素相当于该对象的成员变量。数组本身就是对象，Java中对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中存储的。</p>
-<h1 id="7-2-声明与初始化"><a href="#7-2-声明与初始化" class="headerlink" title="7.2 声明与初始化"></a>7.2 声明与初始化</h1><h2 id="7-2-1-数组的声明"><a href="#7-2-1-数组的声明" class="headerlink" title="7.2.1 数组的声明"></a>7.2.1 数组的声明</h2><p><img src="https://img-blog.csdnimg.cn/20200221101656174.png" alt="数组的声明"></p>
-</li>
+<li>数组变量属引用类型，数组也可以看成是<strong>对象</strong>，数组中的每个元素相当于该对象的成员变量。数组本身就是对象，Java中对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中存储的。<h1 id="7-2-声明与初始化"><a href="#7-2-声明与初始化" class="headerlink" title="7.2 声明与初始化"></a>7.2 声明与初始化</h1><h2 id="7-2-1-数组的声明"><a href="#7-2-1-数组的声明" class="headerlink" title="7.2.1 数组的声明"></a>7.2.1 数组的声明</h2><img src="https://img-blog.csdnimg.cn/20200221101656174.png" alt="数组的声明"></li>
 <li><p>声明的时候并没有实例化任何对象，只有在实例化数组对象时，JVM才分配空间，这时才与长度有关。</p>
 </li>
 <li><p>声明一个数组的时候并没有数组真正被创建。</p>
@@ -215,7 +219,7 @@
 <h2 id="7-2-2-数组的初始化"><a href="#7-2-2-数组的初始化" class="headerlink" title="7.2.2 数组的初始化"></a>7.2.2 数组的初始化</h2><ul>
 <li><strong>静态初始化</strong><br>除了用new关键字来产生数组以外，还可以直接在定义数组的同时就为数组元素分配空间并赋值。<br><img src="https://img-blog.csdnimg.cn/20200221103352100.png" alt="静态初始化"><ul>
 <li><strong>动态初始化</strong><br>数组定义与为数组元素分配空间并赋值的操作分开进行。<br><img src="https://img-blog.csdnimg.cn/20200221103630721.png" alt="动态初始化"></li>
-<li><strong>数组的默认初始化</strong><br>数组是引用类型，它的元素相当于类的实例变量，因此数组一经分配空间，其中的每个元素也被按照实例变量同样的方式被隐式初始化。<br><img src="https://img-blog.csdnimg.cn/20200221103706772.png" alt="数组的默认初始化"><br><img src="https://img-blog.csdnimg.cn/20200221102845845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="基本类型数组内存分配图"><h1 id="7-3-遍历-循环-拷贝-java-util-Arrays类"><a href="#7-3-遍历-循环-拷贝-java-util-Arrays类" class="headerlink" title="7.3 遍历_循环_拷贝_java.util.Arrays类"></a>7.3 遍历_循环_拷贝_java.util.Arrays类</h1><h2 id="7-3-1-数组的遍历"><a href="#7-3-1-数组的遍历" class="headerlink" title="7.3.1 数组的遍历"></a>7.3.1 数组的遍历</h2></li>
+<li><strong>数组的默认初始化</strong><br>数组是引用类型，它的元素相当于类的实例变量，因此数组一经分配空间，其中的每个元素也被按照实例变量同样的方式被隐式初始化。<br><img src="https://img-blog.csdnimg.cn/20200221103706772.png" alt="数组的默认初始化"><br><img src="https://img-blog.csdnimg.cn/20200221102845845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="基本类型数组内存分配图"><h1 id="7-3-遍历循环拷贝-java-util-Arrays类"><a href="#7-3-遍历循环拷贝-java-util-Arrays类" class="headerlink" title="7.3 遍历循环拷贝_java.util.Arrays类"></a>7.3 遍历<em>循环</em>拷贝_java.util.Arrays类</h1><h2 id="7-3-1-数组的遍历"><a href="#7-3-1-数组的遍历" class="headerlink" title="7.3.1 数组的遍历"></a>7.3.1 数组的遍历</h2></li>
 </ul>
 </li>
 <li>数组元素下标的合法区间：[0, length-1]。我们可以通过下标来遍历数组中的元素，遍历时可以读取元素的值或者修改元素的值。<h2 id="7-3-2-for-each-循环"><a href="#7-3-2-for-each-循环" class="headerlink" title="7.3.2 for-each 循环"></a>7.3.2 for-each 循环</h2></li>
@@ -228,7 +232,7 @@
 <li>JDK提供的<strong>java.util.Arrays</strong>类，包含了常用的数组操作，方便我们日常开发。Arrays类包含了：<strong>排序</strong>、<strong>查找</strong>、<strong>填充</strong>、<strong>打印</strong>内容等常见的操作。</li>
 <li><strong>打印</strong><br><img src="https://img-blog.csdnimg.cn/20200221121218521.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="打印数组"><br>此处的Arrays.toString()方法是Arrays类的静态方法，不是前面讲的Object的toString()方法。</li>
 <li><strong>排序</strong><br><img src="https://img-blog.csdnimg.cn/2020022112123870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="数组元素的排序"></li>
-<li><strong>填充</strong><br><img src="https://img-blog.csdnimg.cn/20200221121321247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="数组的填充">)<img src="https://img-blog.csdnimg.cn/20200221121709750.png" alt="fill"><br><img src="https://img-blog.csdnimg.cn/20200221121624429.png" alt="fill"><h1 id="7-4-多维数组"><a href="#7-4-多维数组" class="headerlink" title="7.4 多维数组"></a>7.4 多维数组</h1></li>
+<li><strong>填充</strong><br><img src="https://img-blog.csdnimg.cn/20200221121321247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="数组的填充"><img src="https://img-blog.csdnimg.cn/20200221121709750.png" alt="fill"><br><img src="https://img-blog.csdnimg.cn/20200221121624429.png" alt="fill"><h1 id="7-4-多维数组"><a href="#7-4-多维数组" class="headerlink" title="7.4 多维数组"></a>7.4 多维数组</h1></li>
 <li><strong>多维数组</strong>可以看成以数组为元素的数组。可以有二维、三维、甚至更多维数组，但是实际开发中用的非常少。最多到<strong>二维数组</strong>(学习<strong>容器</strong>后，我们一般使用容器，二维数组用的都很少)。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[][] a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br><span class="line">		a[<span class="number">0</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">		a[<span class="number">1</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>&#125;;</span><br><span class="line">		a[<span class="number">2</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		System.out.println(Arrays.toString(a[<span class="number">2</span>]));</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span>[][] b = &#123;</span><br><span class="line">				&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">				&#123;<span class="number">4</span>,<span class="number">2</span>&#125;,</span><br><span class="line">				&#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		</span><br><span class="line">		System.out.println(Arrays.toString(b[<span class="number">2</span>]));</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="7-5-数组存储表格数据"><a href="#7-5-数组存储表格数据" class="headerlink" title="7.5 数组存储表格数据"></a>7.5 数组存储表格数据</h1></li>
 <li><strong>表格数据模型</strong>是计算机世界最普遍的模型，可以这么说，大家在互联网上看到的所有数据本质上都是“表格”，无非是表格之间互相套用。如下表格是一张雇员表：<br><img src="https://img-blog.csdnimg.cn/20200221121915817.png" alt="雇员表"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Object[] emp1 = &#123;<span class="number">1</span>,<span class="string">"a"</span>,<span class="string">"01"</span>&#125;;</span><br><span class="line">		Object[] emp2 = &#123;<span class="number">2</span>,<span class="string">"b"</span>,<span class="string">"02"</span>&#125;;</span><br><span class="line">		Object[] emp3 = &#123;<span class="number">3</span>,<span class="string">"c"</span>,<span class="string">"03"</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		Object[][] tableData = <span class="keyword">new</span> Object[<span class="number">3</span>][];</span><br><span class="line">		tableData[<span class="number">0</span>] = emp1;</span><br><span class="line">		tableData[<span class="number">1</span>] = emp2;</span><br><span class="line">		tableData[<span class="number">2</span>] = emp3;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(Object[] e:tableData) &#123;</span><br><span class="line">			System.out.println(Arrays.toString(e));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -248,14 +252,14 @@
 <li><p>数组是相同类型数据的有序集合。</p>
 </li>
 <li><p>数组的四个基本特点：</p>
-<p>   – 其长度是确定的</p>
-<p>   – 其元素必须是相同类型</p>
-<p>   – 可以存储基本数据类型和引用数据类型</p>
-<p>   – 数组变量属于引用类型</p>
+<p>   — 其长度是确定的</p>
+<p>   — 其元素必须是相同类型</p>
+<p>   — 可以存储基本数据类型和引用数据类型</p>
+<p>   — 数组变量属于引用类型</p>
 </li>
 <li><p>一维数组的声明方式</p>
-<p>   – type[] arr_name; (推荐使用这种方式)</p>
-<p>   – type arr_name[]。</p>
+<p>   — type[] arr_name; (推荐使用这种方式)</p>
+<p>   — type arr_name[]。</p>
 </li>
 <li><p>数组的初始化：静态初始化、动态初始化和默认初始化。</p>
 </li>
@@ -264,13 +268,13 @@
 <li><p>数组拷贝:System类中的static void arraycopy(object src，int srcpos，object dest， int destpos，int length)方法。</p>
 </li>
 <li><p>数组操作的常用类java.util.Arrays类</p>
-<p>   – 打印数组:Arrays.toString(数组名);</p>
-<p>   – 数组排序:Arrays.sort(数组名);</p>
-<p>   – 二分查找:Arrays.binarySearch(数组名,查找的元素)。</p>
+<p>   — 打印数组:Arrays.toString(数组名);</p>
+<p>   — 数组排序:Arrays.sort(数组名);</p>
+<p>   — 二分查找:Arrays.binarySearch(数组名,查找的元素)。</p>
 </li>
 <li><p>二维数组的声明</p>
-<p>   – type[][]arr_name=new type[length][];</p>
-<p>   – type arr_name[][]=new type[length][length]。</p>
+<p>   — type[][]arr_name=new type[length][];</p>
+<p>   — type arr_name[][]=new type[length][length]。</p>
 </li>
 </ol>
 
@@ -424,26 +428,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习（七）：数组" data-title="Java学习（七）：数组" data-url="http://yoursite.com/2020/02/21/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E6%95%B0%E7%BB%84/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -469,6 +453,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -565,10 +552,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -578,6 +561,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +584,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -605,7 +596,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,10 +609,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

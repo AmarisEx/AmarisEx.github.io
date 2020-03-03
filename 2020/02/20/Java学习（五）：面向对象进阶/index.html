@@ -186,7 +186,14 @@
   
 
         
-        <a href="/2020/02/20/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/20/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6/" class="archive-article-date">
   	<time datetime="2020-02-20T14:02:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
 </a>
         
@@ -267,19 +274,15 @@
 </ol>
 <ul>
 <li><p><strong>构造方法调用顺序</strong><br>构造方法第一句总是：super(…)来调用父类对应的构造方法。所以，流程就是：先向上追溯到Object，然后再依次向下执行类的初始化块和构造方法，直到当前子类为止。</p>
-<pre><code>注：静态初始化块调用顺序，与构造方法调用顺序一样，不再重复。</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSuper02</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"开始创建一个ChildClass对象......"</span>);</span><br><span class="line">        <span class="keyword">new</span> ChildClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FatherClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"创建FatherClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChildClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"创建ChildClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>注：静态初始化块调用顺序，与构造方法调用顺序一样，不再重复。
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSuper02</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"开始创建一个ChildClass对象......"</span>);</span><br><span class="line">        <span class="keyword">new</span> ChildClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FatherClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"创建FatherClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChildClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"创建ChildClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200220123514543.png" alt="result"></p>
 <h1 id="5-4-封装"><a href="#5-4-封装" class="headerlink" title="5.4 封装"></a>5.4 封装</h1></li>
-<li><p>$capsulation$ [kæpsju’leiʃən]</p>
-<h2 id="5-4-1-封装的作用和含义"><a href="#5-4-1-封装的作用和含义" class="headerlink" title="5.4.1 封装的作用和含义"></a>5.4.1 封装的作用和含义</h2></li>
-<li><p><strong>封装</strong>就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。</p>
-</li>
-<li><p>需要让用户知道的才暴露出来，不需要让用户知道的全部隐藏起来，这就是封装。</p>
-<h2 id="5-4-2-封装的实现—使用访问控制符"><a href="#5-4-2-封装的实现—使用访问控制符" class="headerlink" title="5.4.2 封装的实现—使用访问控制符"></a>5.4.2 封装的实现—使用访问控制符</h2></li>
-<li><p>Java是使用“访问控制符”来控制哪些细节需要封装，哪些细节需要暴露的。</p>
-</li>
-<li><p>Java中4种“访问控制符”分别为<strong>private</strong>、<strong>default</strong>、<strong>protected</strong>、<strong>public</strong>，它们说明了面向对象的封装性，所以我们要利用它们尽可能的让访问权限降到最低，从而提高安全性。<br><img src="https://img-blog.csdnimg.cn/20200220200229431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="访问权限修饰符"></p>
-</li>
+<li>$capsulation$ [kæpsju’leiʃən]<h2 id="5-4-1-封装的作用和含义"><a href="#5-4-1-封装的作用和含义" class="headerlink" title="5.4.1 封装的作用和含义"></a>5.4.1 封装的作用和含义</h2></li>
+<li><strong>封装</strong>就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节。</li>
+<li>需要让用户知道的才暴露出来，不需要让用户知道的全部隐藏起来，这就是封装。<h2 id="5-4-2-封装的实现—使用访问控制符"><a href="#5-4-2-封装的实现—使用访问控制符" class="headerlink" title="5.4.2 封装的实现—使用访问控制符"></a>5.4.2 封装的实现—使用访问控制符</h2></li>
+<li>Java是使用“访问控制符”来控制哪些细节需要封装，哪些细节需要暴露的。</li>
+<li>Java中4种“访问控制符”分别为<strong>private</strong>、<strong>default</strong>、<strong>protected</strong>、<strong>public</strong>，它们说明了面向对象的封装性，所以我们要利用它们尽可能的让访问权限降到最低，从而提高安全性。<br><img src="https://img-blog.csdnimg.cn/20200220200229431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="访问权限修饰符"></li>
 </ul>
 <ol>
 <li><p><strong>private</strong> 表示私有，只有<strong>自己类</strong>能访问</p>
@@ -292,7 +295,6 @@
 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.oo2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">int</span> height;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sayAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Boy</span> <span class="keyword">extends</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(height);  <span class="comment">//  age,private</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.oo3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.amaris.oo2.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestEncapsulation2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Human h2 = <span class="keyword">new</span> Human();</span><br><span class="line">		h2.name = <span class="string">"Jorge"</span>;</span><br><span class="line">		</span><br><span class="line">		Girl b1 = <span class="keyword">new</span> Girl();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Girl</span> <span class="keyword">extends</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(height);  <span class="comment">//  age,private</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="5-4-3-封装的使用细节"><a href="#5-4-3-封装的使用细节" class="headerlink" title="5.4.3 封装的使用细节"></a>5.4.3 封装的使用细节</h2><ul>
 <li><strong>类的属性的处理</strong></li>
@@ -306,7 +308,6 @@
 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.oo3;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> man;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(age&gt;=<span class="number">0</span>&amp;&amp;age&lt;=<span class="number">130</span>) &#123;</span><br><span class="line">			<span class="keyword">this</span>.age = age;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"Error age!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMan</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> man;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMan</span><span class="params">(<span class="keyword">boolean</span> man)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.man = man;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.oo2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.amaris.oo3.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">		p1.setName(<span class="string">"Amaris"</span>);</span><br><span class="line">		p1.setAge(<span class="number">20</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(p1.getAge());</span><br><span class="line">		System.out.println(p1.getName());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="5-5-多态"><a href="#5-5-多态" class="headerlink" title="5.5 多态"></a>5.5 多态</h1><ul>
 <li>$polymorphism$ [,pɒlɪ’mɔːfɪz(ə)m]</li>
@@ -346,10 +347,8 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.proj0501;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAbstract</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Dog d = <span class="keyword">new</span> Dog();</span><br><span class="line">		d.shout();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span></span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Runing..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"wang.wang.wang..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="5-9-接口"><a href="#5-9-接口" class="headerlink" title="5.9 接口"></a>5.9 接口</h1><ul>
-<li><p><strong>接口</strong>就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。</p>
-</li>
-<li><p>抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全<strong>面向规范的</strong>，规定了一批类具有的公共方法规范。</p>
-<h2 id="5-9-1-接口的作用"><a href="#5-9-1-接口的作用" class="headerlink" title="5.9.1 接口的作用"></a>5.9.1 接口的作用</h2></li>
+<li><strong>接口</strong>就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类进行约束。全面地专业地实现了：规范和具体实现的分离。</li>
+<li>抽象类还提供某些具体实现，接口不提供任何实现，接口中所有方法都是抽象方法。接口是完全<strong>面向规范的</strong>，规定了一批类具有的公共方法规范。<h2 id="5-9-1-接口的作用"><a href="#5-9-1-接口的作用" class="headerlink" title="5.9.1 接口的作用"></a>5.9.1 接口的作用</h2></li>
 <li><p>从接口的实现者角度看，接口定义了可以向外部提供的服务。</p>
 </li>
 <li><p>从接口的调用者角度看，接口定义了实现者能提供那些服务。</p>
@@ -358,10 +357,8 @@
 </li>
 <li><p><strong>接口和实现类不是父子关系，是实现规则的关系。</strong>比如：我定义一个接口Runnable，Car实现它就能在地上跑，Train实现它也能在地上跑，飞机实现它也能在地上跑。就是说，如果它是交通工具，就一定能跑，但是一定要实现Runnable接口。</p>
 </li>
-<li><p>** 接口的本质探讨**<br>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你是好人，则必须能干掉坏人;如果你是坏人，则必须欺负好人。<br>接口的本质是契约，就像我们人间的法律一样。制定好后大家都遵守。<br>面向对象的精髓，是对对象的抽象，最能体现这一点的就是接口。为什么我们讨论设计模式都只针对具备了抽象能力的语言(比如C++、Java、C#等)，就是因为设计模式所研究的，实际上就是如何合理的去抽象。</p>
-</li>
-<li><p><strong>区别</strong></p>
-</li>
+<li><strong> 接口的本质探讨</strong><br>接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你是好人，则必须能干掉坏人;如果你是坏人，则必须欺负好人。<br>接口的本质是契约，就像我们人间的法律一样。制定好后大家都遵守。<br>面向对象的精髓，是对对象的抽象，最能体现这一点的就是接口。为什么我们讨论设计模式都只针对具备了抽象能力的语言(比如C++、Java、C#等)，就是因为设计模式所研究的，实际上就是如何合理的去抽象。</li>
+<li><strong>区别</strong></li>
 </ul>
 <ol>
 <li><p>普通类：具体实现</p>
@@ -398,7 +395,6 @@
 <li>JDK1.8后，接口中包含普通的静态方法。</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.proj0501;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> MAX_AGE = <span class="number">130</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SubInterface s = <span class="keyword">new</span> SubInterface();</span><br><span class="line">		s.test01();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubInterface</span> <span class="keyword">implements</span> <span class="title">MyInterface</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test SubInterface!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.proj0501;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMyinterface</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Angel a = <span class="keyword">new</span> Angel();</span><br><span class="line">		a.fly();</span><br><span class="line">		a.helpOther();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Volant</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> FLY_HEIGHT = <span class="number">1000</span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Honest</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Angel</span> <span class="keyword">implements</span> <span class="title">Volant</span>,<span class="title">Honest</span></span>&#123;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">helpOther</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Helping..."</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Flying..."</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="5-9-3-面向接口编程"><a href="#5-9-3-面向接口编程" class="headerlink" title="5.9.3 面向接口编程"></a>5.9.3 面向接口编程</h2><ul>
 <li><p>面向接口编程是面向对象编程的一部分。</p>
@@ -409,18 +405,13 @@
 </li>
 <li><p>面向接口编程的概念比接口本身的概念要大得多。设计阶段相对比较困难，在你没有写实现时就要想好接口，接口一变就乱套了，所以设计要比实现难!</p>
 <h1 id="5-10-内部类"><a href="#5-10-内部类" class="headerlink" title="5.10 内部类"></a>5.10 内部类</h1><h2 id="5-10-1-内部类的概念"><a href="#5-10-1-内部类的概念" class="headerlink" title="5.10.1 内部类的概念"></a>5.10.1 内部类的概念</h2></li>
-<li><p>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为<strong>内部类</strong>(innerclasses)。</p>
-</li>
-<li><p>内部类可以使用public、default、protected 、private以及static修饰。而外部顶级类(我们以前接触的类)只能使用public和default修饰。</p>
-</li>
-<li><p>内部类只是一个编译时概念，一旦我们编译成功，就会成为完全不同的两个类。对于一个名为Outer的外部类和其内部定义的名为Inner的内部类。编译完成后会出现Outer.class和Outer$Inner.class两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名可以和外部类的相同。</p>
-</li>
-<li><p><strong>内部类的作用</strong></p>
-</li>
+<li>一般情况，我们把类定义成独立的单元。有些情况下，我们把一个类放在另一个类的内部定义，称为<strong>内部类</strong>(innerclasses)。</li>
+<li>内部类可以使用public、default、protected 、private以及static修饰。而外部顶级类(我们以前接触的类)只能使用public和default修饰。</li>
+<li>内部类只是一个编译时概念，一旦我们编译成功，就会成为完全不同的两个类。对于一个名为Outer的外部类和其内部定义的名为Inner的内部类。编译完成后会出现Outer.class和Outer$Inner.class两个类的字节码文件。所以内部类是相对独立的一种存在，其成员变量/方法名可以和外部类的相同。</li>
+<li><strong>内部类的作用</strong></li>
 </ul>
 <ol>
-<li><p>内部类提供了更好的封装。只能让外部类直接访问，不允许同一个包中的其他类直接访问。</p>
-</li>
+<li>内部类提供了更好的封装。只能让外部类直接访问，不允许同一个包中的其他类直接访问。</li>
 <li><p>内部类<strong>可以直接访问外部类的私有属性</strong>，内部类被当成其外部类的成员。 但外部类不能访问内部类的内部属性。</p>
 </li>
 <li><p>接口只是解决了多重继承的部分问题，而内部类使得多重继承的解决方案变得更加完整。</p>
@@ -429,7 +420,7 @@
 <ul>
 <li><strong>内部类的使用场合</strong></li>
 </ul>
-<ol start="4">
+<ol>
 <li>由于内部类提供了更好的封装特性，并且可以很方便的访问外部类的属性。所以，<strong>在只为外部类提供服务的情况下可以优先考虑使用内部类</strong>。</li>
 <li>使用内部类间接实现多继承：每个内部类都能独立地继承一个类或者实现某些接口，所以无论外部类是否已经继承了某个类或者实现了某些接口，对于内部类没有任何影响。<h2 id="5-10-2-内部类的分类"><a href="#5-10-2-内部类的分类" class="headerlink" title="5.10.2 内部类的分类"></a>5.10.2 内部类的分类</h2></li>
 </ol>
@@ -447,11 +438,12 @@
 <li><p>外部类的静态方法、静态代码块不能访问非静态内部类，包括不能使用非静态内部类定义变量、创建实例。</p>
 </li>
 <li><p>成员变量访问要点：</p>
-<pre><code>a. 内部类里方法的局部变量：变量名。
+<pre><code> a. 内部类里方法的局部变量：变量名。
 
-b. 内部类属性：this.变量名。
+ b. 内部类属性：this.变量名。
 
-c. 外部类属性：外部类名.this.变量名。</code></pre></li>
+ c. 外部类属性：外部类名.this.变量名。
+</code></pre></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.proj0501;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestInnerClass</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建内部类对象</span></span><br><span class="line">		Outer.Inner inner = <span class="keyword">new</span> Outer().<span class="keyword">new</span> Inner();</span><br><span class="line">		inner.show();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testOuter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test outer..."</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">int</span> age = <span class="number">30</span>;</span><br><span class="line">			System.out.println(<span class="string">"外部类的成员变量 age: "</span>+Outer.<span class="keyword">this</span>.age);</span><br><span class="line">			System.out.println(<span class="string">"内部类的成员变量 age: "</span>+<span class="keyword">this</span>.age);</span><br><span class="line">			System.out.println(<span class="string">"局部变量 age: "</span>+age);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200222204644156.png" alt="result"></p>
@@ -467,7 +459,8 @@ c. 外部类属性：外部类名.this.变量名。</code></pre></li>
 
 b. 静态内部类看做外部类的一个静态成员。 因此，外部类的方法
 中可以通过：“静态内部类.名字”的方式访问静态内部类的静态成
-员，通过 new 静态内部类()访问静态内部类的实例。</code></pre></li>
+员，通过 new 静态内部类()访问静态内部类的实例。
+</code></pre></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.amaris.proj0501;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStaticInner</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Outer2.Inner2 inner = <span class="keyword">new</span> Outer2.Inner2();</span><br><span class="line">		inner.test2();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer2</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner2</span></span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"test static inner2..."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -482,19 +475,12 @@ b. 静态内部类看做外部类的一个静态成员。 因此，外部类的�
 <li><strong>局部内部类</strong><br>还有一种内部类，它是定义在方法内部的，<strong>作用域只限于本方法</strong>，称为<strong>局部内部类</strong>。<br>局部内部类的的使用主要是用来解决比较复杂的问题，想创建一个类来辅助我们的解决方案，到那时又不希望这个类是公共可用的，所以就产生了局部内部类。局部内部类和成员内部类一样被编译，只是它的作用域发生了改变，它只能在该方法中被使用，出了该方法就会失效。<br>局部内部类在实际开发中应用很少。</li>
 </ul>
 <h1 id="5-11-String-类"><a href="#5-11-String-类" class="headerlink" title="5.11 String 类"></a>5.11 String 类</h1><h2 id="5-11-1-String-基础"><a href="#5-11-1-String-基础" class="headerlink" title="5.11.1 String 基础"></a>5.11.1 String 基础</h2><ol>
-<li><p><strong>String类</strong>又称作<strong>不可变字符序列</strong>。</p>
-</li>
-<li><p>String位于<strong>java.lang</strong>包中，Java程序默认导入java.lang包下的所有类。</p>
-</li>
-<li><p>Java字符串就是<strong>Unicode字符序列</strong>，例如字符串“Java”就是4个Unicode字符’J’、’a’、’v’、’a’组成的。</p>
-</li>
-<li><p>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义的类String，每个用双引号括起来的字符串都是String类的一个<strong>实例</strong>。</p>
-</li>
-<li><p>n-符号<strong>“+”</strong>把两个字符串按给定的顺序连接在一起，并且是完全按照给定的形式。</p>
-</li>
-<li><p>n-当”+”运算符两侧的操作数中只要有一个是字符串(String)类型，系统会自动将另一个操作数转换为字符串然后再进行连接。<br><img src="https://img-blog.csdnimg.cn/20200222210613283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="example"><br><img src="https://img-blog.csdnimg.cn/20200222210709542.png" alt="example"></p>
-<h2 id="5-11-2-String类和常量池"><a href="#5-11-2-String类和常量池" class="headerlink" title="5.11.2 String类和常量池"></a>5.11.2 String类和常量池</h2><p><a href="https://www.sxt.cn/Java_jQuery_in_action/five-constant-pool.html" target="_blank" rel="noopener">String类和常量池</a></p>
-</li>
+<li><strong>String类</strong>又称作<strong>不可变字符序列</strong>。</li>
+<li>String位于<strong>java.lang</strong>包中，Java程序默认导入java.lang包下的所有类。</li>
+<li>Java字符串就是<strong>Unicode字符序列</strong>，例如字符串“Java”就是4个Unicode字符’J’、’a’、’v’、’a’组成的。</li>
+<li>Java没有内置的字符串类型，而是在标准Java类库中提供了一个预定义的类String，每个用双引号括起来的字符串都是String类的一个<strong>实例</strong>。</li>
+<li>n-符号<strong>“+”</strong>把两个字符串按给定的顺序连接在一起，并且是完全按照给定的形式。</li>
+<li>n-当”+”运算符两侧的操作数中只要有一个是字符串(String)类型，系统会自动将另一个操作数转换为字符串然后再进行连接。<br><img src="https://img-blog.csdnimg.cn/20200222210613283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="example"><br><img src="https://img-blog.csdnimg.cn/20200222210709542.png" alt="example"><h2 id="5-11-2-String类和常量池"><a href="#5-11-2-String类和常量池" class="headerlink" title="5.11.2 String类和常量池"></a>5.11.2 String类和常量池</h2><a href="https://www.sxt.cn/Java_jQuery_in_action/five-constant-pool.html" target="_blank" rel="noopener">String类和常量池</a></li>
 <li><p><strong>全局字符串常量池(String Pool)</strong></p>
 <p>   全局字符串常量池中存放的内容是在类加载完成后存到String Pool中的，在每个VM中只有一份，存放的是字符串常量的引用值(在堆中生成字符串对象实例)。<br>   <strong>字符串比较用equals</strong></p>
 </li>
@@ -786,26 +772,6 @@ b. 静态内部类看做外部类的一个静态成员。 因此，外部类的�
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习（五）：面向对象进阶" data-title="Java学习（五）：面向对象进阶" data-url="http://yoursite.com/2020/02/20/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -831,6 +797,9 @@ b. 静态内部类看做外部类的一个静态成员。 因此，外部类的�
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -927,10 +896,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -940,6 +905,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -959,6 +928,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -967,7 +940,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -980,10 +953,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

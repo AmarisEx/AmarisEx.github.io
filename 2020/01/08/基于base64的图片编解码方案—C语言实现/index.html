@@ -168,7 +168,14 @@
   
 
         
-        <a href="/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
   	<time datetime="2020-01-08T08:18:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
 </a>
         
@@ -181,14 +188,10 @@
 <h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2></li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> image_size_max = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//image</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* base64char = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span>;</span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">base64_encode</span><span class="params">(<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* bindata, <span class="keyword">char</span>* base64, <span class="keyword">int</span> binlength)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">base64_decode</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* base64, <span class="keyword">unsigned</span> <span class="keyword">char</span>* bindata)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">code_image</span><span class="params">(<span class="keyword">char</span>* file_path)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">decode_image</span><span class="params">(<span class="keyword">char</span>* imageBase64, <span class="keyword">unsigned</span> <span class="keyword">int</span> imageSize)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//获取图片</span></span><br><span class="line">	FILE* fp = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* file_path = <span class="literal">NULL</span>;</span><br><span class="line">	file_path = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="number">64</span> * <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Please input your file path:"</span>);</span><br><span class="line">	gets_s(file_path, <span class="number">64</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//图片编码</span></span><br><span class="line">	<span class="keyword">char</span>* image_ch = <span class="literal">NULL</span>;</span><br><span class="line">	image_ch = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(image_size_max * <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">	image_ch = code_image(file_path);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n%s\n"</span>, image_ch);</span><br><span class="line">	<span class="keyword">int</span> image_size = <span class="built_in">strlen</span>(image_ch);</span><br><span class="line">	</span><br><span class="line">	<span class="string">'''</span></span><br><span class="line">	发方：image_ch--&gt;&gt;<span class="number">8</span>位<span class="number">2</span>进制比特流</span><br><span class="line">	通过真实网络传输......</span><br><span class="line">	收方：<span class="number">8</span>位<span class="number">2</span>进制比特流--&gt;&gt;image_ch</span><br><span class="line">	<span class="comment">//有关此部分内容的实现可查看笔者最小网元系列文章</span></span><br><span class="line">	<span class="string">'''</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//图片解码</span></span><br><span class="line">	decode_image(image_ch, image_size);<span class="comment">//在当前目录下生成"outpuy.jpg"图片文件</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\nover！\n"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(fp);</span><br><span class="line">	<span class="built_in">free</span>(file_path);</span><br><span class="line">	<span class="built_in">free</span>(image_ch);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="base64字符库"><a href="#base64字符库" class="headerlink" title="base64字符库"></a>base64字符库</h2><ul>
 <li>即base64表示的64个可打印字符</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* base64char = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span>;</span><br></pre></td></tr></table></figure>
-
-
-
 <h2 id="图片编码函数"><a href="#图片编码函数" class="headerlink" title="图片编码函数"></a>图片编码函数</h2><ul>
 <li>input：图片文件路径 </li>
 <li>output：转换后的base64字符串</li>
@@ -207,9 +210,6 @@
 <li>在decode_image中被调用</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">base64_decode</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* base64, <span class="keyword">unsigned</span> <span class="keyword">char</span>* bindata)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> k;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> temp[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>, j = <span class="number">0</span>; base64[i] != <span class="string">'\0'</span>; i += <span class="number">4</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(temp, <span class="number">0xFF</span>, <span class="keyword">sizeof</span>(temp));</span><br><span class="line">		<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="number">64</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (base64char[k] == base64[i])</span><br><span class="line">				temp[<span class="number">0</span>] = k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="number">64</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (base64char[k] == base64[i + <span class="number">1</span>])</span><br><span class="line">				temp[<span class="number">1</span>] = k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="number">64</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (base64char[k] == base64[i + <span class="number">2</span>])</span><br><span class="line">				temp[<span class="number">2</span>] = k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; <span class="number">64</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (base64char[k] == base64[i + <span class="number">3</span>])</span><br><span class="line">				temp[<span class="number">3</span>] = k;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		bindata[j++] = ((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">0</span>] &lt;&lt; <span class="number">2</span>)) &amp; <span class="number">0xFC</span>)) |</span><br><span class="line">			((<span class="keyword">unsigned</span> <span class="keyword">char</span>)((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">1</span>] &gt;&gt; <span class="number">4</span>) &amp; <span class="number">0x03</span>));</span><br><span class="line">		<span class="keyword">if</span> (base64[i + <span class="number">2</span>] == <span class="string">'='</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		bindata[j++] = ((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">1</span>] &lt;&lt; <span class="number">4</span>)) &amp; <span class="number">0xF0</span>)) |</span><br><span class="line">			((<span class="keyword">unsigned</span> <span class="keyword">char</span>)((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">2</span>] &gt;&gt; <span class="number">2</span>) &amp; <span class="number">0x0F</span>));</span><br><span class="line">		<span class="keyword">if</span> (base64[i + <span class="number">3</span>] == <span class="string">'='</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">		bindata[j++] = ((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">2</span>] &lt;&lt; <span class="number">6</span>)) &amp; <span class="number">0xF0</span>)) |</span><br><span class="line">			((<span class="keyword">unsigned</span> <span class="keyword">char</span>)(temp[<span class="number">3</span>] &amp; <span class="number">0x3F</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 
       
 
@@ -365,26 +365,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="基于base64的图片编解码方案—C语言实现" data-title="Base64实现图片编解码" data-url="http://yoursite.com/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -410,6 +390,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -506,10 +489,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -519,6 +498,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,6 +521,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -546,7 +533,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,10 +546,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

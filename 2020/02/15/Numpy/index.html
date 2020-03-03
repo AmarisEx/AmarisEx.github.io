@@ -168,7 +168,14 @@
   
 
         
-        <a href="/2020/02/15/Numpy/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/15/Numpy/" class="archive-article-date">
   	<time datetime="2020-02-15T13:51:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
 </a>
         
@@ -187,7 +194,6 @@
 <h2 id="numpy-array-合并"><a href="#numpy-array-合并" class="headerlink" title="numpy array 合并"></a>numpy array 合并</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.random.random(<span class="number">3</span>)</span><br><span class="line">b = np.random.random(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># print(np.vstack((a, b)))  # vertical stack</span></span><br><span class="line"><span class="comment"># print(np.hstack((a, b)))  # horizontal stack</span></span><br><span class="line"><span class="comment"># print(np.vstack((a, b)).shape)</span></span><br><span class="line"></span><br><span class="line">print(a.shape)</span><br><span class="line">print(a[np.newaxis, :].shape)</span><br></pre></td></tr></table></figure>
 <h2 id="numpy-array-分割"><a href="#numpy-array-分割" class="headerlink" title="numpy array 分割"></a>numpy array 分割</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">12</span>).reshape((<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># print(np.split(a, 3, 0)[0])  # 等量分割</span></span><br><span class="line"><span class="comment"># print(np.array_split(a, 3, 1))  # 非等量分割</span></span><br><span class="line"></span><br><span class="line">print(np.hsplit(a, <span class="number">2</span>))</span><br><span class="line">print(np.vsplit(a, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 <h2 id="numpy-的-copy-amp-deep-copy"><a href="#numpy-的-copy-amp-deep-copy" class="headerlink" title="numpy 的 copy &amp; deep copy"></a>numpy 的 copy &amp; deep copy</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.arange(<span class="number">4</span>)</span><br><span class="line">b = a</span><br><span class="line">c = a.copy()</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">3</span></span><br><span class="line">print(a)</span><br><span class="line">print(b)  <span class="comment"># copy 类似引用，地址一样</span></span><br><span class="line">print(c)  <span class="comment"># deep copy</span></span><br></pre></td></tr></table></figure>
-
 
       
 
@@ -343,26 +349,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Numpy" data-title="Numpy" data-url="http://yoursite.com/2020/02/15/Numpy/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -388,6 +374,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -484,10 +473,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -497,6 +482,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +505,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -524,7 +517,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,10 +530,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

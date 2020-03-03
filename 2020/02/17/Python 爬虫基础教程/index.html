@@ -172,7 +172,14 @@
   
 
         
-        <a href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="archive-article-date">
   	<time datetime="2020-02-17T02:45:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
 </a>
         
@@ -203,9 +210,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line"><span class="comment"># print(soup.h1)</span></span><br><span class="line"><span class="comment"># print('\n', soup.p)</span></span><br><span class="line"></span><br><span class="line">all_href = soup.find_all(<span class="string">'a'</span>)</span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> all_href:</span><br><span class="line">    print(l[<span class="string">'href'</span>])</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200216195441110.png" alt="href"></p>
-<h2 id="BeautifulSoup-解析网页：CSS"><a href="#BeautifulSoup-解析网页：CSS" class="headerlink" title="BeautifulSoup 解析网页：CSS"></a>BeautifulSoup 解析网页：CSS</h2><p><img src="https://img-blog.csdnimg.cn/20200216201801125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="test"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/list.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># month = soup.find_all('li', &#123;'class': 'month'&#125;)</span></span><br><span class="line"><span class="comment"># for m in month:</span></span><br><span class="line"><span class="comment">#     print(m.get_text())</span></span><br><span class="line"></span><br><span class="line">jan = soup.find(<span class="string">'ul'</span>, &#123;<span class="string">'class'</span>: <span class="string">'jan'</span>&#125;)</span><br><span class="line">print(jan)</span><br><span class="line">d_jan = jan.find_all(<span class="string">'li'</span>)</span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> d_jan:</span><br><span class="line">    print(d.get_text())</span><br></pre></td></tr></table></figure>
-
+<h2 id="BeautifulSoup-解析网页：CSS"><a href="#BeautifulSoup-解析网页：CSS" class="headerlink" title="BeautifulSoup 解析网页：CSS"></a>BeautifulSoup 解析网页：CSS</h2><p><img src="https://img-blog.csdnimg.cn/20200216201801125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="test"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="string">"https://morvanzhou.github.io/static/scraping/list.html"</span></span><br><span class="line">).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># month = soup.find_all('li', &#123;'class': 'month'&#125;)</span></span><br><span class="line"><span class="comment"># for m in month:</span></span><br><span class="line"><span class="comment">#     print(m.get_text())</span></span><br><span class="line"></span><br><span class="line">jan = soup.find(<span class="string">'ul'</span>, &#123;<span class="string">'class'</span>: <span class="string">'jan'</span>&#125;)</span><br><span class="line">print(jan)</span><br><span class="line">d_jan = jan.find_all(<span class="string">'li'</span>)</span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> d_jan:</span><br><span class="line">    print(d.get_text())</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://img-blog.csdnimg.cn/20200216201819628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="result"></p>
 <h2 id="BeautifulSoup-解析网页：正则表达式"><a href="#BeautifulSoup-解析网页：正则表达式" class="headerlink" title="BeautifulSoup 解析网页：正则表达式"></a>BeautifulSoup 解析网页：正则表达式</h2><ul>
 <li><a href="https://morvanzhou.github.io/tutorials/python-basic/basic/13-10-regular-expression/" target="_blank" rel="noopener">BeautifulSoup 解析网页：正则表达式</a><h2 id="爬百度百科"><a href="#爬百度百科" class="headerlink" title="爬百度百科"></a>爬百度百科</h2>error</li>
@@ -218,11 +223,9 @@
 </li>
 <li><p><strong>post</strong><br>   账号登录<br>   搜索内容<br>   上传图片<br>   上传文件<br>   往服务器传数据 等</p>
 </li>
-<li><p><strong>get</strong><br>   正常打开网页<br>   不往服务器传数据</p>
-</li>
+<li><strong>get</strong><br>   正常打开网页<br>   不往服务器传数据</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line"></span><br><span class="line"><span class="comment"># param = &#123;"wd": "莫烦Python"&#125;</span></span><br><span class="line"><span class="comment"># r = requests.get('https://www.baidu.com/s', params=param)</span></span><br><span class="line"><span class="comment"># print(r.url)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># data = &#123;'firstname': 'Guosheng', 'lastname': 'Zhang'&#125;</span></span><br><span class="line"><span class="comment"># r = requests.post('http://pythonscraping.com/files/processing.php', data=data)</span></span><br><span class="line"><span class="comment"># print(r.text)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file = &#123;'uploadFile': open('./image.png', 'rb')&#125;</span></span><br><span class="line"><span class="comment"># r = requests.post('http://pythonscraping.com/files/processing2.php', files=file)</span></span><br><span class="line"><span class="comment"># print(r.text)</span></span><br></pre></td></tr></table></figure>
-
 
       
 
@@ -378,26 +381,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Python 爬虫基础教程" data-title="Python 爬虫基础教程" data-url="http://yoursite.com/2020/02/17/Python%20%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -423,6 +406,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -519,10 +505,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -532,6 +514,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,6 +537,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -559,7 +549,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,10 +562,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

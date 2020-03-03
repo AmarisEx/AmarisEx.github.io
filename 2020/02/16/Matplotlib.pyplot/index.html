@@ -182,7 +182,14 @@
   
 
         
-        <a href="/2020/02/16/Matplotlib.pyplot/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/16/Matplotlib.pyplot/" class="archive-article-date">
   	<time datetime="2020-02-16T04:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
 </a>
         
@@ -208,7 +215,6 @@
 <h2 id="Scatter-散点图"><a href="#Scatter-散点图" class="headerlink" title="Scatter 散点图"></a>Scatter 散点图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">n = <span class="number">2</span>**<span class="number">10</span></span><br><span class="line">x = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">T = np.arctan2(y, x)</span><br><span class="line"></span><br><span class="line">plt.scatter(x, y, s=<span class="number">75</span>, c=T, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.xlim(<span class="number">-1.5</span>, <span class="number">1.5</span>)</span><br><span class="line">plt.ylim(<span class="number">-1.5</span>, <span class="number">1.5</span>)</span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.yticks(())</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200216103015656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Scatter 散点图"></p>
 <h2 id="Bar-柱状图"><a href="#Bar-柱状图" class="headerlink" title="Bar 柱状图"></a>Bar 柱状图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">x=np.arange(<span class="number">12</span>)</span><br><span class="line">y1 = (<span class="number">1</span>-x/float(n)*np.random.uniform(<span class="number">0.5</span>, <span class="number">1</span>, n))</span><br><span class="line">y2 = (<span class="number">1</span>-x/float(n)*np.random.uniform(<span class="number">0.5</span>, <span class="number">1</span>, n))</span><br><span class="line"></span><br><span class="line">plt.bar(x, y1, facecolor=<span class="string">'#9999ff'</span>, edgecolor=<span class="string">'white'</span>)</span><br><span class="line">plt.bar(x, -y2, edgecolor=<span class="string">'white'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a, b <span class="keyword">in</span> zip(x, y1):</span><br><span class="line">    <span class="comment"># plt.text(a - 0.4, b + 0.05, '%.2f' % b)</span></span><br><span class="line">    plt.text(a, b, <span class="string">'%.2f'</span> % b, ha=<span class="string">'center'</span>)</span><br><span class="line"><span class="keyword">for</span> a, b <span class="keyword">in</span> zip(x, y2):</span><br><span class="line">    plt.text(a - <span class="number">0.4</span>, -b - <span class="number">0.1</span>, <span class="string">'%.2f'</span> % b)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://img-blog.csdnimg.cn/20200216104633775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Bar 柱状图"></p>
 <h2 id="Contours-等高线图"><a href="#Contours-等高线图" class="headerlink" title="Contours 等高线图"></a>Contours 等高线图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">h</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span> - x/<span class="number">2</span> + x**<span class="number">5</span> + y**<span class="number">3</span>)*np.exp(-x**<span class="number">2</span>-y**<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">n = <span class="number">256</span></span><br><span class="line">x = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, n)</span><br><span class="line">y = np.linspace(<span class="number">-3</span>, <span class="number">3</span>, n)</span><br><span class="line">x, y = np.meshgrid(x, y)</span><br><span class="line">plt.contourf(x, y, h(x, y), <span class="number">8</span>, alpha=<span class="number">0.75</span>, cmap=plt.cm.hot)  <span class="comment"># 热力图</span></span><br><span class="line">C = plt.contour(x, y, h(x, y), <span class="number">8</span>, colors=<span class="string">'black'</span>, alpha=<span class="number">0.6</span>, linewidth=<span class="number">0.05</span>)</span><br><span class="line">plt.clabel(C, inline=<span class="literal">True</span>, fontsize=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.yticks(())</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200216110654497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Contour 等高线图"></p>
@@ -223,7 +229,6 @@
 <h2 id="次坐标轴"><a href="#次坐标轴" class="headerlink" title="*次坐标轴"></a>*次坐标轴</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.linspace(-np.pi, np.pi, <span class="number">20</span>)</span><br><span class="line">y1 = np.sin(x)</span><br><span class="line">y2 = np.cos(x)</span><br><span class="line"></span><br><span class="line">fig, ax1 = plt.subplots()</span><br><span class="line">ax2 = ax1.twinx()  <span class="comment"># 合并两个，镜面</span></span><br><span class="line">ax1.plot(x, y1, <span class="string">'g-'</span>)</span><br><span class="line">ax2.plot(x, y2, <span class="string">'b--'</span>)</span><br><span class="line"></span><br><span class="line">ax1.set_xlabel(<span class="string">'x'</span>)</span><br><span class="line">ax1.set_ylabel(<span class="string">'y1'</span>)</span><br><span class="line"></span><br><span class="line">ax2.set_xlabel(<span class="string">'x'</span>)</span><br><span class="line">ax2.set_ylabel(<span class="string">'y2'</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200216121551984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="次坐标轴"></p>
 <h2 id="Animation-动画"><a href="#Animation-动画" class="headerlink" title="*Animation 动画"></a>*Animation 动画</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> animation</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">2</span>*np.pi, <span class="number">0.01</span>)</span><br><span class="line">line, =ax.plot(x, np.sin(x))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">animate</span><span class="params">(i)</span>:</span></span><br><span class="line">    line.set_ydata(np.sin(x+i/<span class="number">100</span>))</span><br><span class="line">    <span class="keyword">return</span> line,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">()</span>:</span></span><br><span class="line">    line.set_ydata(np.sin(x))</span><br><span class="line">    <span class="keyword">return</span> line,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ani = animation.FuncAnimation(fig=fig, func=animate, frames=<span class="number">100</span>, init_func=init, interval=<span class="number">20</span>, blit=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
 
       
 
@@ -379,26 +384,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Matplotlib.pyplot" data-title="Matplotlib.pyplot" data-url="http://yoursite.com/2020/02/16/Matplotlib.pyplot/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -424,6 +409,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -520,10 +508,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -533,6 +517,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,6 +540,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -560,7 +552,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,10 +565,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

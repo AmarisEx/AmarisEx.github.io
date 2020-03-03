@@ -171,7 +171,14 @@
   
 
         
-        <a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/" class="archive-article-date">
   	<time datetime="2020-01-06T01:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
 </a>
         
@@ -181,18 +188,15 @@
       
         <h1 id="阶段零：序言"><a href="#阶段零：序言" class="headerlink" title="阶段零：序言"></a>阶段零：序言</h1><h2 id="项目预期"><a href="#项目预期" class="headerlink" title="项目预期"></a>项目预期</h2><p>设计具有多层结构的网元，并将多个网元构成一个网络，实现信息、文件在多个网元之间的传递。并利用网元搭建混合组网，实现信息在多个网元之间的收发。</p>
 <a id="more"></a>
-
 <h2 id="阶段性目标"><a href="#阶段性目标" class="headerlink" title="阶段性目标"></a>阶段性目标</h2><ol>
-<li><p><strong>阶段一：设计</strong><br>设计分层方案，即层次划分、功能设计以及端口分配。</p>
-</li>
+<li><strong>阶段一：设计</strong><br>设计分层方案，即层次划分、功能设计以及端口分配。</li>
 <li><p><strong>阶段二：交互</strong><br>在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。<br>在应用层实现字符编码方案以及图片编码方案。</p>
 </li>
 <li><p><strong>阶段三：共享</strong><br>二层交换机的实现，即按目的转发、反向地址学习以及未知广播。<br>实现交换机成环设计。<br><img src="https://img-blog.csdnimg.cn/20200105220128345.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="交换机成环拓扑图"></p>
 </li>
-<li><p><strong>阶段四：路由</strong></p>
-<pre><code>实现网络层的路由转发功能，即路由表的建立以及静态路由/动态路由的实现。
-搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。</code></pre><p><img src="https://img-blog.csdnimg.cn/20200105220228924.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网拓扑图"></p>
-<h2 id="项目入门指南"><a href="#项目入门指南" class="headerlink" title="项目入门指南"></a>项目入门指南</h2></li>
+<li><strong>阶段四：路由</strong><pre><code> 实现网络层的路由转发功能，即路由表的建立以及静态路由/动态路由的实现。
+ 搭建混合组网（由2台主机、1台交换机以及3台路由器组成）。
+</code></pre><img src="https://img-blog.csdnimg.cn/20200105220228924.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="混合组网拓扑图"><h2 id="项目入门指南"><a href="#项目入门指南" class="headerlink" title="项目入门指南"></a>项目入门指南</h2></li>
 </ol>
 <h3 id="入门流程"><a href="#入门流程" class="headerlink" title="入门流程"></a>入门流程</h3><ol>
 <li>阅读项目指导书，大致了解项目内容</li>
@@ -364,26 +368,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="最小网元设计【阶段零】" data-title="最小网元设计【阶段零】" data-url="http://yoursite.com/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -409,6 +393,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -505,10 +492,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -518,6 +501,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,6 +524,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -545,7 +536,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,10 +549,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

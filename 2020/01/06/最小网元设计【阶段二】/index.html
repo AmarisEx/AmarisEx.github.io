@@ -188,7 +188,14 @@
   
 
         
-        <a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/" class="archive-article-date">
   	<time datetime="2020-01-06T12:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
 </a>
         
@@ -199,7 +206,6 @@
         <h1 id="阶段二：交互"><a href="#阶段二：交互" class="headerlink" title="阶段二：交互"></a>阶段二：交互</h1><p>2.1 本阶段预期</p>
 <h2 id="2-1-本阶段预期"><a href="#2-1-本阶段预期" class="headerlink" title="2.1 本阶段预期"></a>2.1 本阶段预期</h2><p>在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。<br>在应用层实现字符编码方案以及图片编码方案。</p>
 <a id="more"></a>
-
 <p><strong>帧结构图:</strong><br><img src="https://img-blog.csdnimg.cn/20200120201400213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="帧结构"></p>
 <h2 id="2-2-帧定位"><a href="#2-2-帧定位" class="headerlink" title="2.2 帧定位"></a>2.2 帧定位</h2><h3 id="2-2-1-定义"><a href="#2-2-1-定义" class="headerlink" title="2.2.1 定义"></a>2.2.1 定义</h3><p>帧定位技术是一种用来在一个比特流内分配或标记信道的技术。</p>
 <h3 id="2-2-2-方案"><a href="#2-2-2-方案" class="headerlink" title="2.2.2 方案"></a>2.2.2 方案</h3><p><strong>面向比特的首位字符界定法</strong><br>笔者采用在帧头和帧尾各加 8 位标识的比特流 01111110。但是，仅仅如此的话会造成对帧头帧尾的误判，笔者考虑如果在数据中遇到连续的 6 个 1，那么将最后一个 1 替换为 0，但是仔细考虑，这样仍然 会造成误判，因此笔者采用：如果在发送端数据中遇到连续 5 个 1，那么在 最后一个 1 后面增添 1 个 0，例如：Data:11111100 -&gt; 111110100。在接受端遇到 111110100 这种情况若判断出比特流为 9 位时，可去除连续 5 个 1 后 的 0，得到：11111100。</p>
@@ -225,10 +231,8 @@
 <ul>
 <li>收方对收到的帧进行差错检测以及帧序号差（与本地）的判断</li>
 <li>收方只对成功接收的帧发送确认帧（ACK），其余一律丢弃</li>
-<li>发放每发一帧必须暂存此帧并停止等待确认帧，超时则重发</li>
+<li>发放每发一帧必须暂存此帧并停止等待确认帧，超时则重发<br><strong>关于确认帧：</strong><br>格式：将源、目的地址颠倒，ACK标识置为1，数据位为11111111<br>在这里，考虑到反馈比特流可能 会出现误码，笔者规定，只要 8 位比特流内 1 的个数大于等于 4，则认为 不需要重传，8 位比特流内 1 的个数小于 4，则需要重传。这样就巧妙的解决了反馈信息误码造成的判断错误，毕竟误码率 p4 近似等于 0 了，几乎是不可能事件。<br><strong>停等协议示意图：</strong><br><img src="https://img-blog.csdnimg.cn/20200120200029359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="停止等待协议"><h3 id="2-4-3-函数实现"><a href="#2-4-3-函数实现" class="headerlink" title="2.4.3 函数实现"></a>2.4.3 函数实现</h3>发送机制：</li>
 </ul>
-<p><strong>关于确认帧：</strong><br>格式：将源、目的地址颠倒，ACK标识置为1，数据位为11111111<br>在这里，考虑到反馈比特流可能 会出现误码，笔者规定，只要 8 位比特流内 1 的个数大于等于 4，则认为 不需要重传，8 位比特流内 1 的个数小于 4，则需要重传。这样就巧妙的解决了反馈信息误码造成的判断错误，毕竟误码率 p4 近似等于 0 了，几乎是不可能事件。<br><strong>停等协议示意图：</strong><br><img src="https://img-blog.csdnimg.cn/20200120200029359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="停止等待协议"></p>
-<h3 id="2-4-3-函数实现"><a href="#2-4-3-函数实现" class="headerlink" title="2.4.3 函数实现"></a>2.4.3 函数实现</h3><p>发送机制：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">add_dirty</span><span class="params">(<span class="keyword">char</span>* p)</span></span>;<span class="comment">//加入ACK标识位</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">if_ack</span><span class="params">(<span class="keyword">char</span>* s)</span></span>;<span class="comment">//判断是否为确认帧</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">get_dirty</span><span class="params">(<span class="keyword">char</span>* p)</span></span>;<span class="comment">//获得重传标志</span></span><br></pre></td></tr></table></figure>
 <p>接收机制：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">get_retrans_frame</span><span class="params">(<span class="keyword">char</span>* p)</span></span>;<span class="comment">//获得确认帧</span></span><br></pre></td></tr></table></figure>
@@ -401,26 +405,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="最小网元设计【阶段二】" data-title="最小网元设计【阶段二】" data-url="http://yoursite.com/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -446,6 +430,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -542,10 +529,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -555,6 +538,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,6 +561,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -582,7 +573,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,10 +586,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

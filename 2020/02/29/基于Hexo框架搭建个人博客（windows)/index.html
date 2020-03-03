@@ -179,7 +179,14 @@
   
 
         
-        <a href="/2020/02/29/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88windows)/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/29/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88windows)/" class="archive-article-date">
   	<time datetime="2020-02-29T06:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
 </a>
         
@@ -199,12 +206,10 @@
 <h2 id="SSH-key-配置"><a href="#SSH-key-配置" class="headerlink" title="SSH key 配置"></a>SSH key 配置</h2><ol>
 <li><p><strong>$ cd ~/. ssh</strong><br>检查本机已存在的ssh密钥<br>如果提示：No such file or directory 说明你是第一次使用git。<br>如果提示：bash: cd: too many arguments，此时可跳过第二步</p>
 </li>
-<li><p><strong>$ ssh-keygen -t rsa -C  “<a href="mailto:test@test.com">test@test.com</a>“</strong><br>然后连续3次回车，最终会生成一个文件在用户目录下</p>
+<li><p><strong>$ ssh-keygen -t rsa -C  “test@test.com”</strong><br>然后连续3次回车，最终会生成一个文件在用户目录下</p>
 </li>
-<li><p>打开用户目录，找到<strong>.ssh\id_rsa.pub</strong>文件，记事本打开并复制里面的内容<br><img src="https://img-blog.csdnimg.cn/20200229131652732.png" alt="ssh"></p>
-</li>
-<li><p>打开你的github账号，在settings 中打开 SSH and GPG keys<br><img src="https://img-blog.csdnimg.cn/20200229131842234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="3">然后 New SSH key, title自拟，将刚刚复制的内容复制到Key中，最后Add SHH key即可<br><img src="https://img-blog.csdnimg.cn/20200229132017824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="4"></p>
-</li>
+<li>打开用户目录，找到<strong>.ssh\id_rsa.pub</strong>文件，记事本打开并复制里面的内容<br><img src="https://img-blog.csdnimg.cn/20200229131652732.png" alt="ssh"></li>
+<li>打开你的github账号，在settings 中打开 SSH and GPG keys<br><img src="https://img-blog.csdnimg.cn/20200229131842234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="3">然后 New SSH key, title自拟，将刚刚复制的内容复制到Key中，最后Add SHH key即可<br><img src="https://img-blog.csdnimg.cn/20200229132017824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="4"></li>
 </ol>
 <hr>
 <h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><ol>
@@ -214,8 +219,7 @@
 </li>
 <li><p><strong>安装 Hexo</strong></p>
  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>创建本地文件夹</strong><br>新建文件夹例如：blog<br>在该目录下打开 Git Bash 进行后续工作，以后所有的东西都会放在这个目录下</p>
-</li>
+<li><strong>创建本地文件夹</strong><br>新建文件夹例如：blog<br>在该目录下打开 Git Bash 进行后续工作，以后所有的东西都会放在这个目录下</li>
 <li><p><strong>初始化 Hexo</strong></p>
  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 <p> <img src="https://img-blog.csdnimg.cn/20200229133202436.png" alt="test"><br> 此时，你会发现所在目录下多了很多文件</p>
@@ -247,8 +251,7 @@
 <hr>
 <h1 id="远端部署"><a href="#远端部署" class="headerlink" title="远端部署"></a>远端部署</h1><p>当然，我们的博客不可能只在本地访问，因此我们需要部署到服务器或者免费的 Github Page 中<br>以下是部署到GitHub中的步骤</p>
 <ol>
-<li><p><strong>创建 username.github.io</strong><br>新建仓库，以username.github.io命名，username务必使用你的账号昵称</p>
-</li>
+<li><strong>创建 username.github.io</strong><br>新建仓库，以username.github.io命名，username务必使用你的账号昵称</li>
 <li><p><strong>修改配置</strong></p>
  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim _config.yml</span><br></pre></td></tr></table></figure>
 <p> <img src="https://img-blog.csdnimg.cn/20200229135302642.png" alt="test"><br> 修改为如图所示（账号仍使用自己的)</p>
@@ -411,26 +414,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="基于Hexo框架搭建个人博客（windows)" data-title="基于Hexo框架搭建个人博客（windows)" data-url="http://yoursite.com/2020/02/29/%E5%9F%BA%E4%BA%8EHexo%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88windows)/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -456,6 +439,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -552,10 +538,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -565,6 +547,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,6 +570,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -592,7 +582,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,10 +595,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

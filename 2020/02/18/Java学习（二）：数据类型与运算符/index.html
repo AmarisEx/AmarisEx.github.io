@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Java学习（二）：数据类型与运算符 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2.1 注释 单行注释：&#x2F;&#x2F;  多行注释：&#x2F;…&#x2F;，不可嵌套，可行内注释  文档注释：&#x2F;*…&#x2F;，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）">
+  <meta name="description" content="2.1 注释 单行注释：&#x2F;&#x2F; 多行注释：&#x2F;…&#x2F;，不可嵌套，可行内注释 文档注释：&#x2F;*…&#x2F;，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习（二）：数据类型与运算符">
 <meta property="og:url" content="http://yoursite.com/2020/02/18/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="2.1 注释 单行注释：&#x2F;&#x2F;  多行注释：&#x2F;…&#x2F;，不可嵌套，可行内注释  文档注释：&#x2F;*…&#x2F;，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）">
+<meta property="og:description" content="2.1 注释 单行注释：&#x2F;&#x2F; 多行注释：&#x2F;…&#x2F;，不可嵌套，可行内注释 文档注释：&#x2F;*…&#x2F;，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200218115943958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200218120748641.png">
@@ -184,7 +184,14 @@
   
 
         
-        <a href="/2020/02/18/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/02/18/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
   	<time datetime="2020-02-18T14:07:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
@@ -193,16 +200,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="2-1-注释"><a href="#2-1-注释" class="headerlink" title="2.1 注释"></a>2.1 注释</h1><ul>
-<li><p>单行注释：//</p>
-</li>
-<li><p>多行注释：/<em>…</em>/，不可嵌套，可行内注释</p>
-</li>
-<li><p>文档注释：/<em>*…</em>/，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）</p>
-<a id="more"></a>
+<li>单行注释：//</li>
+<li>多行注释：/<em>…</em>/，不可嵌套，可行内注释</li>
+<li>文档注释：/<em>*…</em>/，注释中包含一些说明性的文字及一些JavaDoc标签（后期写项目时，可以生成项目的API）<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Amaris</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">package</span> myfirstproj;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestComment</span> </span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * exe 入口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args 参数</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args<span class="comment">/*test...*/</span>)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"test comment!"</span>);<span class="comment">//test...</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 test...</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="2-2-标识符规则"><a href="#2-2-标识符规则" class="headerlink" title="2.2 标识符规则"></a>2.2 标识符规则</h1></li>
-<li><p><strong>标识符</strong>是用来给变量、类、方法以及包进行命名的</p>
-</li>
+<li><strong>标识符</strong>是用来给变量、类、方法以及包进行命名的</li>
 <li><p><strong>规则</strong><br>  标识符必须以字母、下划线_、美元符号$开头。  </p>
 <p>  标识符其它部分可以是字母、下划线“_”、美元符“$”和数字的任意组合。</p>
 <p>  Java 标识符大小写敏感，且长度无限制。</p>
@@ -211,11 +214,8 @@
 <li><strong>标识符的使用规范</strong><br>表示类名的标识符，每个单词首字母大写<br>表示方法和变量的标识符：第一个单词小写，从第二个单词开始首字母大写即<strong>驼峰原则</strong>，如 eat(), eatFood()</li>
 </ul>
 </li>
-<li><p>Java不采用通常语言使用的ASCLL字符集，而是Unicode这样标准的国际字符集</p>
-<h1 id="2-3-Java-的关键字-保留字"><a href="#2-3-Java-的关键字-保留字" class="headerlink" title="2.3 Java 的关键字/保留字"></a>2.3 Java 的关键字/保留字</h1><p><img src="https://img-blog.csdnimg.cn/20200218115943958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Java 的关键字保留字"></p>
-<h1 id="2-4-变量"><a href="#2-4-变量" class="headerlink" title="2.4 变量"></a>2.4 变量</h1><h2 id="2-4-1-变量的本质"><a href="#2-4-1-变量的本质" class="headerlink" title="2.4.1 变量的本质"></a>2.4.1 变量的本质</h2></li>
-<li><p><strong>变量的本质上是代表一个“可操作的存储空间</strong>，空间位置是确定的，但是里面放置什么值不确定。我们可通过变量名来访问“对应的存储空间”，从而操纵这个“存储空间”存储的值。</p>
-</li>
+<li>Java不采用通常语言使用的ASCLL字符集，而是Unicode这样标准的国际字符集<h1 id="2-3-Java-的关键字-保留字"><a href="#2-3-Java-的关键字-保留字" class="headerlink" title="2.3 Java 的关键字/保留字"></a>2.3 Java 的关键字/保留字</h1><img src="https://img-blog.csdnimg.cn/20200218115943958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="Java 的关键字保留字"><h1 id="2-4-变量"><a href="#2-4-变量" class="headerlink" title="2.4 变量"></a>2.4 变量</h1><h2 id="2-4-1-变量的本质"><a href="#2-4-1-变量的本质" class="headerlink" title="2.4.1 变量的本质"></a>2.4.1 变量的本质</h2></li>
+<li><strong>变量的本质上是代表一个“可操作的存储空间</strong>，空间位置是确定的，但是里面放置什么值不确定。我们可通过变量名来访问“对应的存储空间”，从而操纵这个“存储空间”存储的值。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>  salary;</span><br><span class="line"><span class="keyword">long</span>  earthPopulation;</span><br><span class="line"><span class="keyword">int</span>  age;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200218120748641.png" alt="Variable"></p>
@@ -240,20 +240,15 @@
 </li>
 </ul>
 <h1 id="2-6-基本数据类型-primitive-data-type"><a href="#2-6-基本数据类型-primitive-data-type" class="headerlink" title="2.6 基本数据类型(primitive data type)"></a>2.6 基本数据类型(primitive data type)</h1><ul>
-<li><p><strong>数值型</strong>：byte、short、int、long、float、double<br>byte127，short 3000，int 21亿</p>
-</li>
-<li><p><strong>字符型</strong>（文本型）：char</p>
-</li>
+<li><strong>数值型</strong>：byte、short、int、long、float、double<br>byte127，short 3000，int 21亿</li>
+<li><strong>字符型</strong>（文本型）：char</li>
 <li><p><strong>布尔型</strong>：boolean</p>
 <p> <img src="https://img-blog.csdnimg.cn/20200218192829962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="基本数据类型"></p>
 </li>
 </ul>
 <h2 id="2-6-1-整型变量和常量"><a href="#2-6-1-整型变量和常量" class="headerlink" title="2.6.1 整型变量和常量"></a>2.6.1 整型变量和常量</h2><ul>
 <li><strong>整型</strong>用于表示没有小数部分的数值，它允许是负数。整型的范围与运行Java代码的机器无关，这正是Java程序具有很强移植能力的原因之一。与此相反，C和C++程序需要针对不同的处理器选择最有效的整型。<br><img src="https://img-blog.csdnimg.cn/20200218193531890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="整型数据类型"></li>
-<li><strong>Java 语言整型常量的四种表示形式</strong></li>
-</ul>
-<p><strong>十进制</strong>：…<br><strong>八进制</strong>：要求以0开头，如015<br><strong>十六进制</strong>：0x或0X<br><strong>二进制</strong>：要求以 0b 或 0B 开头，如 0b0100101</p>
-<ul>
+<li><strong>Java 语言整型常量的四种表示形式</strong><br><strong>十进制</strong>：…<br><strong>八进制</strong>：要求以0开头，如015<br><strong>十六进制</strong>：0x或0X<br><strong>二进制</strong>：要求以 0b 或 0B 开头，如 0b0100101</li>
 <li>Java 语言的整型常量<strong>默认为int型</strong>，声明 long 型常量可以后加 ‘ l ‘ 或 ’ L ‘</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> globalPopulation = <span class="number">7400000000L</span>;</span><br></pre></td></tr></table></figure>
@@ -262,10 +257,7 @@
 </ul>
 <p><img src="https://img-blog.csdnimg.cn/20200218194950384.png" alt="浮点型数据类型"></p>
 <ul>
-<li><strong>Java 浮点类型常量两种表示形式</strong></li>
-</ul>
-<p><strong>十进制</strong>：如3.14<br><strong>科学计数法</strong>：如314e2，314E2，314E-2</p>
-<ul>
+<li><strong>Java 浮点类型常量两种表示形式</strong><br><strong>十进制</strong>：如3.14<br><strong>科学计数法</strong>：如314e2，314E2，314E-2</li>
 <li>float类型的数值有一个后缀F或者f ，没有后缀F/f的浮点数值<strong>默认为double类型</strong>。也可以在浮点数值后添加后缀D或者d， 以明确其为double类型。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> i = <span class="number">314e-2f</span>;</span><br><span class="line"><span class="keyword">double</span> j = <span class="number">314e2</span>;</span><br></pre></td></tr></table></figure>
@@ -300,17 +292,13 @@
 <li>整数和浮点运算时，优先为浮点</li>
 </ol>
 <ul>
-<li><p><strong>取模运算</strong><br>.其操作数可以为浮点数,一般使用整数，结果是“余数”，“余数”符号和左边操作数相同，如：7%3=1，-7%3=-1，7%-3=1。</p>
-</li>
-<li><p><strong>一元运算符</strong><br>算术运算符中++，–属于一元运算符，该类运算符只需要一个操作数。</p>
-<h2 id="2-7-2-赋值及其扩展赋值运算符"><a href="#2-7-2-赋值及其扩展赋值运算符" class="headerlink" title="2.7.2 赋值及其扩展赋值运算符"></a>2.7.2 赋值及其扩展赋值运算符</h2><p><img src="https://img-blog.csdnimg.cn/20200218204710560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="赋值及其扩展赋值运算符"></p>
-<h2 id="2-7-3-关系运算符"><a href="#2-7-3-关系运算符" class="headerlink" title="2.7.3 关系运算符"></a>2.7.3 关系运算符</h2><p><img src="https://img-blog.csdnimg.cn/20200218205112927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="关系运算符"></p>
-</li>
+<li><strong>取模运算</strong><br>.其操作数可以为浮点数,一般使用整数，结果是“余数”，“余数”符号和左边操作数相同，如：7%3=1，-7%3=-1，7%-3=1。</li>
+<li><strong>一元运算符</strong><br>算术运算符中++，—属于一元运算符，该类运算符只需要一个操作数。<h2 id="2-7-2-赋值及其扩展赋值运算符"><a href="#2-7-2-赋值及其扩展赋值运算符" class="headerlink" title="2.7.2 赋值及其扩展赋值运算符"></a>2.7.2 赋值及其扩展赋值运算符</h2><img src="https://img-blog.csdnimg.cn/20200218204710560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="赋值及其扩展赋值运算符"><h2 id="2-7-3-关系运算符"><a href="#2-7-3-关系运算符" class="headerlink" title="2.7.3 关系运算符"></a>2.7.3 关系运算符</h2><img src="https://img-blog.csdnimg.cn/20200218205112927.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="关系运算符"></li>
 <li><p>=是赋值运算符，而真正的判断两个操作数是否相等的运算符是==。</p>
 </li>
 <li><p>==、!= 是所有（基本和引用）数据类型都可以使用</p>
 </li>
-<li><p>&gt;、&gt;=、 &lt;、 &lt;= 仅针对数值类型（byte/short/int/long,  float/double。以及char）</p>
+<li><p>>、&gt;=、 &lt;、 &lt;= 仅针对数值类型（byte/short/int/long,  float/double。以及char）</p>
 <h2 id="2-7-4-逻辑运算符"><a href="#2-7-4-逻辑运算符" class="headerlink" title="2.7.4 逻辑运算符"></a>2.7.4 逻辑运算符</h2><p><img src="https://img-blog.csdnimg.cn/2020021820592830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="逻辑运算符"></p>
 </li>
 <li><p>短路与和短路或采用短路的方式。从左到右计算，如果只通过运算符左边的操作数就能够确定该逻辑表达式的值，则不会继续计算运算符右边的操作数，<strong>提高效率</strong>。</p>
@@ -327,18 +315,14 @@
 </ul>
 <h2 id="2-7-8-运算符优先级"><a href="#2-7-8-运算符优先级" class="headerlink" title="2.7.8 运算符优先级"></a>2.7.8 运算符优先级</h2><p><img src="https://img-blog.csdnimg.cn/20200218213238173.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="运算符优先级"></p>
 <h1 id="2-8-类型转换"><a href="#2-8-类型转换" class="headerlink" title="2.8 类型转换"></a>2.8 类型转换</h1><h2 id="2-8-1-自动类型转换"><a href="#2-8-1-自动类型转换" class="headerlink" title="2.8.1 自动类型转换"></a>2.8.1 自动类型转换</h2><ul>
-<li><p><strong>自动类型转换</strong>指的是容量小的数据类型可以自动转换为容量大的数据类型。如图2-6所示，黑色的实线表示无数据丢失的自动类型转换，而虚线表示在转换时可能会有精度的损失。<br><img src="https://img-blog.csdnimg.cn/20200218213913499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="自动类型转换"></p>
-</li>
-<li><p>可以将整型常量直接赋值给byte、 short、 char等类型变量，而不需要进行强制类型转换，只要不超出其表数范围即可。（$ASCLL$)</p>
-<h2 id="2-8-2-强制类型转换"><a href="#2-8-2-强制类型转换" class="headerlink" title="2.8.2 强制类型转换"></a>2.8.2 强制类型转换</h2></li>
-<li><p><strong>强制类型转换</strong>，又被称为造型，用于显式的转换一个数值的类型。在有可能丢失信息的情况下进行的转换是通过造型来完成的，但可能造成精度降低或溢出。</p>
-</li>
+<li><strong>自动类型转换</strong>指的是容量小的数据类型可以自动转换为容量大的数据类型。如图2-6所示，黑色的实线表示无数据丢失的自动类型转换，而虚线表示在转换时可能会有精度的损失。<br><img src="https://img-blog.csdnimg.cn/20200218213913499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="自动类型转换"></li>
+<li>可以将整型常量直接赋值给byte、 short、 char等类型变量，而不需要进行强制类型转换，只要不超出其表数范围即可。（$ASCLL$)<h2 id="2-8-2-强制类型转换"><a href="#2-8-2-强制类型转换" class="headerlink" title="2.8.2 强制类型转换"></a>2.8.2 强制类型转换</h2></li>
+<li><strong>强制类型转换</strong>，又被称为造型，用于显式的转换一个数值的类型。在有可能丢失信息的情况下进行的转换是通过造型来完成的，但可能造成精度降低或溢出。</li>
 <li><p>(type)var</p>
 <h2 id="2-8-3-类型转换时常见错误问题"><a href="#2-8-3-类型转换时常见错误问题" class="headerlink" title="2.8.3 类型转换时常见错误问题"></a>2.8.3 类型转换时常见错误问题</h2></li>
 <li><p><strong>超范围</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> money = <span class="number">1000000000</span>; <span class="comment">//10亿</span></span><br><span class="line"><span class="keyword">int</span> years = <span class="number">20</span>;</span><br><span class="line"><span class="comment">//返回的total是负数，超过了int的范围</span></span><br><span class="line"><span class="keyword">int</span> total = money*years;</span><br><span class="line">System.out.println(<span class="string">"total="</span>+total);</span><br><span class="line"><span class="comment">//返回的total仍然是负数。默认是int，因此结果会转成int值，再转成long。但是已经发生//了数据丢失</span></span><br><span class="line"><span class="keyword">long</span> total1 = money*years; </span><br><span class="line">System.out.println(<span class="string">"total1="</span>+total1);</span><br><span class="line"><span class="comment">//返回的total2正确:先将一个因子变成long，整个表达式发生提升。全部用long来计算。</span></span><br><span class="line"><span class="keyword">long</span> total2 = money*((<span class="keyword">long</span>)years); </span><br><span class="line">System.out.println(<span class="string">"total2="</span>+total2);</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>l与1混淆</strong><br>long类型使用大写L不要用小写。</p>
-<h1 id="简单的键盘输入和输出"><a href="#简单的键盘输入和输出" class="headerlink" title="简单的键盘输入和输出"></a>简单的键盘输入和输出</h1></li>
+<li><strong>l与1混淆</strong><br>long类型使用大写L不要用小写。<h1 id="简单的键盘输入和输出"><a href="#简单的键盘输入和输出" class="headerlink" title="简单的键盘输入和输出"></a>简单的键盘输入和输出</h1></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @author zgs</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">"Please input your name: "</span>);</span><br><span class="line">		String name = scanner.nextLine();</span><br><span class="line">		System.out.println(<span class="string">"Hello, "</span> + name + <span class="string">" !"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20200218220045869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="简单的键盘输入和输出"></p>
@@ -387,7 +371,7 @@
 </li>
 <li><p>Java语言支持的运算符可分为：</p>
 </li>
-<li><p>算术运算符:  +，-，*，/，%，++，–</p>
+<li><p>算术运算符:  +，-，*，/，%，++，—</p>
 </li>
 <li><p>赋值运算符 = </p>
 </li>
@@ -563,26 +547,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Java学习（二）：数据类型与运算符" data-title="Java学习（二）：数据类型与运算符" data-url="http://yoursite.com/2020/02/18/Java%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -608,6 +572,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -704,10 +671,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -717,6 +680,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,6 +703,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -744,7 +715,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,10 +728,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

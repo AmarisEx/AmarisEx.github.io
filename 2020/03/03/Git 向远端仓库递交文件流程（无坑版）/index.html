@@ -168,7 +168,14 @@
   
 
         
-        <a href="/2020/03/03/Git%20%E5%90%91%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E9%80%92%E4%BA%A4%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B%EF%BC%88%E6%97%A0%E5%9D%91%E7%89%88%EF%BC%89/" class="archive-article-date">
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/03/03/Git%20%E5%90%91%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E9%80%92%E4%BA%A4%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B%EF%BC%88%E6%97%A0%E5%9D%91%E7%89%88%EF%BC%89/" class="archive-article-date">
   	<time datetime="2020-03-02T17:08:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
 </a>
         
@@ -187,7 +194,6 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://test.github.com...</span><br><span class="line">git remote -v <span class="comment"># 查看配置</span></span><br></pre></td></tr></table></figure></li>
 <li><p><strong>递交</strong></p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment"># 查看当前所在分支</span></span><br><span class="line">git checkout master <span class="comment"># 改变分支到master</span></span><br><span class="line">git push -u origin master <span class="comment"># 假设你要提交到主分支master</span></span><br></pre></td></tr></table></figure>
-
 <p>   此过程会可能需要你登录你的github账号，按照提示做即可。<br>   注意：最后会弹出一个窗口提示你填写目的仓库的用户名和密码，此处的密码是仓库所有者的<strong>token</strong>, 而非账号密码，token的获取可在settings中找到。</p>
 </li>
 </ul>
@@ -337,26 +343,6 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Git 向远端仓库递交文件流程（无坑版）" data-title="Git 向远端仓库递交文件流程（无坑版）" data-url="http://yoursite.com/2020/03/03/Git%20%E5%90%91%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E9%80%92%E4%BA%A4%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B%EF%BC%88%E6%97%A0%E5%9D%91%E7%89%88%EF%BC%89/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
@@ -382,6 +368,9 @@
   </div>
 </footer>
 
+<!-- 根据个人喜好在相应位置添加以下代码 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -478,10 +467,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -491,6 +476,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +499,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
@@ -518,7 +511,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,10 +524,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
