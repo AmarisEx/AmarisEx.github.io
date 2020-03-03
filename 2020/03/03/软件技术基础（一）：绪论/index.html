@@ -6,17 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Amaris&#39;s blog</title>
+  <title>软件技术基础（一）：绪论 | Amaris&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Less is more.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amaris&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/3/index.html">
+  <meta name="description" content="计算机软件开发过程软件逻辑设计 问题的理解清楚问题的输入、要求和输出 算法设计包括软件架构设计、模块分解、选择具体算法策略、用适当的方式描述和逐步细化算法步骤 数据结构设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件技术基础（一）：绪论">
+<meta property="og:url" content="http://yoursite.com/2020/03/03/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E7%BB%AA%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Amaris&#39;s blog">
-<meta property="og:description" content="Less is more.">
+<meta property="og:description" content="计算机软件开发过程软件逻辑设计 问题的理解清楚问题的输入、要求和输出 算法设计包括软件架构设计、模块分解、选择具体算法策略、用适当的方式描述和逐步细化算法步骤 数据结构设计">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020030316254682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303163402432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303163944266.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303164430494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303164648641.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303165004682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303165250601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303165357393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303170154469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303170243413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020030317052511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303170930643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303170957887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303171030378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200303171226816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-03-03T09:17:36.000Z">
+<meta property="article:modified_time" content="2020-03-03T14:08:23.306Z">
 <meta property="article:author" content="Amaris">
+<meta property="article:tag" content="软件开发">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020030316254682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Amaris&#39;s blog" type="application/atom+xml">
   
@@ -152,439 +171,281 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-软件技术基础（一）：绪论" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      软件技术基础（一）：绪论
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/03/03/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E7%BB%AA%E8%AE%BA/" class="archive-article-date">
+  	<time datetime="2020-03-03T09:17:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机软件开发过程"><a href="#计算机软件开发过程" class="headerlink" title="计算机软件开发过程"></a>计算机软件开发过程</h1><h2 id="软件逻辑设计"><a href="#软件逻辑设计" class="headerlink" title="软件逻辑设计"></a>软件逻辑设计</h2><ol>
+<li><strong>问题的理解</strong><br>清楚问题的输入、要求和输出</li>
+<li><strong>算法设计</strong><br>包括软件架构设计、模块分解、选择具体算法策略、用适当的方式描述和逐步细化算法步骤</li>
+<li><strong>数据结构设计</strong></li>
+</ol>
+<a id="more"></a>
+<h2 id="一方面要选择或设计能有效表示和存储应用问题中所涉及的数据对象的数据结构，同时还要选择或设计能支持算法策略实现的数据结构"><a href="#一方面要选择或设计能有效表示和存储应用问题中所涉及的数据对象的数据结构，同时还要选择或设计能支持算法策略实现的数据结构" class="headerlink" title="一方面要选择或设计能有效表示和存储应用问题中所涉及的数据对象的数据结构，同时还要选择或设计能支持算法策略实现的数据结构"></a>一方面要选择或设计能有效表示和存储应用问题中所涉及的数据对象的数据结构，同时还要选择或设计能支持算法策略实现的数据结构</h2><h2 id="软件程序设计"><a href="#软件程序设计" class="headerlink" title="软件程序设计"></a>软件程序设计</h2><ol>
+<li><strong>算法分析</strong><br>发现有改进完善之处，返回第二步，重新选择或设计算法与数据结构</li>
+<li><strong>程序设计</strong><br>设计具体的数据存储访问方案、数据结构实现细节、基于某种操作系统设计程序实现细节，在计算机上调试和运行程序。</li>
+<li><strong>程序实现</strong><br>用某种计算机程序设计语言，定义数据结构、数据存储、基于某种操作系统编写实现算法的代码，编译代码并在计算机上调试和运行程序，并不断优化程序设计。<h2 id="双循环"><a href="#双循环" class="headerlink" title="双循环"></a>双循环</h2><img src="https://img-blog.csdnimg.cn/2020030316254682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="双循环"></li>
+</ol>
+<hr>
+<h1 id="软件系统核心逻辑"><a href="#软件系统核心逻辑" class="headerlink" title="软件系统核心逻辑"></a>软件系统核心逻辑</h1><ul>
+<li>数据结构 + 算法 = <strong>核心逻辑</strong></li>
+<li><strong>数据结构在计算问题中有两大用途</strong></li>
+</ul>
+<ol>
+<li>用于存放要处理的数据，如迷宫地图</li>
+<li>用于实现算法策略，如迷宫例子中探索方向增量数组、回溯的栈、避免重复走的标志数组或特殊标记）</li>
+</ol>
+<h2 id="算法设计就是要研究各类数据结构上的各种运算方法，从而解决计算问题"><a href="#算法设计就是要研究各类数据结构上的各种运算方法，从而解决计算问题" class="headerlink" title="- 算法设计就是要研究各类数据结构上的各种运算方法，从而解决计算问题"></a>- <strong>算法设计</strong>就是要研究各类数据结构上的各种运算方法，从而解决计算问题</h2><h1 id="软件程序设计-1"><a href="#软件程序设计-1" class="headerlink" title="软件程序设计"></a>软件程序设计</h1><ul>
+<li><strong>程序在计算机上运行方式</strong><br><img src="https://img-blog.csdnimg.cn/20200303163402432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="1"></li>
+<li><strong>程序设计要考虑的问题</strong></li>
+</ul>
+<ol>
+<li><p>程序架构</p>
+<blockquote>
+<p>如何在操作系统上开发软件？<br>操作系统具备什么功能<br>程序对操作系统的依耐性？<br>采用什么样的程序架构</p>
+</blockquote>
+</li>
+<li><p>数据管理<br>数据库</p>
+</li>
+</ol>
+<hr>
+<h2 id="软件系统运行平台"><a href="#软件系统运行平台" class="headerlink" title="软件系统运行平台"></a>软件系统运行平台</h2><ul>
+<li><strong>操作系统OS</strong><br>操作系统是一组控制和管理计算机硬件和软件资源，合理地对各类作业进行调度，以及方便用户使用的程序的集合。</li>
+<li><strong>操作系统主要功能</strong><br><img src="https://img-blog.csdnimg.cn/20200303163944266.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="操作系统主要功能"></li>
+</ul>
+<hr>
+<h3 id="处理机管理"><a href="#处理机管理" class="headerlink" title="处理机管理"></a>处理机管理</h3><ul>
+<li>按照一定的算法把处理机分配给进程（线程），并对其进行有效的管理和控制。<br><img src="https://img-blog.csdnimg.cn/20200303164430494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="处理机管理"></li>
+<li><strong>进程控制</strong><br>进程控制的主要功能是为作业创建进程、撤消已结束的进程，以及控制进程在运行过程中的状态转换。</li>
+<li><strong>进程调度</strong><br>操作系统内的进程运行需经调度才能执行完成，即把CPU分配给哪个进程使之运行<br><img src="https://img-blog.csdnimg.cn/20200303164648641.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="进程调度"></li>
+<li><strong>进程同步</strong><pre><code>进程同步的主要任务是为多个进程的运行进行协调。
+</code></pre><strong>进程同步的两种协调方式</strong><br><strong>进程互斥方式</strong>，这是指诸进程（线程）在对临界资源进行访问时，应采用互斥方式；<br><strong>进程同步方式</strong>，指进程相互合作去完成共同的任务时，诸进程之间的协调</li>
+<li><strong>进程通信</strong><pre><code>进程是指进程之间的信息交换。
+</code></pre><strong>进程通信方式</strong><br>机器内<br>机器间</li>
+</ul>
+<hr>
+<h3 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h3><ul>
+<li>为多道程序的运行提供良好的环境，方便用户使用存储器，提高存储器的利用率以及能从逻辑上扩充内存。 </li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200303165004682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="存储器管理"></p>
+<hr>
+<h3 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h3><ul>
+<li>完成用户进程提出的I/O请求；</li>
+<li>为用户进程分配其所需的I／O设备；</li>
+<li>提高CPU和I／O设备的利用率；</li>
+<li>提高I／O速度；</li>
+<li>方便用户使用I／O设备。 </li>
+</ul>
+<hr>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><ul>
+<li>是对用户文件和系统文件进行管理，以方便用户使用，并保证文件的安全性<br><img src="https://img-blog.csdnimg.cn/20200303165250601.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="文件管理"></li>
+</ul>
+<hr>
+<h3 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h3><p><img src="https://img-blog.csdnimg.cn/20200303165357393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="用户接口"></p>
+<hr>
+<h2 id="软件程序编译"><a href="#软件程序编译" class="headerlink" title="软件程序编译"></a>软件程序编译</h2><ul>
+<li><strong>程序需要编译成计算机能理解的代码才能在操作系统上运行</strong></li>
+<li>软件是运行在操作系统之上的，因此与操作系统息息相关。同一个软件逻辑和程序在不同的操作系统上的实现可能是不同的，其可运行二进制码也是不同的</li>
+</ul>
+<ol>
+<li><strong>依赖操作系统的程序编译方式</strong><br><img src="https://img-blog.csdnimg.cn/20200303170154469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="依赖操作系统的程序编译方式"></li>
+<li><strong>不依赖操作系统的程序编译方式：跨平台开发</strong><br>JAVA语言是跨平台的语言，JAVA虚拟机JVM不是跨平台的<br><img src="https://img-blog.csdnimg.cn/20200303170243413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="不依赖操作系统的程序编译方式"></li>
+</ol>
+<ul>
+<li>与“编译”有关的三种语言、三种程序<br><img src="https://img-blog.csdnimg.cn/2020030317052511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<hr>
+<h2 id="计算机软件数据管理"><a href="#计算机软件数据管理" class="headerlink" title="计算机软件数据管理"></a>计算机软件数据管理</h2><ul>
+<li>数据结构确定后，软件的主要工作之一：管理操作结构化的数据</li>
+<li>CRUD， 增删改查</li>
+<li><strong>手工管理</strong><br><img src="https://img-blog.csdnimg.cn/20200303170930643.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="手工管理"></li>
+<li><strong>文件系统</strong><br><img src="https://img-blog.csdnimg.cn/20200303170957887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="文件系统"></li>
+<li><strong>数据库系统</strong><br>Database Management System 简称 DBMS<br><img src="https://img-blog.csdnimg.cn/20200303171030378.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="数据库系统"></li>
+<li><strong>SQL 语言</strong><br><img src="https://img-blog.csdnimg.cn/20200303171226816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70" alt="SQL 语言"></li>
+<li><strong>分布式数据库DDBS</strong><br>(Distributed DBS)<br>技术是DB技术和网络、通信技术的结晶产物。<br>其<strong>特点</strong>是：<br>处理数据分散在各个结点上，每个结点的数据由本地DBMS管理，各结点间可以<br> 数据共享<br>充分利用、发挥各个结点的资源优势，减轻网络负担</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的鼓励是我创作的动力<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193442664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://img-blog.csdnimg.cn/20200229193833714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzQ4ODk1OA==,size_16,color_FFFFFF,t_70">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-02-10T12:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">数据结构学习笔记【第7章 图】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件开发</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/03/%E8%BD%AF%E4%BB%B6%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E7%BB%AA%E8%AE%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 
-<a href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/" class="archive-article-date">
-  	<time datetime="2020-02-05T11:16:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/03/C++%EF%BC%9A%E4%BD%A0%E6%89%80%E4%B8%8D%E4%BA%86%E8%A7%A3%E7%9A%84%20Cin%20%E5%92%8C%20Cout/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++：你所不了解的 Cin 和 Cout
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/03/Git%20%E5%90%91%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E9%80%92%E4%BA%A4%E6%96%87%E4%BB%B6%E6%B5%81%E7%A8%8B%EF%BC%88%E6%97%A0%E5%9D%91%E7%89%88%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git 向远端仓库递交文件流程（无坑版）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/">数据结构学习笔记【第6章 树和二叉树】</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-02-03T06:55:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/">数据结构学习笔记【第5章 数组和广义表】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-02-02T04:00:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E5%9B%9B%E3%80%91/">最小网元设计【阶段四】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-02-02T03:23:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%89%E3%80%91/">最小网元设计【阶段三】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/01/31/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97-%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0-%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-01-31T13:07:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/31/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97-%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0-%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/">数据结构学习笔记【第3章 栈和队列】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/01/27/%E4%B8%A5%E8%94%9A%E6%95%8F-%E7%BA%BF%E6%80%A7%E8%A1%A8-%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-01-27T06:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/27/%E4%B8%A5%E8%94%9A%E6%95%8F-%E7%BA%BF%E6%80%A7%E8%A1%A8-%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0%E5%92%8C%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/">数据结构学习笔记【第2章 线性表】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/01/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BB%AA%E8%AE%BA/" class="archive-article-date">
-  	<time datetime="2020-01-21T12:04:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BB%AA%E8%AE%BA/">数据结构学习笔记【第1章 绪论】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/01/21/%E4%B8%A5%E8%94%9A%E6%95%8F-%E4%B8%B2-%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0-%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2020-01-21T12:04:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/21/%E4%B8%A5%E8%94%9A%E6%95%8F-%E4%B8%B2-%E4%B8%B2%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0-%E4%B8%B2%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/">数据结构学习笔记【第4章 串】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-01-20T11:08:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/20/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%B8%80%E3%80%91/">最小网元设计【阶段一】</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2020/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/page/4/">Next &amp;raquo;</a>
-    </nav>
   
 
+  
+
+  
 
           </div>
         </div>
@@ -610,8 +471,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
