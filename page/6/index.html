@@ -154,6 +154,242 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-严蔚敏-图-存储结构-图的遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">数据结构学习笔记【第7章 图】</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
+  	<time datetime="2020-02-10T12:28:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="7-1-图的定义和术语"><a href="#7-1-图的定义和术语" class="headerlink" title="7.1 图的定义和术语"></a>7.1 图的定义和术语</h2><ul>
+<li><strong>图</strong>是一种较线性表和树更为复杂的数据结构。在图形结构中，结点之间的关系是任意的，图中任意两个数据元素之间都可能相关。</li>
+<li>在图中的数据元素通常称做<strong>顶点</strong>(<em>Vertex</em>)，<em>V</em>是顶点的有穷非空集合；<em>VR</em>是两个顶点之间的关系的集合。若$<v,w>∈VR$，则$<v,w>$表示从$v$到$w$的一条<strong>弧</strong>(<em>Arc</em>)，    且称$v$为<strong>弧尾</strong>(<em>Tail</em>)或起始点，称$w$为<strong>弧头</strong>(<em>Head</em>)或终端点。</v,w></v,w></li>
+<li><strong>无向图</strong>中$<v,w>$与$<w,v>$是相同的，即VR是对称的，用$(v,w)$表示$v$和$w$的一条<strong>边</strong>(<em>Edge</em>)，反之称为<strong>有向图</strong>。</w,v></v,w></li></ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/10/%E4%B8%A5%E8%94%9A%E6%95%8F-%E5%9B%BE-%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-严蔚敏-树和二叉树-遍历二叉树-森林" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/">数据结构学习笔记【第6章 树和二叉树】</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/" class="archive-article-date">
+  	<time datetime="2020-02-05T11:16:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="6-1-树的定义和基本术语"><a href="#6-1-树的定义和基本术语" class="headerlink" title="6.1 树的定义和基本术语"></a>6.1 树的定义和基本术语</h2><ul>
+<li><strong>树</strong>(Tree)是n(n≥0）个结点的有限集，有且只有一个<strong>根结点</strong>，其余结点可划分为不同的根的<strong>子树</strong></li>
+<li>树的<strong>结点</strong>包含一个数据元素及若干指向其子树的分支</li>
+<li>结点拥有的子树数称为<strong>结点的度</strong>(Degree)</li>
+<li>度数为0的结点称为<strong>叶子</strong>(Leaf)或<strong>终端结点</strong></li></ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/05/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91-%E6%A3%AE%E6%9E%97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-严蔚敏-数组和广义表-数组的顺序实现-矩阵的压缩存储-广义表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/">数据结构学习笔记【第5章 数组和广义表】</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-02-03T06:55:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="5-1-数组的定义"><a href="#5-1-数组的定义" class="headerlink" title="5.1 数组的定义"></a>5.1 数组的定义</h2><ul>
+<li>n维数组</li>
+<li>n=1时，n维数组就退化为定长的线性表；反之，n维数组也可以看成是线性表的推广</li>
+<li>数组一旦被定义，它的维数和维界就不再改变</li>
+<li>除了结构的初始化和销毁之外，数组只有存取元素和修改元素值的操作</li></ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/03/%E4%B8%A5%E8%94%9A%E6%95%8F-%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8-%E6%95%B0%E7%BB%84%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8-%E5%B9%BF%E4%B9%89%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-最小网元设计【阶段四】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -710,245 +946,6 @@
 
 
   
-    <article id="post-基于base64的图片编解码方案—C语言实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">Base64实现图片编解码</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-01-08T08:18:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>Base64是一种基于64个可打印字符来表示二进制数据的表示方法。<br>本文旨在通过base64对图片进行编解码，并可转换为8位2进制比特流，以实现图片文件在真实网络环境下的传输。</li></ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">base64</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/08/%E5%9F%BA%E4%BA%8Ebase64%E7%9A%84%E5%9B%BE%E7%89%87%E7%BC%96%E8%A7%A3%E7%A0%81%E6%96%B9%E6%A1%88%E2%80%94C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-最小网元设计【阶段二】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/">最小网元设计【阶段二】</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-01-06T12:39:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="阶段二：交互"><a href="#阶段二：交互" class="headerlink" title="阶段二：交互"></a>阶段二：交互</h1><p>2.1 本阶段预期</p>
-<h2 id="2-1-本阶段预期"><a href="#2-1-本阶段预期" class="headerlink" title="2.1 本阶段预期"></a>2.1 本阶段预期</h2><p>在数据链路层实现帧定位、差错检测、差错控制以及流量控制功能。<br>在应用层实现字符编码方案以及图片编码方案。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E4%BA%8C%E3%80%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-最小网元设计【阶段零】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/">最小网元设计【阶段零】</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/" class="archive-article-date">
-  	<time datetime="2020-01-06T01:53:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="阶段零：序言"><a href="#阶段零：序言" class="headerlink" title="阶段零：序言"></a>阶段零：序言</h1><h2 id="项目预期"><a href="#项目预期" class="headerlink" title="项目预期"></a>项目预期</h2><p>设计具有多层结构的网元，并将多个网元构成一个网络，实现信息、文件在多个网元之间的传递。并利用网元搭建混合组网，实现信息在多个网元之间的收发。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/06/%E6%9C%80%E5%B0%8F%E7%BD%91%E5%85%83%E8%AE%BE%E8%AE%A1%E3%80%90%E9%98%B6%E6%AE%B5%E9%9B%B6%E3%80%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
@@ -1172,6 +1169,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
             
             <div class="clearfix"></div>
