@@ -154,6 +154,240 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-为你的POJO类定制排序方法【基于Comparator】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/29/%E4%B8%BA%E4%BD%A0%E7%9A%84POJO%E7%B1%BB%E5%AE%9A%E5%88%B6%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E3%80%90%E5%9F%BA%E4%BA%8EComparator%E3%80%91/">为你的POJO类定制排序方法【基于Comparator】</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/04/29/%E4%B8%BA%E4%BD%A0%E7%9A%84POJO%E7%B1%BB%E5%AE%9A%E5%88%B6%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E3%80%90%E5%9F%BA%E4%BA%8EComparator%E3%80%91/" class="archive-article-date">
+  	<time datetime="2020-04-29T13:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="为什么要定制？？"><a href="#为什么要定制？？" class="headerlink" title="为什么要定制？？"></a>为什么要定制？？</h1><p><code>xxx.sort()</code>方法可能任何一个Java开发者都是用过的，sort的底层是根据快速排序实现的，在学习Java的时候，我们可能直接针对对简单的整型数组进行排序，这样的排序不需要任何改变，直接sort就可以<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后台</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/29/%E4%B8%BA%E4%BD%A0%E7%9A%84POJO%E7%B1%BB%E5%AE%9A%E5%88%B6%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E3%80%90%E5%9F%BA%E4%BA%8EComparator%E3%80%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-还搞不懂 Java 方法de传值和传引用？【最全实例解答疑惑】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/29/%E8%BF%98%E6%90%9E%E4%B8%8D%E6%87%82%20Java%20%E6%96%B9%E6%B3%95de%E4%BC%A0%E5%80%BC%E5%92%8C%E4%BC%A0%E5%BC%95%E7%94%A8%EF%BC%9F%E3%80%90%E6%9C%80%E5%85%A8%E5%AE%9E%E4%BE%8B%E8%A7%A3%E7%AD%94%E7%96%91%E6%83%91%E3%80%91/">还搞不懂 Java 方法de传值和传引用？【最全实例解答疑惑】</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/04/29/%E8%BF%98%E6%90%9E%E4%B8%8D%E6%87%82%20Java%20%E6%96%B9%E6%B3%95de%E4%BC%A0%E5%80%BC%E5%92%8C%E4%BC%A0%E5%BC%95%E7%94%A8%EF%BC%9F%E3%80%90%E6%9C%80%E5%85%A8%E5%AE%9E%E4%BE%8B%E8%A7%A3%E7%AD%94%E7%96%91%E6%83%91%E3%80%91/" class="archive-article-date">
+  	<time datetime="2020-04-29T13:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="何为传值-amp-引用"><a href="#何为传值-amp-引用" class="headerlink" title="何为传值&amp;引用"></a>何为传值&amp;引用</h1><p>在搞懂传值和引用之间的区别前，我们不妨先明白他俩到底是啥</p>
+<ul>
+<li><strong>传值</strong><br>call by value<br>按值传递，表示方法接收的是调用者提供的<strong>值</strong></li>
+<li><strong>传引用</strong><br>call by reference<br>按引用传递，表示方法接收的是调用者提供的<strong>变量地址</strong></li></ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/29/%E8%BF%98%E6%90%9E%E4%B8%8D%E6%87%82%20Java%20%E6%96%B9%E6%B3%95de%E4%BC%A0%E5%80%BC%E5%92%8C%E4%BC%A0%E5%BC%95%E7%94%A8%EF%BC%9F%E3%80%90%E6%9C%80%E5%85%A8%E5%AE%9E%E4%BE%8B%E8%A7%A3%E7%AD%94%E7%96%91%E6%83%91%E3%80%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-进程的互斥与同步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/29/%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">进程的互斥与同步</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/04/29/%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/" class="archive-article-date">
+  	<time datetime="2020-04-29T13:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Concurrency（并发控制）"><a href="#Concurrency（并发控制）" class="headerlink" title="Concurrency（并发控制）"></a>Concurrency（并发控制）</h1><p>包含</p>
+<ol>
+<li><strong>Mutual Exclusion and Synchronization</strong><br>互斥与同步<br><strong>互斥</strong>:<br>决定进程之间谁先进行<br>是指某一资源同时只允许一个访问者对其进行访问<br><strong>同步</strong>：<br>决定进程之间协调进行<br>在互斥的基础上（大多数情况），通过其它机制实现访问者对资源的有序访问。<br>是具有一定机制的，更加复杂的互斥</li></ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/29/%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%BA%92%E6%96%A5%E4%B8%8E%E5%90%8C%E6%AD%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Mysql博文集锦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -713,261 +947,6 @@
 
 
   
-    <article id="post-SpringBoot 异常处理与测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/SpringBoot%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%B5%8B%E8%AF%95/">SpringBoot 异常处理与测试</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/04/15/SpringBoot%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-04-15T14:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://gitee.com/amarisex/spring-boot-exception-and-junit.git" target="_blank" rel="noopener">Gitee地址</a> </p>
-<h1 id="自定义错误页面"><a href="#自定义错误页面" class="headerlink" title="自定义错误页面"></a>自定义错误页面</h1><p>这是我们用来测试的bug，当项目启动时，系统会报错<br></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后台</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/SpringBoot%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%B5%8B%E8%AF%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-SpringBoot 整合 Thymeleaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/SpringBoot%20%E6%95%B4%E5%90%88%20Thymeleaf/">SpringBoot 整合 Thymeleaf</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/04/15/SpringBoot%20%E6%95%B4%E5%90%88%20Thymeleaf/" class="archive-article-date">
-  	<time datetime="2020-04-15T14:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf ?"></a>Thymeleaf ?</h1><ul>
-<li><strong>Thymeleaf</strong><br>是一个现代的服务器端Java模板引擎的web和独立的环境。<br>Thymeleaf的主要目标是为您的开发工作流程带来优雅的自然模板- HTML，可以正确地显示在浏览器，也可以作为静态原型，允许在开发团队更强大的协作。<br>有了Spring框架的模块，与您喜欢的工具的大量集成，以及插入您自己的功能的能力，Thymeleaf是现代HTML5 JVM web开发的理想选择——尽管它可以做的还有很多<br>(翻译自官网)</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后台</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/SpringBoot%20%E6%95%B4%E5%90%88%20Thymeleaf/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-SpringBoot 日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/SpringBoot%20%E6%97%A5%E5%BF%97/">SpringBoot 日志</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/04/15/SpringBoot%20%E6%97%A5%E5%BF%97/" class="archive-article-date">
-  	<time datetime="2020-04-15T14:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-日志框架介绍"><a href="#1-日志框架介绍" class="headerlink" title="1. 日志框架介绍"></a>1. 日志框架介绍</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>日志门面（日志的 抽象层）(类似接口)</th>
-<th>日志实现</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><del>JCL(jakatra Common Logging)</del>  <strong>SLF4j</strong>(Simple Logging Facade for java)  <del>jboss-logging</del></td>
-<td>Log4j                  JUL(java.util.logging)     Log4j2               <strong>Logback</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后台</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/SpringBoot%20%E6%97%A5%E5%BF%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1090,23 +1069,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1122,11 +1089,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">gitee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1138,10 +1125,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">numpy</a>
               </li>
              
@@ -1150,7 +1133,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1158,7 +1141,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后台</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,11 +1173,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,15 +1185,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
